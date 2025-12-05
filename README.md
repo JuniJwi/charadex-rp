@@ -1,9 +1,8 @@
 # Charadex v.1.5.5
 
 > [!IMPORTANT]
-> **This versions is meant to work with the [Charadex v1.5.0 Google Sheet](https://docs.google.com/spreadsheets/d/1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak/).**
-
-&nbsp;
+> You can (tentatively) use this branch in development. **It is fully compatible with with the [Charadex v1.5.0 Google Sheet](https://docs.google.com/spreadsheets/d/1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak/).**
+> It can work with older sheets as well but it'll take a bit of work.
 
 ## Changelog
 
@@ -38,7 +37,7 @@ If you're using this version and find any bugs, please let me know in the [Disco
 
 **Download**
 
-- [Charadex](https://github.com/charadex-team/charadex-v1.0/releases/tag/v1.5.5)
+- [Charadex](https://github.com/charadex-team/charadex-v1.0/archive/refs/heads/v1.5.5-develop.zip)
 - [Google Sheet](https://docs.google.com/spreadsheets/d/1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak/copy)
 
 **Setting Up**
