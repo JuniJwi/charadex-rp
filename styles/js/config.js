@@ -192,7 +192,7 @@ charadex.page.lore = {
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'Question', 'Answer', 'Tags']
+    parameters: ['All', 'Title', 'Content', 'Tags']
   },
 
   prevNext: {
