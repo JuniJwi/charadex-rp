@@ -701,21 +701,12 @@ ul {
   list-style-type: "✦";
 }
 
-ul li {
-  padding-left: 0.5em;
-}
-
 ul li::marker {
   color: var(--cd-secondary-color) !important;
 }
 
 ol {
   list-style-type: upper-roman;
-}
-
-ol li {
-  margin-bottom: 0.5em;
-  padding-left: 0.5em;
 }
 
 ol li::marker {
