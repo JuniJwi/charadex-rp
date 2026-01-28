@@ -714,6 +714,11 @@ ol li::marker {
   font-family: var(--cd-header-font-family);
 }
 
+.card-body ul li, .card-body ol li {
+  margin-bottom: 0.5em;
+  padding-left: 0.5em;
+}
+
 /* ============================================================= */
 /* Horizontal Rule
 /* ============================================================= */
@@ -721,10 +726,10 @@ hr {
   height: 1em;
   width: 100%;
   margin: 0 auto 0 auto;
-  border: 0;
+  border-top: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
 }
-.card hr {
-  margin: 0 auto 0 auto;
+.card-body hr {
+  margin: 1em auto 1em auto;
 }
 
 /* ============================================================= */
