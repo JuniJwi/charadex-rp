@@ -805,7 +805,7 @@ a.badge.badge-primary:active,
 /* to Top & Bottom
 /* ============================================================= */
 .to-top {
-  right: calc((100vw - 950px) / 2 - 60px);
+  right: calc((100vw - 950px) / 2 - 99px);
   top: 45%;
   width: 100px;
   transition: all .2s ease-in-out;
@@ -814,9 +814,6 @@ a.badge.badge-primary:active,
   right: calc((100vw - 950px) / 2 - 99px);
   bottom: 45%;
   width: 100px;
-}
-.to-top:hover, .to-bottom:hover {
-  transform: scale(1.1);
 }
 
 /* ============================================================= */
