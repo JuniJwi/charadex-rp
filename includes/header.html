@@ -1,64 +1,105 @@
 <div class="container order-1" id="header">
+
   <nav class="navbar navbar-expand-md bg-body-tertiary">
-    <!-- Brand -->
-    <a href="/charadex-rp/" class="navbar-brand mt-md-5 mt-0 mx-md-auto">Site Name</a>
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/charadex-rp/">Site Name</a>
+      <!-- Toggle -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+        aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <!-- Nav content -->
+      <div class="collapse navbar-collapse row" id="topnav">
+        
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    <!-- Toggle -->
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-      aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Info
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/info/premise" data-bs-toggle="tooltip"
+                  title="A summary of the group's premise.">
+                  Premise
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/info/gameplay" data-bs-toggle="tooltip"
+                  title="Mechanics and event structure.">
+                  RP & Gameplay
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/info/rules" data-bs-toggle="tooltip"
+                  title="Expectations for player behavior.">
+                  Rules
+                </a>
+              </li>
+            </ul>
+          </li>
 
-  </nav>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lore
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/info/world" data-bs-toggle="tooltip"
+                  title="In depth lore for the setting, history, and notable groups.">
+                  World
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/timeline" data-bs-toggle="tooltip"
+                  title="Notable events, including group events and player-established history.">
+                  Timeline
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/characters" data-bs-toggle="tooltip"
+                  title="A list of all characters.">
+                  Characters
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/inventories" data-bs-toggle="tooltip"
+                  title="A list of all players.">
+                  Players
+                </a>
+              </li>
+            </ul>
+          </li>
 
-  <nav class="navbar navbar-expand-md bg-body-tertiary py-md-2 py-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Activity
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/prompts" data-bs-toggle="tooltip"
+                  title="Art, literature, and roleplay prompts.">
+                  Prompts
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="nav-item">
+                <a class="nav-link justify-content-center" href="/charadex-rp/info/creation" data-bs-toggle="tooltip"
+                  title="How to create a character.">
+                  OC Creation
+                </a>
+              </li>
+            </ul>
+          </li>
 
-    <!-- Links -->
-    <div class="collapse navbar-collapse row" id="topnav">
-      <ul class="navbar-nav justify-content-between col-md-6 col-12 px-3">
+        </ul>
 
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/info/premise" data-bs-toggle="tooltip"
-            title="A general pitch for the roleplay setting, summarized for at-a-glance viewing.">
-            Premise
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/info/world" data-bs-toggle="tooltip"
-            title="A look into the tone, aesthetic, and story of the world setting. Includes summaries of notable groups and religions within the world.">
-            World
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/info/magic" data-bs-toggle="tooltip"
-            title="A look into the magic of the world, and the possibilities for mythos forms.">
-            Magic & Mythos
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav w-md-50 justify-content-between col-md-6 col-12 px-3">
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/info/the-order" data-bs-toggle="tooltip"
-            title="An in-depth look at the Order’s structure, responsibilities, and unique features.">
-            The Order
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/timeline" data-bs-toggle="tooltip"
-            title="A brief list of events that have shaped the world thus far. This will expand from both group events, and player-established history.">
-            Timeline
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link justify-content-center" href="/charadex-rp/info/creation" data-bs-toggle="tooltip"
-            title="An explanation of how to go about making a character for the setting, and what guidelines to follow.">
-            OC Creation
-          </a>
-        </li>
-
-      </ul>
-    </div>
-
+      </div> <!-- Nav content -->
+    </div> <!-- container fluid -->
   </nav>
 </div>
 
