@@ -46,7 +46,7 @@ body {
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color: var(--cd-body-background-color);
+  --cd-navbar-background-color: transparent;
   --cd-navbar-brand-color: var(--cd-secondary-color);
   --cd-navbar-brand-color-hover: var(--cd-faded-text-color);
   --cd-navbar-text-color: var(--cd-secondary-color);
@@ -90,7 +90,7 @@ body {
   ================================================================ */
 
   /* Background */
-  --cd-navbar-dropdown-background-color: var(--cd-navbar-background-color);
+  --cd-navbar-dropdown-background-color: var(--cd-body-background-color);
   --cd-navbar-dropdown-background-hover: var(--cd-primary-color);
 
   /* Link/Text */
@@ -106,7 +106,7 @@ body {
   ================================================================ */
 
   /* Background */
-  --cd-footer-background-color: var(--cd-body-background-color);
+  --cd-footer-background-color: transparent;
 
   /* Link/Text */
   --cd-footer-text-color: var(--cd-navbar-text-color);
