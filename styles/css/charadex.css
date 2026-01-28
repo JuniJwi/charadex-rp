@@ -59,7 +59,7 @@ body {
   ================================================================ */
   --cd-body-font-family: "Open Sans", sans-serif;
   --cd-header-font-family: "Domine", serif;
-  --cd-decorative-font-family:  "Amatic SC", sans-serif;
+  --cd-decorative-font-family:  "Cedarville Cursive", cursive;
 
   /* ============================================================= */
   /* Badges
@@ -685,9 +685,7 @@ h4 {
 }
 
 .script {
-  font-family: var(--cd-navbar-font-family) !important;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-family: var(--cd-decorative-font-family) !important;
   color: var(--cd-faded-text-color);
 }
 .subtitle {
