@@ -42,9 +42,8 @@ charadex.sheet = {
 
     roles: ['Story Character', 'Player Character', 'Side Character'],
     statuses: ['Active', 'Out of Date', 'Retired', 'Dead', 'WIP'],
-    magic: ['Blood', 'Bone', 'Flesh'],
-    inheritance: ['Earth', 'Heaven', 'None'],
-    affiliation: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
+    category: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
+    subcategory: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
     itemTypes: ['All', 'Currency', 'Voucher', 'Achievement', 'Gatcha', 'Misc'],
 
   }
@@ -131,7 +130,8 @@ charadex.page.prompts = {
   filters: {
     toggle: true,
     parameters: {
-      'Affiliation': charadex.sheet.options.affiliation,
+      'Category': charadex.sheet.options.category,
+      'Subcategory': charadex.sheet.options.subcategory,
     }
   },
 
@@ -233,7 +233,7 @@ charadex.page.masterlist = {
     parameters: {
       'Role': charadex.sheet.options.roles,
       'Status': charadex.sheet.options.statuses,
-      'Affiliation': charadex.sheet.options.affiliation,
+      'Category': charadex.sheet.options.category,
     }
   },
 
