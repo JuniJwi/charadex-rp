@@ -199,6 +199,10 @@ charadex.page.lore = {
     toggle: false,
   },
 
+  markdownColumns: [
+    'content',
+  ],
+
 }
 
 
