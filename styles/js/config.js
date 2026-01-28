@@ -35,7 +35,7 @@ charadex.sheet = {
     inventoryLog:  'inventory log',
     items:         'items',
     prompts:       'prompts',
-    timeline:      'timeline',
+    lore:          'lore',
   },
 
   options: {
@@ -154,12 +154,12 @@ charadex.page.prompts = {
 };
 
 
-/* Timeline
+/* Lore
 /* --------------------------------------------------------------- */
-charadex.page.timeline = {
+charadex.page.lore = {
 
-  sheetPage: charadex.sheet.pages.timeline,
-  sitePage: 'timeline',
+  sheetPage: charadex.sheet.pages.lore,
+  sitePage: 'lore',
   dexSelector: 'charadex',
   profileProperty: 'id',
 
