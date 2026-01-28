@@ -59,7 +59,7 @@ body {
   ================================================================ */
   --cd-body-font-family: "Open Sans", sans-serif;
   --cd-header-font-family: "Domine", serif;
-  --cd-decorative-font-family:  "Cedarville Cursive", cursive;
+  --cd-decorative-font-family:  "Permenant Marker", cursive;
 
   /* ============================================================= */
   /* Badges
@@ -357,6 +357,7 @@ figure {
 
 .faux-photo {
   font-family: var(--cd-decorative-font-family);
+  font-size: 1em;
   border: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
   border-radius: 4px;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
@@ -685,7 +686,9 @@ h4 {
 }
 
 .script {
-  font-family: var(--cd-decorative-font-family) !important;
+  font-family: var(--cd-navbar-font-family) !important;
+  font-weight: bold;
+  text-transform: uppercase;
   color: var(--cd-faded-text-color);
 }
 .subtitle {
