@@ -731,6 +731,7 @@ hr {
   width: 100%;
   margin: 0 auto 0 auto;
   border-top: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
+  opacity: 1;
 }
 .card-body hr {
   margin: 1em auto 1em auto;
