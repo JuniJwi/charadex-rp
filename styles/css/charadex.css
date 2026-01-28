@@ -106,7 +106,7 @@ body {
   ================================================================ */
 
   /* Background */
-  --cd-footer-background-color: var(--cd-navbar-background-color);
+  --cd-footer-background-color: var(--cd-body-background-color);
 
   /* Link/Text */
   --cd-footer-text-color: var(--cd-navbar-text-color);
@@ -514,8 +514,8 @@ label {
 }
 .dropdown-menu {
   border-radius: var(--cd-border-radius) !important;
-  background-color: var(--cd-faded-background-color) !important;
-  color: var(--cd-body-text-color) !important;
+  color: var(--cd-navbar-dropdown-link-color) !important;
+  background-color: var(--cd-navbar-dropdown-background-color) !important;
 }
 .dropdown-item {
   color: var(--cd-body-text-color) !important;
@@ -524,8 +524,8 @@ label {
 .dropdown-item:focus,
 .dropdown-item:active,
 .dropdown-item.selected {
-  background-color: var(--cd-primary-color) !important;
-  color: var(--cd-primary-text-color) !important;
+  color: var(--cd-navbar-dropdown-link-color-hover) !important;
+  background-color: var(--cd-navbar-dropdown-background-hover) !important;
 }
 option:checked {
   background-color: var(--cd-primary-color);
