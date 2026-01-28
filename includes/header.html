@@ -1,59 +1,69 @@
-<nav class="nav navbar navbar-expand-md py-4" id="header">
-  <div class="container">
-
+<div class="container order-1" id="header">
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
     <!-- Brand -->
-    <a class="navbar-brand" href="index.html"><i class="fas fa-floppy-disk fa-fw"></i> Charadex</a>
+    <a href="/charadex-rp/" class="navbar-brand mt-md-5 mt-0 mx-md-auto">Concordia Order</a>
 
     <!-- Toggle -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#charadexnav">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+      aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
     </button>
 
+  </nav>
+
+  <nav class="navbar navbar-expand-md bg-body-tertiary py-md-2 py-0">
+
     <!-- Links -->
-    <div class="collapse navbar-collapse" id="charadexnav">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse row" id="topnav">
+      <ul class="navbar-nav justify-content-between col-md-6 col-12 px-3">
 
-
-        <a class="nav-link" href="#">News</a>
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown"> Explore <i class="fas fa-chevron-down nav-link-icon fa-fw"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="world.html">About World</a>
-            <a class="dropdown-item" href="species.html">About Species</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Toyhou.se World</a>
-            <a class="dropdown-item" href="#">Discord Server</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/info/premise" data-bs-toggle="tooltip"
+            title="A general pitch for the roleplay setting, summarized for at-a-glance viewing.">
+            Premise
+          </a>
         </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown">Catalogue <i class="fas fa-chevron-down nav-link-icon fa-fw"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="inventories.html">Player Inventories</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="masterlist.html">Species Masterlist</a>
-            <a class="dropdown-item" href="traits.html">Species Traits</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="items.html">Item Catalogue</a>
-            <a class="dropdown-item" href="prompts.html">Prompt Catalogue</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/info/world" data-bs-toggle="tooltip"
+            title="A look into the tone, aesthetic, and story of the world setting. Includes summaries of notable groups and religions within the world.">
+            World
+          </a>
         </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown">Help <i class="fas fa-chevron-down nav-link-icon fa-fw"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="staff.html">Staff</a>
-            <a class="dropdown-item" href="terms.html">TOS</a>
-            <a class="dropdown-item" href="faq.html">FAQ</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="">Help Desk</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/info/magic" data-bs-toggle="tooltip"
+            title="A look into the magic of the world, and the possibilities for mythos forms.">
+            Magic & Mythos
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav w-md-50 justify-content-between col-md-6 col-12 px-3">
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/info/the-order" data-bs-toggle="tooltip"
+            title="An in-depth look at the Order’s structure, responsibilities, and unique features.">
+            The Order
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/timeline" data-bs-toggle="tooltip"
+            title="A brief list of events that have shaped the world thus far. This will expand from both group events, and player-established history.">
+            Timeline
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link justify-content-center" href="/charadex-rp/info/creation" data-bs-toggle="tooltip"
+            title="An explanation of how to go about making a character for the setting, and what guidelines to follow.">
+            OC Creation
+          </a>
         </li>
 
       </ul>
     </div>
 
-  </div>
-</nav>
+  </nav>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip();
+  });
+</script>

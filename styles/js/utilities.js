@@ -45,13 +45,14 @@ charadex.tools = {
       const target = $(this);
       $.get(this.dataset.source, function (data) {
         target.replaceWith(data);
+        console.log("Loaded HTML file:", target);
       });
     });
   },
 
   // Load Page
   // Load selected areas
-  loadPage(loadAreaSelector = '', timeout = 500, loadIconSelector = '#loading') {
+  loadPage(loadAreaSelector = '', timeout = 500, loadIconSelector = '.loading') {
     setTimeout(function () {
       $(loadIconSelector).hide();
       $(loadAreaSelector).addClass('active');
@@ -97,6 +98,9 @@ charadex.tools = {
       if (classArr[i].includes('link') || classArr[i].includes('toyhouse')) {
         newArr[i] = { name: classArr[i], attr: 'href' };
       }
+      if (classArr[i].includes('toggle') || classArr[i].includes('check') || classArr[i].includes('active')) {
+        newArr[i] = { name: classArr[i], attr: 'data-cd-bool' };
+      }
     }
 
     return newArr;
@@ -136,7 +140,7 @@ charadex.tools = {
 charadex.url = {
 
   // Returns the entire URL w/ parameters 
-  // https://charadex.com/masterlist.html?param=value
+  // https://charadex.com/characters.html?param=value
   getUrl(url) {
     return new URL(url || window.location.href).href;
   },
@@ -157,10 +161,10 @@ charadex.url = {
   },
 
   // Returns the page URL
-  // https://charadex.com/masterlist.html
+  // https://charadex.com/characters.html
   getPageUrl(page, url) {
     let pageUrl = url ?? charadex.url.getSiteUrl();
-    return `${pageUrl.replace(/\/$/, '')}/${page}.html`
+    return `${pageUrl.replace(/\/$/, '')}/${page}`
   },
 
   // Returns the parameters in object form
@@ -287,10 +291,15 @@ charadex.manageData = {
 
   },
 
- /* Relates data to a main sheet via a key
-  ===================================================================== */
+  /**
+   * Relates data to a main sheet via a key
+   *
+   * @param {String} primaryArray       The primary array we are building off of
+   * @param {String} primaryKey         The key of the field we are SEARCHING BY in primary array
+   * @param {String} secondaryPageName  The name of the secondary array sheet
+   * @param {String} secondaryKey       The name of the field we are SEARCHING IN in secondary array
+   */
   async relateData (primaryArray, primaryKey, secondaryPageName, secondaryKey) {
-
     let scrub = charadex.tools.scrub;
     let secondaryArray = await charadex.importSheet(secondaryPageName);
 
@@ -304,6 +313,7 @@ charadex.manageData = {
           }
         }
       }
+      primaryEntry[scrub(secondaryPageName) + "count"] = primaryEntry[scrub(secondaryPageName)].length;
     }
 
   },
@@ -325,7 +335,7 @@ charadex.manageData = {
         });
       }
     }
-  
+    console.log("Inventory Data:", inventoryData);
     return inventoryData;
   
   },
@@ -337,6 +347,22 @@ charadex.manageData = {
       entry.profileid = entry[key];
       entry.profilelink = charadex.manage.url.addParameters(pageUrl, { profile: entry[key] });
     };
+  },
+
+  /* Convert markdown to html
+  ===================================================================== */
+  convertMarkdown(text) {
+    var converter = new showdown.Converter({
+      headerLevelStart: 2,
+      strikethrough: true,
+      tasklists: true,
+      simplifiedAutoLink: true,
+      parseImgDimensions: true,
+      backslashEscapesHTMLTags: true ,
+      simpleLineBreaks: true,
+    });
+
+    return converter.makeHtml(text);
   }
 
 }
@@ -390,6 +416,8 @@ charadex.importSheet = async (sheetPage, sheetId = charadex.sheet.id) => {
 
   // Filter out everything that says hide
   let publicData = scrubbedData.filter(i => !i['hide']);
+  // Filter out anything that does not say show
+  // let publicData = scrubbedData.filter(i => i['show']);
 
   // Return Data
   return publicData;

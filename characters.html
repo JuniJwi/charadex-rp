@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- About Your Site                                                   -->
+  <!-- ----------------------------------------------------------------- -->
+  <link rel="shortcut icon" type="image/png" href="/charadex-rp/assets/favicon.png" />
+  <title>Charadex Characters</title>
+  <meta name="title" content="Charadex Characters" />
+  <meta name="type" content="website" />
+  <meta name="url" content="/" />
+  <meta name="image" content="/charadex-rp/assets/meta.png" />
+  <meta name="description" content="">
+
+  <!-- No AI scraping directives -->
+  <meta name="robots" content="noai">
+  <meta name="robots" content="noimageai">
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Styles                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Multiselect CSS -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/css/bootstrap-select.min.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Optional Styles                                                   -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="/charadex-rp/styles/css/charadex.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="charadex-body" class="d-flex">
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Header                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+  <div class="load-html" data-source="/charadex-rp/includes/header.html"></div>
+
+  <div id="anchor-nav" class="softload" style="display: none;">
+    <div class="position-fixed to-top">
+      <a href="#header">
+        <img class="img-fluid" src="/charadex-rp/assets/emblems/heaven.png" alt="Go to top.">
+      </a>
+    </div>
+    <div class="position-fixed to-bottom">
+      <a href="#footer">
+        <img class="img-fluid" src="/charadex-rp/assets/emblems/earth.png" alt="Go to bottom.">
+      </a>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Main Container                                                    -->
+  <!-- ----------------------------------------------------------------- -->
+  <div id="main-container" class="container d-flex order-md-2 order-3">
+
+    <!-- ----------------------------------------------------------------- -->
+    <!-- Title                                                             -->
+    <!-- ----------------------------------------------------------------- -->
+    <div id="charadex-gallery" class="w-100 d-flex flex-column softload">
+
+      <div id="search-options" class="mx-md-3 mx-0 mb-2">
+        <h1 class="mb-0"><a href="/charadex-rp/characters">Characters</a></h1>
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Faux Folders                                                      -->
+        <!-- ----------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-folder-container">
+          <div class="row mb-2" id="charadex-folders"></div>
+          <!-- Buttons -->
+          <div style="display:none;">
+            <div class="col-md-3 col-md-4 col-sm-6" id="charadex-folder">
+              <a class="btn btn-primary d-block" href=""></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Filters                                                           -->
+        <!-- ----------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-filter-container">
+          <div class="row mb-2" id="charadex-filters"></div>
+          <!-- Filters -->
+          <div style="display: none;">
+            <div class="col-md-4 col-12" id="charadex-filter">
+              <label class="px-2"></label>
+              <select class="form-control" multiple data-actions-box="true" data-icon-base="fa-solid"
+                data-tick-icon="fa-check"></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Search                                                            -->
+        <!-- ----------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-search-container">
+          <div class="row mb-2">
+            <!-- Search Filter -->
+            <div class="col-md-4 col-6" style="display: none;">
+              <select id="charadex-search-filter" class="form-control form-select"
+                aria-label="Select search parameter."></select>
+            </div>
+            <!-- Search Bar -->
+            <div class="col d-flex">
+              <input class="form-control search" type="search" placeholder="Search" id="charadex-search"
+              aria-label="Input search.">
+            </div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Pagination                                                        -->
+        <!-- ----------------------------------------------------------------- -->
+        <div style="display: none;" class="charadex-pagination-container">
+
+          <div class="nav d-flex justify-content-center mb-n4">
+            <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+            <ul class="pagination charadex-pagination charadex-pagination-top justify-content-center m-0"></ul>
+            <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Prev & Next Topbar                                                -->
+        <!-- ----------------------------------------------------------------- -->
+        <div style="display: none;" id="charadex-prevnext-container">
+          <div class="row no-gutters px-2 text-uppercase">
+            <div class="col-6 px-1">
+              <a id="entryPrev" href=""><i class="fas fa-chevron-left me-2"></i><b><span></span></b></a>
+            </div>
+            <div class="col-6 px-1 text-end order-md-1">
+              <a id="entryNext" href=""><b><span></span></b><i class="fas fa-chevron-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end of search options -->
+
+      <div id="gallery-card" class="card card-body bg-faded flex-grow-1 mx-md-3 mx-0">
+        <!-- ----------------------------------------------------------------- -->
+        <!-- List Items Render Here                                            -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="card-body p-md-3 p-0">
+          <div class="row no-gutters charadex-list list m-n2"></div>
+
+          <!-- ----------------------------------------------------------------- -->
+          <!-- Pagination                                                        -->
+          <!-- ----------------------------------------------------------------- -->
+          <div style="display: none;" class="charadex-pagination-container">
+            <div class="nav d-flex justify-content-center mb-n4">
+              <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+              <ul class="pagination charadex-pagination charadex-pagination-bottom justify-content-center m-0"></ul>
+              <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- card body -->
+    </div> <!-- card -->
+  </div> <!-- container -->
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Footer                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+  <div class="load-html" data-source="/charadex-rp/includes/footer.html"></div>
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Repeat Items                                                      -->
+  <!-- Do not remove 'display:none;'                                     -->
+  <!-- ----------------------------------------------------------------- -->
+  <div style="display:none;">
+    <!-- --------------------------------------------------------------- -->
+    <!-- Gallery Item - Character Thumb                                  -->
+    <!-- --------------------------------------------------------------- -->
+    <div class="col-md-3 col-sm-6 p-2" id="charadex-gallery-item">
+      <div class="card bg-faded h-100">
+        <div class="card-header text-center d-flex p-0">
+          <div class="cd-gallery-card-header"></div>
+          <div class="m-auto">
+            <a class="stretched-link profileid profilelink" href=""></a>
+          </div>
+        </div>
+        <div class="card-body cd-gallery-card d-flex flex-column flex-fill pt-2 px-0 pb-0">
+          <img class="img-thumbnail img-fluid refthumbnail m-auto" src="" alt="Character thumbnail.">
+          <div class="text-end text-muted player small mt-auto"></div>
+          <div class="affiliationstamp"></div>
+        </div>
+      </div>
+    </div> <!-- End of Character Thumb -->
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- Gallery Profile - Character Card                                -->
+    <!-- --------------------------------------------------------------- -->
+    <div class="col-12 p-md-2 p-0" id="charadex-profile">
+      <div id="profile-card" class="card">
+        <div class="card-header text-center d-flex p-0">
+          <div class="cd-profile-card-header d-md-block d-none"></div>
+          <div class="m-auto z-1">
+            <h3 class="mb-0"><a class="profilelink profileid"></a></h3>
+          </div>
+        </div>
+        <div class="card-body cd-profile-card-body d-flex flex-column flex-fill px-md-3 p-0">
+
+          <!-- Banner Info -->
+          <div id="status-info" class="text-center cut-corners script mx-3 pb-1">
+            <a class="player playerlink"></a> ◆ <span class="status"></span> ◆ <span class="role text-nowrap"></span>
+          </div>
+
+          <div class="row mx-3 mb-2">
+
+            <!-- image -->
+            <div class="col-auto px-md-5 mx-auto py-2 d-flex justify-content-center align-items-center order-0">
+              <div class="my-auto p-3 bg-white d-inline-block align-self-center position-relative faux-photo">
+                <p>
+                  <img src="" class="refthumbnail img-fluid" alt="Reference image.">
+                </p>
+                <p class="text-center">
+                  <a href="" class="reflink stretched-link" target="_blank">
+                    reference
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Basics -->
+            <div class="col order-1">
+              <!-- identity rows -->
+              <h2 class="text-center mt-2" id="basics"><a href="#basics">Basics</a></h2>
+
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Name
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="name"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Alias
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="alias"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Age
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="age"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Gender
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="gender"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Pronouns
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="pronouns"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Sexuality
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="sexuality"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Birthday
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="birthday"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Height
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="height"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Build
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="build"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Playlist
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <a href="" class="playlistlink" target="_blank">
+                    <i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div> <!-- end of basic section -->
+
+          </div>
+          
+          <!-- ------------- -->
+          <!-- Relationships -->
+          <!-- ------------- -->
+
+          <div class="frame-top">
+            <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
+              aria-controls="collapseRels">
+              <hr>
+            </a>
+          </div>
+          <!-- vv collapse vv -->
+          <div class="collapse" id="collapseRels">
+
+            <div id="rel-list" class="my-4 mx-3">
+              <!-- ----- -->
+              <!-- Title -->
+              <!-- ----- -->
+              <h2 class="text-center mt-2" id="relationships"><a href="#relationships">Relationships</a></h2>
+              <!-- ---- -->
+              <!-- List -->
+              <!-- ---- -->
+              <div id="rel-container" class="p-md-3"></div>
+            </div>
+
+          </div>
+          <!-- ^^ collapse ^^ -->
+          <div class="frame-bottom mb-2">
+            <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
+              aria-controls="collapseRels">
+              <hr>
+            </a>
+          </div>
+
+          <div class="row mx-3 mb-2">
+
+            <!-- image -->
+            <div class="col-auto px-md-5 mx-auto py-2 d-flex justify-content-center align-items-center order-1">
+              <div class="my-auto p-3 bg-white d-inline-block align-self-center position-relative faux-photo">
+                <p>
+                  <img src="" class="mythosrefthumbnail img-fluid" alt="Mythos form reference image.">
+                </p>
+                <p class="text-center">
+                  <a href="" class="mythosreflink stretched-link" target="_blank">
+                    reference
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Mythos -->
+            <div class="col order-0">
+              <!-- identity rows -->
+              <h2 class="text-center mt-2" id="affiliation"><a href="#affiliation">Affiliation</a></h2>
+
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Affiliation
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="affiliation"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Position
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="position"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Partner
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <a class="partner partnerlink"></a>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Token
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="token"></span>
+                </div>
+              </div>
+
+              <!-- mythos rows -->
+              <h2 class="text-center mt-2" id="mythos"><a href="#mythos">Mythos</a></h2>
+
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Species
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="species"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Size
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="size"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Inheritance
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="inheritance"></span>
+                </div>
+              </div>
+              <div class="row align-items-center mb-2">
+                <div class="col-4 ps-0 text-end text-truncate script">
+                  Magic
+                </div>
+                <div class="col-8 cut-corners text-center">
+                  <span class="magic"></span>
+                </div>
+              </div>
+
+            </div> <!-- end of mythos section -->
+
+            <div class="col-12 order-2 cut-corners my-2 p-3 mythosdescription"></div>
+
+            <!-- Abilities -->
+            <div class="col-12 order-3">
+
+              <!-- mythos rows -->
+              <h2 class="text-center mt-2" id="abilities"><a href="#abilities">Mythos Abilities</a></h2>
+
+              <div class="row no-gutters justify-content-center align-items-center mb-2">
+                <h3 class="col-md-3 text-center text-uppercase ability1 abilityactive1">
+                </h3>
+                <div class="col-md-9 p-2 cut-corners text-center abilitydescription1">
+                </div>
+              </div>
+              <div class="row no-gutters justify-content-center align-items-center mb-2">
+                <h3 class="col-md-3 text-center text-uppercase ability2 abilityactive2">
+                </h3>
+                <div class="col-md-9 p-2 cut-corners text-center abilitydescription2">
+                </div>
+              </div>
+              <div class="row no-gutters justify-content-center align-items-center mb-2">
+                <h3 class="col-md-3 text-center text-uppercase ability3 abilityactive3">
+                </h3>
+                <div class="col-md-9 p-2 cut-corners text-center abilitydescription3">
+                </div>
+              </div>
+              <div class="row no-gutters justify-content-center align-items-center mb-2">
+                <h3 class="col-md-3 text-center text-uppercase ability4 abilityactive4">
+                </h3>
+                <div class="col-md-9 p-2 cut-corners text-center abilitydescription4">
+                </div>
+              </div>
+              <div class="row no-gutters justify-content-center align-items-center mb-2">
+                <h3 class="col-md-3 text-center text-uppercase ability5 abilityactive5">
+                </h3>
+                <div class="col-md-9 p-2 cut-corners text-center abilitydescription5">
+                </div>
+              </div>
+
+            </div> <!-- end of abilities section -->
+
+          </div>
+
+          <hr>
+          <h2 class="text-center mt-2" id="personality"><a href="#personality">Personality</a></h2>
+          
+          <!-- Banner Info -->
+          <div class="row mx-2 mb-2">
+            <div class="col-md-4 col-12 text-center script p-1">
+              <p class="cut-corners p-1 goodtraits text-success"></p>
+            </div>
+            <div class="col-md-4 col-12 text-center script p-1">
+              <p class="cut-corners p-1 neutraltraits"></p>
+            </div>
+            <div class="col-md-4 col-12 text-center script p-1">
+              <p class="cut-corners p-1 goodtraits badtraits text-danger"></p>
+            </div>
+          </div>
+
+          <div class="cut-corners mx-3 mb-2 p-3 personality"></div>
+
+          <hr>
+          <h2 class="text-center mt-2" id="lore"><a href="#lore">Lore</a></h2>
+          <div class="cut-corners mx-3 mb-2 p-3 lore"></div>
+
+          <!-- ---- -->
+          <!-- Logs -->
+          <!-- ---- -->
+
+          <div class="frame-top">
+            <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
+              aria-controls="collapseLogs">
+              <hr>
+            </a>
+          </div>
+          <!-- vv collapse vv -->
+          <div class="collapse" id="collapseLogs">
+
+            <div id="log-gallery" class="my-4 mx-3">
+              <!-- ----- -->
+              <!-- Title -->
+              <!-- ----- -->
+              <h2 class="text-center mt-2" id="transactions"><a href="#transactions">Transaction Log</a></h2>
+              <!-- ---- -->
+              <!-- List -->
+              <!-- ---- -->
+              <div class="p-3">
+                <div class="row pb-1 border-bottom">
+                  <div class="col-md-3"><b>Timestamp</b></div>
+                  <div class="col-md-9"><b>Reason</b></div>
+                </div>
+                <!-- ---------------------- -->
+                <!-- List Items Render Here -->
+                <!-- ---------------------- -->
+                <div class="log-list list"></div>
+              </div>
+              <!-- ---------- -->
+              <!-- Pagination -->
+              <!-- ---------- -->
+              <div style="display: none;" class="log-pagination-container">
+                <div class="nav d-flex justify-content-center mb-n4">
+                  <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a>
+                  </div>
+                  <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
+                  <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- ^^ collapse ^^ -->
+          <div class="frame-bottom mb-2">
+            <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
+              aria-controls="collapseLogs">
+              <hr>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div> <!-- End of Character Card -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- List Item - Log Thumb                                           -->
+    <!-- --------------------------------------------------------------- -->
+    <div id="log-gallery-item">
+      <div class="row py-1 border-bottom">
+        <div class="col-md-3"><span class="timestamp"></span></div>
+        <div class="col-md-9"><span class="reason"></span></div>
+      </div>
+    </div> <!-- End of Log Thumb -->
+  </div>
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- JS                                                                -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <!-- Showdown.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Multiselect -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+
+  <!-- Charadex Script -->
+  <script src="/charadex-rp/styles/js/pages/base.js" type="module"></script>
+  <script src="/charadex-rp/styles/js/pages/characters.js" type="module" defer></script>
+
+
+</body>
+
+</html>

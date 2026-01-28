@@ -2,7 +2,7 @@
 /* Import Charadex
 ======================================================================= */
 import { charadex } from './utilities.js';
-import List from "https://esm.sh/gh/javve/list.js@v2.3.0";
+import List from "https://esm.sh/gh/javve/list.js@v2.3.1";
 
 
 /* ==================================================================== */
@@ -16,7 +16,7 @@ import List from "https://esm.sh/gh/javve/list.js@v2.3.0";
 charadex.buildList = (selector = 'charadex') => {
 
   let listConfig = {
-    listClass: `${selector}-list`,
+    listClass: `${selector}-list list`,
     item: `${selector}-gallery-item`,
   }
   
@@ -176,7 +176,7 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
     // If they're in a container, hide it if there's nothing in it
     listJs.on('updated', (list) => {
       let listClass = $(`.${list.listClass}`);
-      let listContainerSelector = `.${selector}-list-container`;
+      let listContainerSelector = `.${selector}-list list-container`;
       if (list.matchingItems.length < 1 && listClass.length > 0) {
         listClass.parents(listContainerSelector).hide();
       } else {

@@ -31,12 +31,36 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
 
   // Get our data
   let charadexData = dataArr || await charadex.importSheet(config.sheetPage);
-
+  
   // Add profile information
   for (let entry of charadexData) {
     charadex.tools.addProfileLinks(entry, pageUrl, config.profileProperty); // Go ahead and add profile keys just in case
     if (folders) folders(entry, config.fauxFolder.folderProperty); // If folders, add folder info
-    if (entry.rarity) entry.raritybadge = `<span class="badge badge-${charadex.tools.scrub(entry.rarity)}">${entry.rarity}</span>`; // Adds a rarity badge
+    if (entry.affiliation) {
+      let affiliations = entry.affiliation.split(', ');
+      let badges = [];
+      for (let affiliation of affiliations) {
+        badges.push(`<span class="badge badge-${charadex.tools.scrub(affiliation)}">${affiliation}</span>`);
+      }
+      entry.affiliationbadge = badges.join('');
+    }
+
+    // Clear blanks
+    Object.entries(entry).forEach(([key, value]) => {
+      if (entry[key] === "") {
+        entry[key] = `<span class='text-muted'>--</span>`;
+      }
+      if (typeof entry[key] === 'number') {
+        entry[key] = entry[key].toString();
+      }
+    });
+
+    // Convert markdown to HTML, if we need to
+    if (config.markdownColumns) {
+      config.markdownColumns.forEach(function(column) {
+        if (entry[column]) entry[column] = charadex.manageData.convertMarkdown(entry[column]);
+      });
+    }
   }
 
   // If there's related data, add it
@@ -51,6 +75,8 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     }
   }
 
+  console.log("CHARADEX DATA:", charadexData);
+  
   // Initialize the list
   let list = charadex.buildList(selector);
 
@@ -112,6 +138,18 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
 
     // Filter by parameters
     charadexData = charadex.manageData.filterByPageParameters(charadexData);
+
+    // Add gallery information
+    for (let entry of charadexData) {
+      if (entry.affiliation) {
+        let affiliations = entry.affiliation.split(', ');
+        let stamps = [];
+        for (let affiliation of affiliations) {
+          stamps.push(`<span class="stamp-${charadex.tools.scrub(affiliation)}"></span>`);
+        }
+        entry.affiliationstamp = stamps.join('');
+      }
+    }
 
     // Add Pagination
     if (config.pagination?.toggle ?? false) {

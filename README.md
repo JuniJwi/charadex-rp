@@ -12,6 +12,7 @@
   - Closed species properties have been removed
   - Google sheets now import member's profile sheets
   - Lore entries instead of an FAQ
+  - Add character achievement system
 
 &nbsp;
 
@@ -28,11 +29,7 @@ If you're using this version and find any bugs, please make an [issue](https://g
 - [Charadex](#)
 - [Google Sheet Template](https://docs.google.com/spreadsheets/d/1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo/copy)
 - [Character Sheet Template](https://docs.google.com/spreadsheets/d/1yYCI972zbizZfoa16u_dY7ZieIdzjFnJ67UumjF890g/copy)
-
-**Setting Up**
-
-- [Getting Started](https://github.com/charadex-team/charadex-v1.0/wiki/Getting-Started)
-- [Hosting](https://github.com/charadex-team/charadex-v1.0/wiki/Hosting)
+tps://github.com/charadex-team/charadex-v1.0/wiki/Hosting)
 - [Sheet Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/Sheet-Set-Up)
 - [Site Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/Site-Set-Up)
 

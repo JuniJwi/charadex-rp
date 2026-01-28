@@ -10,8 +10,8 @@
   <!-- About Your Site                                                   -->
   <!-- ----------------------------------------------------------------- -->
   <link rel="shortcut icon" type="image/png" href="/charadex-rp/assets/favicon.png" />
-  <title>Charadex Items</title>
-  <meta name="title" content="Charadex Items" />
+  <title>Charadex Timeline</title>
+  <meta name="title" content="Charadex Timeline" />
   <meta name="type" content="website" />
   <meta name="url" content="/" />
   <meta name="image" content="/charadex-rp/assets/meta.png" />
@@ -30,9 +30,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <!-- Multiselect CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/css/bootstrap-select.min.css">
-
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -44,13 +41,16 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="/charadex-rp/styles/css/charadex.css">
 
+  <!-- Multiselect CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/css/bootstrap-select.min.css">
+
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body id="item-body" class="d-flex">
+<body id="charadex-body" class="d-flex">
   <!-- ----------------------------------------------------------------- -->
   <!-- Header                                                            -->
   <!-- ----------------------------------------------------------------- -->
@@ -66,18 +66,18 @@
         <!-- ----------------------------------------------------------------- -->
         <!-- Title                                                             -->
         <!-- ----------------------------------------------------------------- -->
-        <div id="item-gallery">
-          <h3 class="mb-0"><a href="?">Item Catalogue</a></h3>
+        <div id="charadex-gallery">
+          <h3 class="mb-0"><a href="?">Timeline</a></h3>
 
           <!-- ----------------------------------------------------------------- -->
           <!-- Faux Folders                                                      -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display:none;" id="item-folder-container">
+          <div style="display:none;" id="charadex-folder-container">
             <hr>
-            <div class="row no-gutters m-n1" id="item-folders"></div>
+            <div class="row no-gutters m-n1" id="charadex-folders"></div>
             <!-- Buttons -->
             <div style="display:none;">
-              <div class="col-md-3 col-md-4 col-sm-6 p-1" id="item-folder">
+              <div class="col-md-3 col-md-4 col-sm-6 p-1" id="charadex-folder">
                 <a class="btn btn-primary d-block" href=""></a>
               </div>
             </div>
@@ -86,12 +86,12 @@
           <!-- ----------------------------------------------------------------- -->
           <!-- Filters                                                           -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display:none;" id="item-filter-container">
+          <div style="display:none;" id="charadex-filter-container">
             <hr>
-            <div class="row no-gutters m-n1" id="item-filters"></div>
+            <div class="row no-gutters m-n1" id="charadex-filters"></div>
             <!-- Filters -->
             <div style="display: none;">
-              <div class="col-md-4 col-12 p-1" id="item-filter">
+              <div class="col-md-4 col-12 p-1" id="charadex-filter">
                 <label class="px-2"></label>
                 <select class="form-control" multiple></select>
               </div>
@@ -101,16 +101,16 @@
           <!-- ----------------------------------------------------------------- -->
           <!-- Search                                                            -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display:none;" id="item-search-container">
+          <div style="display:none;" id="charadex-search-container">
             <hr>
             <div class="row no-gutters m-n1">
               <!-- Search Filter -->
               <div class="col-md-4 col-6 p-1" style="display: none;">
-                <select class="form-control" id="item-search-filter"></select>
+                <select id="charadex-search-filter" class="form-control form-select" aria-label="Select search parameter."></select>
               </div>
               <!-- Search Bar -->
               <div class="col d-flex p-1">
-                <input class="form-control search" type="search" placeholder="Search" id="item-search">
+                <input class="form-control search" type="search" placeholder="Search" id="charadex-search">
               </div>
             </div>
           </div>
@@ -118,11 +118,11 @@
           <!-- ----------------------------------------------------------------- -->
           <!-- Pagination                                                        -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display: none;" class="item-pagination-container">
+          <div style="display: none;" class="charadex-pagination-container">
             
             <div class="nav d-flex justify-content-center mb-n4">
               <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
-              <ul class="pagination item-pagination item-pagination-top justify-content-center m-0"></ul>
+              <ul class="pagination charadex-pagination charadex-pagination-top justify-content-center m-0"></ul>
               <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
             </div>
           </div>
@@ -130,7 +130,7 @@
           <!-- ----------------------------------------------------------------- -->
           <!-- Prev & Next Topbar                                                -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display: none;" id="item-prevnext-container">
+          <div style="display: none;" id="charadex-prevnext-container">
             <hr>
             <div class="row no-gutters px-2 text-uppercase">
               <div class="col-6 px-1">
@@ -145,17 +145,17 @@
           <!-- ----------------------------------------------------------------- -->
           <!-- List Items Render Here                                            -->
           <!-- ----------------------------------------------------------------- -->
-          <div class="row no-gutters item-list list softload m-n2"></div>
+          <div class="charadex-list list softload m-n2"></div>
           <p class="text-center"><i class="text-primary fa-solid fa-hurricane fa-spin fa-spin-reverse loading"></i></p>
 
           <!-- ----------------------------------------------------------------- -->
           <!-- Pagination                                                        -->
           <!-- ----------------------------------------------------------------- -->
-          <div style="display: none;" class="item-pagination-container">
+          <div style="display: none;" class="charadex-pagination-container">
             <hr>
             <div class="nav d-flex justify-content-center mb-n4">
               <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
-              <ul class="pagination item-pagination item-pagination-bottom justify-content-center m-0"></ul>
+              <ul class="pagination charadex-pagination charadex-pagination-bottom justify-content-center m-0"></ul>
               <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
             </div>
           </div>
@@ -175,103 +175,54 @@
   <!-- Do not remove 'display:none;'                                     -->
   <!-- ----------------------------------------------------------------- -->
   <div style="display:none;">
+
+
     <!-- ----------------------------------------------------------------- -->
-    <!-- Gallery Items - Item Thumb                                        -->
+    <!-- Gallery Items                                                     -->
     <!-- ----------------------------------------------------------------- -->
-    <div class="col-md-3 col-sm-6 p-2" id="item-gallery-item">
-      <div class="card bg-faded h-100">
+    <div class="mt-3 p-2" id="charadex-gallery-item">
+      <div class="card h-100">
 
-        <!-- Title/Design ID -->
-        <div class="card-header text-center">
-          <h5 class="mb-0">
-            <a class="stretched-link profileid profilelink" href=""></a>
-          </h5>
+        <!-- Question -->
+        <h5 class="card-header">
+          <a class="profilelink question" href=""></a>
+        </h5>
+
+        <!-- Answer -->
+        <div class="card-body px-md-5 d-flex flex-fill">
+          <div class="answer"></div>
         </div>
 
-        <!-- Image -->
-        <div class="card-body d-flex flex-fill">
-          <img class="masterlist-image img-fluid m-auto image" src="" alt="Item thumbnail.">
-        </div>
-
-        <!-- Quantity -->
-        <div class="card-footer text-center py-1">
-          <div class="classbadge pb-1"></div>
-          <span class="quantity small"></span>
-        </div>
+        <!-- Tags-->
+        <div class="card-footer text-end fancytags"></div>
 
       </div>
-    </div> <!-- End of Item Thumb -->
+    </div>
+
 
     <!-- ----------------------------------------------------------------- -->
-    <!-- Gallery Profile - Item Card                                       -->
+    <!-- Gallery Profile                                                   -->
     <!-- ----------------------------------------------------------------- -->
-    <div class="col-12 p-2" id="item-profile">
-      <div class="card">
+    <div class="mt-3 p-2" id="charadex-profile">
+      <div class="card h-100">
 
-        <!-- Header -->
-        <div class="card-header px-md-5 px-4 py-4">
-          <div class="row no-gutters align-items-end m-n1">
-            <div class="col">
-              <h3 class="mb-0 pe-2"><a class="profilelink profileid"></a></h3>
-            </div>
-            <div class="col-auto text-end classbadge"></div>
-          </div>
+        <!-- Question -->
+        <h5 class="card-header p-4">
+          <a class="profilelink question" href=""></a>
+        </h5>
+
+        <!-- Answer -->
+        <div class="card-body p-md-5 p-4 d-flex flex-fill">
+          <div class="answer"></div>
         </div>
 
-        <!-- --------- -->
-        <!-- Main Info -->
-        <!-- --------- -->
-        <div class="p-md-5 p-4">
-          <div class="row no-gutters m-n2">
+        <!-- Tags-->
+        <div class="card-footer text-end fancytags"></div>
 
-            <!-- Image -->
-            <div class="col-md-4 d-flex justify-content-center align-items-start text-center p-2">
-              <img class="image img-fluid" src="" alt="Item image.">
-            </div>
-
-            <div class="col-md-8 p-2">
-              <div class="card bg-faded p-4 h-100">
-
-                <!-- Item -->
-                <div class="d-flex no-gutters mb-2">
-                  <b class="text-muted col-md-5 col-6">Item</b>
-                  <span class="item"></span>
-                </div>
-
-                <!-- Item -->
-                <div class="d-flex no-gutters mb-2">
-                  <b class="text-muted col-md-5 col-6">Type</b>
-                  <span class="type"></span>
-                </div>
-
-                <!-- Item -->
-                <div class="d-flex no-gutters mb-2">
-                  <b class="text-muted col-md-5 col-6">Rarity</b>
-                  <span class="class"></span>
-                </div>
-
-                <!-- Item -->
-                <div class="d-flex no-gutters">
-                  <b class="text-muted col-md-5 col-6">Price</b>
-                  <span>$<span class="price"></span></span>
-                </div>
-
-                <hr>
-
-                <!-- Item -->
-                <div>
-                  <b class="text-muted">Description</b>
-                  <div class="px-4 cd-text-pre description"></div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
       </div>
-    </div> <!-- End of Item Card -->
+    </div>
+
+
   </div>
 
   <!-- ----------------------------------------------------------------- -->
@@ -295,7 +246,7 @@
 
   <!-- Charadex Script -->
   <script src="/charadex-rp/styles/js/pages/base.js" type="module"></script>
-  <script src="/charadex-rp/styles/js/pages/items.js" type="module"></script>
+  <script src="/charadex-rp/styles/js/pages/timeline.js" type="module"></script>
 
 
 </body>
