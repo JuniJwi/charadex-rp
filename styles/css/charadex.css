@@ -5,17 +5,21 @@ body {
   /*
   /* ============================================================= */
   /* 
-  /* This only styles the elements shown on the page.
+  /* These variables trickle down into all the .css styles, but you
+  /* can fine tune them even further if you'd like. Some colors won't
+  /* always play well together.
   /*
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
+  /* The "Main" accent color of your site. */
   --cd-primary-color: #272727;
   --cd-primary-text-color: #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
+  /* The "Second" accent color of your site. */
   --cd-secondary-color: #bb5f13;
   --cd-secondary-text-color: #fff;
 
@@ -26,8 +30,16 @@ body {
   --cd-content-background-color: rgba(255, 255, 255, 0.9);
   --cd-faded-background-color: var(--cd-content-background-color);
 
-  /* Background Extras */
+  /* Background Image */
   --cd-body-background-image: url("/charadex-rp/assets/bg-image.png");
+
+  /* ============================================================= */
+  /* Main Fonts
+  ================================================================ */
+  --cd-body-font-family: "Open Sans", sans-serif;
+  --cd-header-font-family: "Comfortaa", sans-serif;
+  --cd-serif-font-family: "Domine", serif;
+  --cd-decorative-font-family:  "Permanent Marker", cursive;
 
   /* ============================================================= */
   /* Text
@@ -41,31 +53,25 @@ body {
   --cd-border-color: #b4b3b661;
   --cd-border-width: 1px;
   --cd-border-style: solid;
-  --cd-border-radius: 10px;
+  --cd-border-radius: 8px;
 
   /* ============================================================= */
   /* Navbar
   ================================================================ */
   --cd-navbar-background-color: transparent;
+  --cd-navbar-font-family: var(--cd-header-font-family);
+  /* Title */
   --cd-navbar-brand-color: var(--cd-secondary-color);
   --cd-navbar-brand-color-hover: var(--cd-faded-text-color);
+  /* Link/Text */
   --cd-navbar-text-color: var(--cd-secondary-color);
   --cd-navbar-link-color: var(--cd-primary-color);
   --cd-navbar-link-color-hover: var(--cd-secondary-color);
-  --cd-navbar-font-family: var(--cd-header-font-family);
-
-  /* ============================================================= */
-  /* Main Fonts
-  ================================================================ */
-  --cd-body-font-family: "Open Sans", sans-serif;
-  --cd-header-font-family: "Comfortaa", sans-serif;
-  --cd-serif-font-family: "Domine", serif;
-  --cd-decorative-font-family:  "Permanent Marker", cursive;
 
   /* ============================================================= */
   /* Badges
   ================================================================ */
-
+  /* Character categories appear as button "badges" in listings */
   --cd-rarity-one-bg: #143c81;
   --cd-rarity-one-txt: #ffffff;
 
@@ -84,12 +90,12 @@ body {
   /* ============================================================= */
   /*
   /* Optional Styles
-  /* These are just for extra easy styling
+  /* These are just for extra easy styling. Most of these are based
+  /* on existing colors defined above, but can be further tweaked.
   /*
   /* ============================================================= */
   /* Navbar Dropdown 
   ================================================================ */
-
   /* Background */
   --cd-navbar-dropdown-background-color: var(--cd-body-background-color);
   --cd-navbar-dropdown-background-hover: var(--cd-primary-color);
@@ -435,19 +441,20 @@ figure {
 }
 .navbar .dropdown-divider {
   border-top: 1px solid var(--cd-navbar-dropdown-divider) !important;
+  width: 100%;
+  padding: 0;
 }
-.navbar .dropdown-item,
-.navbar .dropdown-item-text {
+.navbar .dropdown-menu .nav-item {
   color: var(--cd-navbar-dropdown-link-color) !important;
   transition: color 0.2s ease, background 0.2s ease;
 }
-.navbar .dropdown-item:hover,
-.dropdown-item:focus,
-.dropdown-item:active {
+.navbar .dropdown-menu .nav-item:hover,
+.navbar .dropdown-menu .nav-item:focus,
+.navbar .dropdown-menu .nav-item:active {
   color: var(--cd-navbar-dropdown-link-color-hover) !important;
   background-color: var(--cd-navbar-dropdown-background-hover) !important;
 }
-.navbar .dropdown-header {
+.navbar .dropdown-menu .dropdown-header {
   color: var(--cd-navbar-dropdown-link-color-hover) !important;
 }
 
