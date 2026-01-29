@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         // Logs
-        if (charadex.tools.checkArray(profile.inventorylog)) {
+        if (charadex.tools.checkArray(profile.inventoryLog)) {
           let logs = await charadex.initialize.page(
-            profile.inventorylog,
+            profile.inventoryLog,
             charadex.page.inventory.relatedData['inventory log'],
           );
           console.log('Initialized related logs!');
