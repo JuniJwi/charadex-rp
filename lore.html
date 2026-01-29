@@ -64,10 +64,10 @@
     <!-- ----------------------------------------------------------------- -->
     <!-- Title                                                             -->
     <!-- ----------------------------------------------------------------- -->
-    <div id="charadex-gallery" class="w-100 d-flex flex-column">
+    <div id="charadex-gallery" class="w-100 d-flex flex-column softload">
 
       <div id="search-options" class="mx-md-3 mx-0 mb-2">
-        <h1><a href="/charadex-rp/lore">Lore</a></h1>
+        <h1 class="mb-0"><a href="/charadex-rp/lore">Lore</a></h1>
         <!-- ----------------------------------------------------------------- -->
         <!-- Faux Folders                                                      -->
         <!-- ----------------------------------------------------------------- -->
@@ -75,7 +75,7 @@
           <div class="row mb-2" id="charadex-folders"></div>
           <!-- Buttons -->
           <div style="display:none;">
-            <div class="col-md-3 col-md-4 col-sm-6 p-1" id="charadex-folder">
+            <div class="col-md-3 col-md-4 col-sm-6" id="charadex-folder">
               <a class="btn btn-primary d-block" href=""></a>
             </div>
           </div>
@@ -90,7 +90,8 @@
           <div style="display: none;">
             <div class="col-md-4 col-12 p-1" id="charadex-filter">
               <label class="px-2"></label>
-              <select class="form-control" multiple></select>
+              <select class="form-control" multiple data-actions-box="true" data-icon-base="fa-solid"
+                data-tick-icon="fa-check"></select>
             </div>
           </div>
         </div>
@@ -107,7 +108,8 @@
             </div>
             <!-- Search Bar -->
             <div class="col d-flex">
-              <input class="form-control search" type="search" placeholder="Search" id="charadex-search">
+              <input class="form-control search" type="search" placeholder="Search" id="charadex-search"
+              aria-label="Input search.">
             </div>
           </div>
         </div>
@@ -195,17 +197,16 @@
     <!-- ----------------------------------------------------------------- -->
     <div class="col-12 prompt-body" id="charadex-profile">
 
-        <!-- Title -->
-        <h1 class="card-header title">
-        </h1>
+      <!-- Title -->
+      <h1 class="card-header title">
+      </h1>
 
-        <!-- Content -->
-        <div class="content my-4"></div>
+      <!-- Content -->
+      <div class="content my-4"></div>
 
-        <!-- Tags-->
-        <div class="text-end fancytags"></div>
+      <!-- Tags-->
+      <div class="text-end fancytags"></div>
 
-      </div>
     </div> <!-- End of Lore Card -->
 
   </div>
