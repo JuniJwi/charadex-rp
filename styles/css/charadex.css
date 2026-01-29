@@ -880,7 +880,7 @@ p:last-child {
 .cd-hero-title {
   color: var(--cd-primary-text-color);
   text-shadow: 0px 0px 3px black;
-  background-color: var(--cd-faded-background-color);
+  background-color: var(--cd-secondary-color);
   border-radius: var(--cd-border-radius);
   font-family: var(--cd-header-font-family);
   text-transform: uppercase;
