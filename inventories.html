@@ -54,6 +54,7 @@
   <!-- Header                                                            -->
   <!-- ----------------------------------------------------------------- -->
   <div class="load-html" data-source="/charadex-rp/includes/header.html"></div>
+  <div class="loading text-primary"><i class="fa-solid fa-hourglass fa-spin fa-spin-reverse"></i></div>
 
   <!-- ----------------------------------------------------------------- -->
   <!-- Main Container                                                    -->
@@ -63,7 +64,7 @@
     <!-- -------------------------------------------------------------- -->
     <!-- Gallery Container                                              -->
     <!-- -------------------------------------------------------------- -->
-    <div id="player-gallery" class="w-100 d-flex flex-column">
+    <div id="player-gallery" class="w-100 d-flex flex-column softload">
 
       <div id="search-options" class="mx-md-3 mx-0 mb-2">
         <h1><a href="/charadex-rp/players">Players</a></h1>
@@ -154,9 +155,8 @@
             <hr>
           </div>
           <!-- entries -->
-          <div class="player-list list softload"></div>
-          <p class="text-center"><i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i></p>
-
+          <div class="player-list list"></div>
+          
           <!-- ----------------------------------------------------------------- -->
           <!-- Pagination                                                        -->
           <!-- ----------------------------------------------------------------- -->
@@ -187,7 +187,7 @@
     <!-- ----------------------------------------------------------------- -->
     <!-- Gallery Items - Player Thumb                                      -->
     <!-- ----------------------------------------------------------------- -->
-    <div class="position-relative softload mb-2" id="player-gallery-item">
+    <div class="position-relative mb-2" id="player-gallery-item">
       <div class="row">
         <div class="col">
           <a class="stretched-link script profilelink profileid" href="">
@@ -417,7 +417,7 @@
             <!-- ---------------------- -->
             <!-- List Items Render Here -->
             <!-- ---------------------- -->
-            <div class="row no-gutters charadex-list list softload m-n2"></div>
+            <div class="row no-gutters charadex-list list m-n2"></div>
 
             <!-- ---------- -->
             <!-- Pagination -->

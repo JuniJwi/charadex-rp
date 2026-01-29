@@ -56,6 +56,7 @@
   <!-- Header                                                            -->
   <!-- ----------------------------------------------------------------- -->
   <div class="load-html" id="header" data-source="/charadex-rp/includes/header.html"></div>
+  <div class="loading text-primary"><i class="fa-solid fa-hourglass fa-spin fa-spin-reverse"></i></div>
 
   <!-- ----------------------------------------------------------------- -->
   <!-- Main Container                                                    -->
@@ -65,7 +66,7 @@
     <!-- ----------------------------------------------------------------- -->
     <!-- Title                                                             -->
     <!-- ----------------------------------------------------------------- -->
-    <div id="prompt-gallery" class="w-100 d-flex flex-column">
+    <div id="prompt-gallery" class="w-100 d-flex flex-column softload">
 
       <div id="prompt-options" class="mx-md-3 mx-0 mb-2">
         <h1><a href="/charadex-rp/prompts">Prompt List</a></h1>
@@ -146,8 +147,7 @@
         <!-- List Items Render Here                                            -->
         <!-- ----------------------------------------------------------------- -->
         <div class="card-body">
-          <div class="row no-gutters prompt-list list softload m-n2"></div>
-          <p class="text-center"><i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i></p>
+          <div class="row no-gutters prompt-list list m-n2"></div>
 
           <!-- ----------------------------------------------------------------- -->
           <!-- Pagination                                                        -->

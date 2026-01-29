@@ -49,12 +49,13 @@
   <!-- Header                                                            -->
   <!-- ----------------------------------------------------------------- -->
   <div class="load-html" data-source="/charadex-rp/includes/header.html"></div>
+  <div class="loading text-primary"><i class="fa-solid fa-hourglass fa-spin fa-spin-reverse"></i></div>
 
   <!-- ----------------------------------------------------------------- -->
   <!-- Main Container                                                    -->
   <!-- ----------------------------------------------------------------- -->
   <div id="main-container" class="container d-flex order-md-2 order-3">
-    <div id="gallery-card" class="card bg-faded flex-grow-1 mx-md-3 mx-0">
+    <div id="gallery-card" class="card bg-faded flex-grow-1 mx-md-3 mx-0 softload">
       <div class="card-body">
 
         <!-- --------------------------------------------------------------- -->
@@ -62,10 +63,7 @@
         <!-- --------------------------------------------------------------- -->
         <div id="charadex-gallery">
           <h1><a href="characters">Newest Characters</a></h1>
-          <div class="row no-gutters charadex-list list softload m-n2"></div>
-          <p class="text-center">
-            <i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i>
-          </p>
+          <div class="row no-gutters charadex-list list m-n2"></div>
         </div>
 
         <hr />
@@ -75,10 +73,7 @@
         <!-- --------------------------------------------------------------- -->
         <div id="prompt-gallery">
           <h1><a href="prompts">Recent prompts</a></h1>
-          <div class="row no-gutters prompt-list list softload m-n2"></div>
-          <p class="text-center">
-            <i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i>
-          </p>
+          <div class="row no-gutters prompt-list list m-n2"></div>
         </div>
 
       </div> <!-- card body -->
