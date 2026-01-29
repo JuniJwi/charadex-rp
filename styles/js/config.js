@@ -306,7 +306,7 @@ charadex.page.inventory = {
 
   // Dex Set Up
   sheetPage: charadex.sheet.pages.inventory,
-  sitePage: 'inventories',
+  sitePage: 'players',
   dexSelector: 'player',
   profileProperty: 'username',
 
@@ -352,7 +352,7 @@ charadex.page.inventory = {
     [charadex.sheet.pages.inventoryLog]: {
 
       sheetPage: charadex.sheet.pages.inventoryLog,
-      sitePage: 'inventories',
+      sitePage: 'players',
       primaryProperty: 'username', // name of field of the calling page to search by
       relatedProperty: 'username', // name of column to search in related page
       dexSelector: 'log',

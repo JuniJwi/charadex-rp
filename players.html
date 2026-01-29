@@ -9,8 +9,8 @@
   <!-- About Your Site                                                   -->
   <!-- ----------------------------------------------------------------- -->
   <link rel="shortcut icon" type="image/png" href="/charadex-rp/assets/favicon.png" />
-  <title>Charadex Inventories</title>
-  <meta name="title" content="Charadex Inventories" />
+  <title>Charadex Players</title>
+  <meta name="title" content="Charadex Players" />
   <meta name="type" content="website" />
   <meta name="url" content="/" />
   <meta name="image" content="/charadex-rp/assets/meta.png" />
@@ -149,7 +149,7 @@
           <div id="gallery-header">
             <div class="row no-gutters m-n2 script">
               <div class="col">Name</div>
-              <div class="col-md-2 col-auto">Characters</div>
+              <div class="col-md-2 col">Characters</div>
               <div class="col-auto">Cooldown</div>
             </div>
             <hr>
@@ -193,7 +193,7 @@
           <a class="stretched-link script profilelink profileid" href="">
           </a>
         </div>
-        <div class="col-md-2 col-auto characterscount"></div>
+        <div class="col-md-2 col characterscount"></div>
         <div class="col-auto cooldown"></div>
       </div>
     </div> <!-- End of Player Thumb -->
@@ -464,29 +464,23 @@
             <!-- ----- -->
             <h4 class="text-primary mb-0">Transaction Log</h4>
 
-            <!-- ---- -->
-            <!-- List -->
-            <!-- ---- -->
-            <div class="p-3">
-              <div class="row no-gutters">
-                <div class="col-md-3"><b>Timestamp</b></div>
-                <div class="col-md-9"><b>Reason</b></div>
-              </div>
-              <hr>
-              <!-- ---------------------- -->
-              <!-- List Items Render Here -->
-              <!-- ---------------------- -->
-              <div class="log-list list"></div>
+            <!-- headers -->
+            <div class="row no-gutters m-n2 script">
+              <div class="col-auto">Timestamp</div>
+              <div class="col">Reason</div>
             </div>
+            <hr>
+            <!-- entries -->
+            <div class="log-list list"></div>
 
             <div style="display: none;">
               <!-- --------------------------------------------------------------- -->
               <!-- List Item - Log Thumb                                           -->
               <!-- --------------------------------------------------------------- -->
-              <div id="log-gallery-item">
-                <div class="row no-gutters">
-                  <div class="col-md-3"><span class="timestamp"></span></div>
-                  <div class="col-md-9"><span class="reason"></span></div>
+              <div class="position-relative mb-2" id="log-gallery-item">
+                <div class="row">
+                  <div class="col-auto timestamp"></div>
+                  <div class="col reason"></div>
                 </div>
               </div> <!-- End of Log Thumb -->
 
