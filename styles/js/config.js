@@ -31,7 +31,7 @@ charadex.sheet = {
   pages: {
     masterlist:    'characters',
     masterlistLog: 'character log',
-    inventory:     'players',
+    player:        'players',
     inventoryLog:  'inventory log',
     items:         'items',
     prompts:       'prompts',
@@ -302,10 +302,10 @@ charadex.page.masterlist = {
 
 /* Inventory
 /* --------------------------------------------------------------- */
-charadex.page.inventory = {
+charadex.page.player = {
 
   // Dex Set Up
-  sheetPage: charadex.sheet.pages.inventory,
+  sheetPage: charadex.sheet.pages.player,
   sitePage: 'players',
   dexSelector: 'player',
   profileProperty: 'username',
@@ -388,7 +388,7 @@ charadex.page.inventory = {
 
   
   // This is a special config for their inventory
-  inventoryConfig: {
+  playerConfig: {
 
     sheetPage: charadex.sheet.pages.items,
     sitePage: 'items',

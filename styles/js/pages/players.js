@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   let dex = await charadex.initialize.page(
     null,
-    charadex.page.inventory,
+    charadex.page.player,
     null, 
     async (listData) => {
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Inventory
         charadex.initialize.groupGallery(
-          charadex.page.inventory.inventoryConfig,
+          charadex.page.player.playerConfig,
           fixedData,
           'type',
           charadex.url.getPageUrl('items')
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (charadex.tools.checkArray(profile.characters)) {
           let designs = await charadex.initialize.page(
             profile.characters,
-            charadex.page.inventory.relatedData['characters'],
+            charadex.page.player.relatedData['characters'],
           );
           console.log('Initialized related characters!');
         }
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (charadex.tools.checkArray(profile.inventorylog)) {
           let logs = await charadex.initialize.page(
             profile.inventorylog,
-            charadex.page.inventory.relatedData['inventory log'],
+            charadex.page.player.relatedData['inventory log'],
           );
           console.log('Initialized related logs!');
         }
