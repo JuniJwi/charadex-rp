@@ -141,7 +141,7 @@
         </div>
       </div> <!-- end of search options -->
 
-      <div id="gallery-card" class="card card-body bg-faded flex-grow-1 mx-md-3 mx-0">
+      <div id="gallery-card" class="card bg-faded flex-grow-1 mx-md-3 mx-0">
         <!-- ----------------------------------------------------------------- -->
         <!-- List Items Render Here                                            -->
         <!-- ----------------------------------------------------------------- -->
@@ -202,34 +202,31 @@
     <!-- ----------------------------------------------------------------- -->
     <!-- Gallery Profile - Prompt Card                                     -->
     <!-- ----------------------------------------------------------------- -->
-    <div class="col-12 p-2" id="prompt-profile">
-      <div class="card">
+    <div class="col-12" id="prompt-profile">
 
+      <!-- Hero Image -->
+      <div class="cd-hero-title m-1 cd-prompt-background">
         <!-- Header -->
-        <h3 class="card-header text-center px-md-5 px-4 py-4">
-          <a class="profilelink profileid" href=""></a>
-        </h3>
-
-        <!-- Banner -->
-        <div class="cd-prompt-background"></div>
-
-        <!-- Body -->
-        <div class="card-body p-md-5 p-4 d-flex flex-column flex-fill">
-          <div class="description mb-auto"></div>
-          <hr class="my-4 mx-0">
-          <div class="row no-gutters text-muted m-n1 px-3 small">
-            <div class="col p-1"><b>Start Date:</b> <span class="startdate"></span></div>
-            <div class="col p-1"><b>End Date:</b> <span class="enddate"></span></div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="card-footer text-end">
-          <a class="link" href="">Check It Out <i class="fas fa-circle-chevron-right fa-fw ms-2"></i></a>
-        </div>
-
+        <div class="m-auto"><a class="profilelink profileid"></a></div>
       </div>
-    </div> <!-- End of Prompt Card -->
+
+      <!-- Dates -->
+      <div class="row no-gutters text-muted m-n1 px-3 small">
+        <div class="col p-1"><b>Start Date:</b> <span class="startdate"></span></div>
+        <div class="col p-1"><b>End Date:</b> <span class="enddate"></span></div>
+      </div>
+      
+      <hr>
+
+      <!-- Body -->
+      <div class="description mb-auto"></div>
+
+      <!-- Link -->
+      <a class="btn btn-primary link" href="" role="button">
+        Submit <i class="fas fa-circle-chevron-right fa-fw ms-2"></i>
+      </a>
+
+    </div><!-- End of Prompt Card -->
   </div>
 
   <!-- ----------------------------------------------------------------- -->
