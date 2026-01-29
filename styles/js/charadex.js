@@ -46,14 +46,16 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     }
 
     // Clear blanks
-    Object.entries(entry).forEach(([key, value]) => {
-      if (entry[key] === "") {
-        entry[key] = `<span class='text-muted'>--</span>`;
-      }
-      if (typeof entry[key] === 'number') {
-        entry[key] = entry[key].toString();
-      }
-    });
+    if (config.fillBlanks) {
+      Object.entries(entry).forEach(([key, value]) => {
+        if (entry[key] === "") {
+          entry[key] = `<span class='text-muted'>--</span>`;
+        }
+        if (typeof entry[key] === 'number') {
+          entry[key] = entry[key].toString();
+        }
+      });
+    }
 
     // Convert markdown to HTML, if we need to
     if (config.markdownColumns) {

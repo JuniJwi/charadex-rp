@@ -150,6 +150,14 @@ charadex.page.prompts = {
     toggle: true,
   },
   
+  fillBlanks: [
+    'title',
+    'startdate',
+    'enddate',
+    'summary',
+    'description',
+  ],
+  
   markdownColumns: [
     'summary',
     'description',
@@ -202,6 +210,12 @@ charadex.page.lore = {
   prevNext: {
     toggle: false,
   },
+  
+  fillBlanks: [
+    'title',
+    'summary',
+    'content',
+  ],
 
   markdownColumns: [
     'summary',
@@ -286,6 +300,23 @@ charadex.page.masterlist = {
     }
 
   },
+  
+  fillBlanks: [
+    'name',
+    'alias',
+    'age',
+    'gender',
+    'pronouns',
+    'sexuality',
+    'birthday',
+    'height',
+    'build',
+    'goodtraits',
+    'neutraltraits',
+    'badtraits',
+    'personality',
+    'lore',
+  ],
 
   markdownColumns: [
     'mythosdescription',
