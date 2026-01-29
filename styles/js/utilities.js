@@ -54,9 +54,12 @@ charadex.tools = {
   // Load selected areas
   loadPage(loadAreaSelector = '', timeout = 500, loadIconSelector = '.loading') {
     setTimeout(function () {
-      $(loadIconSelector).hide();
+      $(loadIconSelector).addClass('inactive');
       $(loadAreaSelector).addClass('active');
     }, timeout);
+    setTimeout(function () {
+      $(loadIconSelector).hide();
+    }, timeout+100);
   },
   
   // Change meta information

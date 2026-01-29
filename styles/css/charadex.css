@@ -838,31 +838,24 @@ a.badge.badge-primary:active,
   text-align: center;
   position: absolute;
 }
+.loading.inactive {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
 /* Fades container in on load so its not as jarring */
 .softload {
   opacity: 0;
 }
-
 .softload.active {
   opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-/* Fades container in on load so its not as jarring */
-.hardload {
-  opacity: 0;
-}
-
-.hardload.active {
-  opacity: 1;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.2s ease;
 }
 
 /* Specifically for the body */
 #charadex-body {
   display: none;
 }
-
 #charadex-body.active {
   display: block;
 }
