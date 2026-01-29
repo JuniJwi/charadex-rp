@@ -830,6 +830,12 @@ a.badge.badge-primary:active,
 /* Loading
 /* ============================================================= */
 
+/* Spinner icon */
+.spinner {
+  margin: auto;
+  width: 50%;
+  height: 100vh;
+}
 /* Fades container in on load so its not as jarring */
 .softload {
   opacity: 0;
