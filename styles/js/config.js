@@ -152,6 +152,7 @@ charadex.page.prompts = {
   },
   
   markdownColumns: [
+    'summary',
     'description',
   ],
 
@@ -204,6 +205,7 @@ charadex.page.lore = {
   },
 
   markdownColumns: [
+    'summary',
     'content',
   ],
 
