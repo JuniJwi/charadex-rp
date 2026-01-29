@@ -608,11 +608,11 @@ option:checked {
     calc(var(--cd-border-radius) - 1px) 0 0 !important;
 }
 .card-header a, .card-header a:visited {
+  transition: opacity 0.2s ease-in-out;
   color: var(--cd-card-header-font-color) !important;
-  transition: color 0.2s ease, background-color 0.2s ease-in-out;
   font-weight: bold;
 }
-.card-header:hover {
+.card-header a:hover {
   opacity: .8;
 }
 
@@ -940,8 +940,6 @@ p:last-child {
 }
 
 /* prompt gallery */
-#prompt-gallery .list .card {
-}
 #prompt-gallery .list .card-header {
   padding: .5em;
 }
