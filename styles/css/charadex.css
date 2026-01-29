@@ -930,14 +930,8 @@ p:last-child {
 }
 
 /* masterlist gallery */
-#charadex-gallery .list .card {
-  border: 0 !important;
-  background-color: transparent !important;
-}
 #charadex-gallery .list .card-header {
-  border: 0 !important;
-  background-color: transparent !important;
-  min-height: 40px;
+  padding: .5em;
 }
 #charadex-gallery .list .card-header a {
   text-decoration: none;
@@ -983,14 +977,8 @@ p:last-child {
 }
 
 /* player gallery */
-#player-gallery .list .card {
-  border: 0 !important;
-  background-color: transparent !important;
-}
 #player-gallery .list .card-header {
-  border: 0 !important;
-  background-color: transparent !important;
-  min-height: 40px;
+  padding: .5em;
 }
 #player-gallery .list .card-header a {
   text-decoration: none;
@@ -1000,14 +988,8 @@ p:last-child {
 }
 
 /* item gallery */
-#item-gallery .list .card {
-  border: 0 !important;
-  background-color: transparent !important;
-}
 #item-gallery .list .card-header {
-  border: 0 !important;
-  background-color: transparent !important;
-  min-height: 40px;
+  padding: .5em;
 }
 #item-gallery .list .card-header a {
   text-decoration: none;
