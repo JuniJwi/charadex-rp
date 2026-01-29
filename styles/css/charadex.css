@@ -13,14 +13,14 @@ body {
   /* Primary Color
   ================================================================ */
   /* The "Main" accent color of your site. */
-  --cd-primary-color: #272727;
+  --cd-primary-color: #bb5f13;
   --cd-primary-text-color: #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
   /* The "Second" accent color of your site. */
-  --cd-secondary-color: #bb5f13;
+  --cd-secondary-color: #272727;
   --cd-secondary-text-color: #fff;
 
   /* ============================================================= */
@@ -61,12 +61,12 @@ body {
   --cd-navbar-background-color: transparent;
   --cd-navbar-font-family: var(--cd-header-font-family);
   /* Title */
-  --cd-navbar-brand-color: var(--cd-secondary-color);
-  --cd-navbar-brand-color-hover: var(--cd-faded-text-color);
+  --cd-navbar-brand-color: var(--cd-primary-color);
+  --cd-navbar-brand-color-hover: var(--cd-secondary-color);
   /* Link/Text */
   --cd-navbar-text-color: var(--cd-secondary-color);
   --cd-navbar-link-color: var(--cd-primary-color);
-  --cd-navbar-link-color-hover: var(--cd-secondary-color);
+  --cd-navbar-link-color-hover: var(--cd-faded-text-color);
 
   /* ============================================================= */
   /* Badges
@@ -153,7 +153,6 @@ body {
   /* ============================================================= */
   /* Cards
   ================================================================ */
-
   /* Background */
   --cd-card-background-color: var(--cd-content-background-color);
   --cd-card-header-background-color: var(--cd-secondary-color);
@@ -171,7 +170,6 @@ body {
   /* ============================================================= */
   /* Button
   ================================================================ */
-
   /* Background */
   --cd-button-background-color: var(--cd-primary-color);
   --cd-button-background-color-hover: var(--cd-secondary-color);
@@ -190,7 +188,6 @@ body {
   /* ============================================================= */
   /* Input
   ================================================================ */
-
   /* Background */
   --cd-input-background-color: var(--cd-faded-background-color);
 
