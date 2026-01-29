@@ -604,9 +604,17 @@ option:checked {
   border-radius: calc(var(--cd-border-radius) - 1px)
     calc(var(--cd-border-radius) - 1px) 0 0 !important;
 }
+.card-header a, .card-header a:visited {
+  color: var(--cd-card-header-font-color) !important;
+  transition: color 0.2s ease-in-out;
+  font-weight: bold;
+}
+.card-header:hover {
+  opacity: .8;
+}
 
 .card-footer {
-  background-color: var(--cd-card-header-background-color) !important;
+  background-color: var(--cd-faded-background-color) !important;
   color: var(--cd-card-header-font-color) !important;
   border-top-color: var(--cd-card-border-color) !important;
   border-top-width: var(--cd-card-border-width) !important;
@@ -614,6 +622,7 @@ option:checked {
   font-family: var(--cd-card-header-font-family) !important;
   border-radius: 0 0 calc(var(--cd-border-radius) - 1px)
     calc(var(--cd-border-radius) - 1px) !important;
+  font-size: .875em;
 }
 
 
@@ -728,7 +737,6 @@ ol li::marker {
 /* Horizontal Rule
 /* ============================================================= */
 hr {
-  height: 1em;
   width: 100%;
   margin: 0 auto 0 auto;
   border-top: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
@@ -933,13 +941,9 @@ p:last-child {
 
 /* prompt gallery */
 #prompt-gallery .list .card {
-  border: 0 !important;
-  background-color: transparent !important;
 }
 #prompt-gallery .list .card-header {
-  border: 0 !important;
-  background-color: transparent !important;
-  min-height: 40px;
+  padding: .5em;
 }
 #prompt-gallery .list .card-header a {
   text-decoration: none;
