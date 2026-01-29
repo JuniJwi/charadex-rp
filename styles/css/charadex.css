@@ -977,12 +977,12 @@ p:last-child {
   min-height: 150px;
 }
 .prompt-body {
-  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 @media (min-width: 768px) {
   .prompt-body {
-    margin: 1rem 7rem;
+    padding: 1rem 7rem;
   }
 }
 
