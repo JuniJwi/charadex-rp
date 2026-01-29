@@ -30,6 +30,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+  <!-- Multiselect CSS -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/css/bootstrap-select.min.css">
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -41,13 +45,12 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="/charadex-rp/styles/css/charadex.css">
 
-  <!-- Multiselect CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@v1.14.0-beta2/dist/css/bootstrap-select.min.css">
-
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
 </head>
 
 <body id="charadex-body" class="d-flex">
@@ -104,12 +107,12 @@
             <!-- Search Filter -->
             <div class="col-md-4 col-6" style="display: none;">
               <select id="charadex-search-filter" class="form-control form-select"
-              aria-label="Select search parameter."></select>
+                aria-label="Select search parameter."></select>
             </div>
             <!-- Search Bar -->
             <div class="col d-flex">
               <input class="form-control search" type="search" placeholder="Search" id="charadex-search"
-              aria-label="Input search.">
+                aria-label="Input search.">
             </div>
           </div>
         </div>
@@ -118,7 +121,7 @@
         <!-- Pagination                                                        -->
         <!-- ----------------------------------------------------------------- -->
         <div style="display: none;" class="charadex-pagination-container">
-          
+
           <div class="nav d-flex justify-content-center mb-n4">
             <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
             <ul class="pagination charadex-pagination charadex-pagination-top justify-content-center m-0"></ul>
@@ -138,26 +141,28 @@
               <a id="entryNext" href=""><b><span></span></b><i class="fas fa-chevron-right ms-2"></i></a>
             </div>
           </div>
-        </div> <!-- end of search options -->
+        </div>
+      </div> <!-- end of search options -->
 
-        <div id="gallery-card" class="card bg-faded flex-grow-1 mx-md-3 mx-0">
-          <!-- ----------------------------------------------------------------- -->
-          <!-- List Items Render Here                                            -->
-          <!-- ----------------------------------------------------------------- -->
-          <div class="card-body">
-            <div class="row no-gutters charadex-list list softload m-n2"></div>
-            <p class="text-center"><i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i></p>
+      <div id="gallery-card" class="card bg-faded flex-grow-1 mx-md-3 mx-0">
+        <!-- ----------------------------------------------------------------- -->
+        <!-- List Items Render Here                                            -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="card-body">
+          <div class="row no-gutters charadex-list list softload m-n2"></div>
+          <p class="text-center"><i class="text-primary fa-solid fa-hourglass fa-spin fa-spin-reverse loading"></i>
+          </p>
 
-            <!-- ----------------------------------------------------------------- -->
-            <!-- Pagination                                                        -->
-            <!-- ----------------------------------------------------------------- -->
-            <div style="display: none;" class="charadex-pagination-container">
-              <div class="nav d-flex justify-content-center mb-n4">
-                <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
-                <ul class="pagination charadex-pagination charadex-pagination-bottom justify-content-center m-0"></ul>
-                <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
-              </div>
+          <!-- ----------------------------------------------------------------- -->
+          <!-- Pagination                                                        -->
+          <!-- ----------------------------------------------------------------- -->
+          <div style="display: none;" class="charadex-pagination-container">
+            <div class="nav d-flex justify-content-center mb-n4">
+              <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+              <ul class="pagination charadex-pagination charadex-pagination-bottom justify-content-center m-0"></ul>
+              <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
             </div>
+          </div>
 
         </div>
       </div> <!-- card body -->
