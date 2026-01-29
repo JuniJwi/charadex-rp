@@ -383,11 +383,10 @@ charadex.page.player = {
     [charadex.sheet.pages.inventoryLog]: {
 
       sheetPage: charadex.sheet.pages.inventoryLog,
-      sitePage: 'players',
-      primaryProperty: 'username', // name of field of the calling page to search by
-      relatedProperty: 'player', // name of column to search in related page
+      primaryProperty: 'username', // The key of the field we are SEARCHING BY in primary array
+      relatedProperty: 'username', // The name of the field we are SEARCHING IN in secondary array
       dexSelector: 'log',
-      profileProperty: 'username', // name of found record of the related page
+      profileProperty: 'timestamp', // The ID of the secondary field
       profileToggle: false,
 
       pagination: {
