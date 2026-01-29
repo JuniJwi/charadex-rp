@@ -29,13 +29,13 @@ charadex.sheet = {
   id: '1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo',
 
   pages: {
-    masterlist:    'Characters',
-    masterlistLog: 'Character Log',
-    player:        'Players',
-    inventoryLog:  'Inventory Log',
-    items:         'Items',
-    prompts:       'Prompts',
-    lore:          'Lore',
+    masterlist:    'characters',
+    masterlistLog: 'character log',
+    player:        'players',
+    inventoryLog:  'inventory log',
+    items:         'items',
+    prompts:       'prompts',
+    lore:          'lore',
   },
 
   options: {
