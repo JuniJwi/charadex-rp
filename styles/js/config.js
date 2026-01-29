@@ -131,7 +131,6 @@ charadex.page.prompts = {
     toggle: true,
     parameters: {
       'Category': charadex.sheet.options.category,
-      'Subcategory': charadex.sheet.options.subcategory,
     }
   },
 
@@ -240,6 +239,7 @@ charadex.page.masterlist = {
       'Role': charadex.sheet.options.roles,
       'Status': charadex.sheet.options.statuses,
       'Category': charadex.sheet.options.category,
+      'Subcategory': charadex.sheet.options.subcategory,
     }
   },
 
