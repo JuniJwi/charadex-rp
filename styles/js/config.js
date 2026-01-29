@@ -386,8 +386,15 @@ charadex.page.player = {
       primaryProperty: 'username', // The key of the field we are SEARCHING BY in primary array
       relatedProperty: 'username', // The name of the field we are SEARCHING IN in secondary array
       dexSelector: 'log',
-      profileProperty: 'timestamp', // The ID of the secondary field
+      profileProperty: 'username', // The ID of the secondary field
       profileToggle: false,
+
+      sort: {
+        toggle: true,
+        sortProperty: 'timestamp',
+        order: 'desc',
+        parameters: []
+      },
 
       pagination: {
         toggle: true,
