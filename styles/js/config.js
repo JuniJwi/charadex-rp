@@ -150,6 +150,10 @@ charadex.page.prompts = {
   prevNext: {
     toggle: true,
   },
+  
+  markdownColumns: [
+    'description',
+  ],
 
 };
 
