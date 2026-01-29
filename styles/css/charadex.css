@@ -976,12 +976,12 @@ p:last-child {
   background-size: cover;
   min-height: 150px;
 }
-#prompt-profile {
+.prompt-body {
   margin: 0;
   overflow-x: hidden;
 }
 @media (min-width: 768px) {
-  #prompt-profile {
+  .prompt-body {
     margin: 1rem 7rem;
   }
 }
