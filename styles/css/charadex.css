@@ -614,8 +614,6 @@ option:checked {
 }
 
 .card-footer {
-  background-color: var(--cd-faded-background-color) !important;
-  color: var(--cd-card-header-font-color) !important;
   border-top-color: var(--cd-card-border-color) !important;
   border-top-width: var(--cd-card-border-width) !important;
   border-top-style: var(--cd-card-border-style) !important;
