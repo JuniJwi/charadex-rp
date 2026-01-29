@@ -976,10 +976,6 @@ p:last-child {
   background-size: cover;
   min-height: 150px;
 }
-.prompt-body {
-  padding: 0;
-  overflow-x: hidden;
-}
 @media (min-width: 768px) {
   .prompt-body {
     padding: 1rem 7rem;
