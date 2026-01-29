@@ -111,7 +111,6 @@ body {
   /* ============================================================= */
   /* Footer
   ================================================================ */
-
   /* Background */
   --cd-footer-background-color: transparent;
 
@@ -123,22 +122,19 @@ body {
   /* ============================================================= */
   /* Link
   ================================================================ */
-
   --cd-link-text-color: var(--cd-primary-color);
   --cd-link-text-color-hover: var(--cd-faded-text-color);
 
   /* ============================================================= */
   /* HR
   ================================================================ */
-
-  --cd-hr-border-width: 2px;
+  --cd-hr-border-width: var(--cd-border-width);
   --cd-hr-border-height: 16px;
   --cd-hr-border-color: var(--cd-primary-color);
 
   /* ============================================================= */
   /* Pagination
   ================================================================ */
-
   /* Background */
   --cd-pagination-background-color: transparent;
   --cd-pagination-background-hover: transparent;
@@ -446,7 +442,7 @@ figure {
 }
 .navbar .dropdown-menu .nav-item {
   color: var(--cd-navbar-dropdown-link-color) !important;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .navbar .dropdown-menu .nav-item:hover,
 .navbar .dropdown-menu .nav-item:focus,
@@ -463,7 +459,7 @@ figure {
 /* ============================================================= */
 
 .page-link {
-  transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border 0.2s ease-in-out;
   border-width: var(--cd-pagination-border-width) !important;
   border-style: var(--cd-pagination-border-style) !important;
 }
@@ -613,7 +609,7 @@ option:checked {
 }
 .card-header a, .card-header a:visited {
   color: var(--cd-card-header-font-color) !important;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease, background-color 0.2s ease-in-out;
   font-weight: bold;
 }
 .card-header:hover {
@@ -823,7 +819,6 @@ a.badge.badge-primary:active,
   right: calc((100vw - 950px) / 2 - 99px);
   top: 45%;
   width: 100px;
-  transition: all .2s ease-in-out;
 }
 .to-bottom {
   right: calc((100vw - 950px) / 2 - 99px);
