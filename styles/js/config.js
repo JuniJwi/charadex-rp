@@ -385,7 +385,7 @@ charadex.page.player = {
       sheetPage: charadex.sheet.pages.inventoryLog,
       sitePage: 'players',
       primaryProperty: 'username', // name of field of the calling page to search by
-      relatedProperty: 'username', // name of column to search in related page
+      relatedProperty: 'player', // name of column to search in related page
       dexSelector: 'log',
       profileProperty: 'username', // name of found record of the related page
       profileToggle: false,
