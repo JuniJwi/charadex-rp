@@ -306,9 +306,6 @@ body {
 #main-card {
   overflow: scroll;
 }
-#gallery-card .card-body {
-  margin: 0;
-}
 
 @media (min-width: 768px) {
   #main-container {
@@ -317,9 +314,6 @@ body {
   }
   #main-card {
     padding: 1rem 7rem;
-  }
-  #gallery-card .card-body {
-    margin: 1rem 7rem;
   }
 }
 /* Small container for more compact view */
@@ -951,7 +945,8 @@ p:last-child {
 #charadex-gallery .list .card-body img {
   max-height: 200px;
 }
-/* Character Profile */
+
+/* character profile */
 @media (min-width: 768px) {
   .cd-profile-card-body a {
     text-decoration: none;
@@ -980,6 +975,15 @@ p:last-child {
   background-position: center;
   background-size: cover;
   min-height: 150px;
+}
+#prompt-profile {
+  margin: 0;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  #prompt-profile {
+    margin: 1rem 7rem;
+  }
 }
 
 /* player gallery */
