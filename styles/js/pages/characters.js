@@ -91,5 +91,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.location = hash;
   }
 
-  charadex.tools.loadPage('.softload', 500);
+  charadex.tools.loadPage('.softload', 100);
 });
