@@ -680,7 +680,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
 }
 h1 {
-  color: var(--cd-faded-text-color);
+  color: var(--cd-primary-color);
   font-size: 1.4rem;
   text-align: center;
 }
@@ -689,7 +689,7 @@ h2 {
   font-size: 1.2rem;
 }
 h3 {
-  color: var(--cd-primary-color);
+  color: var(--cd-faded-text-color);
   font-size: 1.1rem;
 }
 h4 {
