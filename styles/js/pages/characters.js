@@ -63,14 +63,23 @@ document.addEventListener("DOMContentLoaded", async () => {
               let relTitle = rel[3] ? rel[3] : '--';
               let relText = rel[4] ? charadex.manageData.convertMarkdown(rel[4]) : `<span class="text-muted">--</span>`;
               // Create the DOM elements
-              relElement += `<div class="row no-gutters justify-content-center align-items-center mb-2">
-                              <div class="col-md-3 text-center text-uppercase">
-                                <h3><a href="${charLink}">${rel[0]}</a></h3>
-                                <p class="small"><span class="script">Last Updated:</span> ${rel[2]}</p>
-                              </div>
-                              <div class="col-md-9 p-2 text-center">
-                                <p class="script">${relTitle}</p>
-                                <div>${relText}</div>
+              relElement += `<div class="col-md-3 col-sm-6 p-2">
+                              <div class="card bg-faded h-100">
+                                <div class="card-header text-center d-flex">
+                                  <div class="m-auto z-1">
+                                    <a class="stretched-link" href="${charLink}">${rel[0]}</a>
+                                  </div>
+                                </div>
+                                <div class="card-body cd-gallery-card d-flex flex-column flex-fill">
+                                  <p class="script">${relTitle}</p>
+                                  <div>${relText}</div>
+                                </div>
+                                <div class="card-footer text-muted">
+                                  <div class="row">
+                                    <div class="col">Last Updated:</div>
+                                    <div class="col-auto">${rel[2]}</div>
+                                  </div>
+                                </div>
                               </div>
                              </div>`
             }

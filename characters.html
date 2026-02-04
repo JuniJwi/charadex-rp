@@ -200,7 +200,7 @@
             <a class="stretched-link profileid profilelink" href=""></a>
           </div>
         </div>
-        <div class="card-body cd-gallery-card d-flex flex-column flex-fill ">
+        <div class="card-body cd-gallery-card d-flex flex-column flex-fill">
           <img class="img-thumbnail img-fluid refthumbnail m-auto" src="" alt="Character thumbnail.">
         </div>
         <div class="card-footer text-muted">
@@ -215,26 +215,23 @@
     <!-- --------------------------------------------------------------- -->
     <!-- Gallery Profile - Character Card                                -->
     <!-- --------------------------------------------------------------- -->
-    <div class="col-12 p-md-2 p-0" id="charadex-profile">
+    <div class="col-12 profile-body" id="charadex-profile">
 
       <!-- Character Name -->
-      <h1 class="cd-hero-title">
-        <a class="profileid"></a>
-      </h1>
+      <h1 class="cd-hero-title profileid"></h1>
 
       <!-- Status Info -->
       <hr>
-      <div class="row mx-3 mb-2">
-        <div class="col script my-1 mx-3">
+      <div class="row mb-2">
+        <div class="col script my-1">
           <a class="player playerlink"></a> ◆
           <span class="status"></span> ◆
           <span class="role text-nowrap">
           </span>
         </div>
-        <div class="col-auto">
-          <span class="subcategory"></span>
-          <span class="categorystamp"></span>
+        <div class="col-auto my-1 script subcategory">
         </div>
+        <div class="col-auto my-1 categorystamp"></div>
       </div>
       <hr>
 
@@ -425,86 +422,44 @@
       <!-- ------------- -->
       <!-- Relationships -->
       <!-- ------------- -->
-      <div id="relationships" class="card">
-        <div class="card-header">
-          <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
-            aria-controls="collapseRels">
-            Relationships
-          </a>
-        </div>
-        <div class="card-body">
-          <!-- vv collapse vv -->
-          <div class="collapse" id="collapseRels">
-
-            <!-- list containers -->
-            <div id="rel-list" class="my-4 mx-3">
-              <div id="rel-container" class="p-md-3"></div>
-            </div>
-
-          </div>
-          <!-- ^^ collapse ^^ -->
-        </div>
-        <div class="card-footer">
-          <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
-            aria-controls="collapseRels">
-            <i class="fa-solid fa-people-group"></i>
-            <hr>
-          </a>
-        </div>
-      </div>
+      <hr>
+      <h2 class="text-center mt-2" id="relationships"><a href="#relationships">Relationships</a></h2>
+      
+      <!-- list container -->
+      <div id="rel-container" class="row no-gutters m-n2"></div>
 
       <!-- ---- -->
       <!-- Logs -->
       <!-- ---- -->
-      <div id="logs" class="card">
-        <div class="card-header">
-          <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
-            aria-controls="collapseLogs">
-            Activity Logs
-          </a>
-        </div>
-        <div class="card-body">
-          <!-- vv collapse vv -->
-          <div class="collapse" id="collapseLogs">
+      <hr>
+      <h2 class="text-center mt-2" id="logs"><a href="#logs">Activity Logs</a></h2>
 
-            <!-- list containers -->
-            <div id="log-gallery" class="my-4 mx-3">
-              <!-- ---- -->
-              <!-- List -->
-              <!-- ---- -->
-              <div class="p-3">
-                <div class="row pb-1 border-bottom">
-                  <div class="col-md-3"><b>Timestamp</b></div>
-                  <div class="col-md-9"><b>Reason</b></div>
-                </div>
-                <!-- ---------------------- -->
-                <!-- List Items Render Here -->
-                <!-- ---------------------- -->
-                <div class="log-list list"></div>
-              </div>
-              <!-- ---------- -->
-              <!-- Pagination -->
-              <!-- ---------- -->
-              <div style="display: none;" class="log-pagination-container">
-                <div class="nav d-flex justify-content-center mb-n4">
-                  <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a>
-                  </div>
-                  <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
-                  <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+      <!-- list containers -->
+      <div id="log-gallery" class="my-4 mx-3">
+        <!-- ---- -->
+        <!-- List -->
+        <!-- ---- -->
+        <div class="p-3">
+          <div class="row pb-1 border-bottom">
+            <div class="col-md-3"><b>Timestamp</b></div>
+            <div class="col-md-9"><b>Reason</b></div>
           </div>
-          <!-- ^^ collapse ^^ -->
+          <!-- ---------------------- -->
+          <!-- List Items Render Here -->
+          <!-- ---------------------- -->
+          <div class="log-list list"></div>
         </div>
-        <div class="card-footer">
-          <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
-            aria-controls="collapseLogs">
-            <i class="fa-solid fa-list"></i>
-            <hr>
-          </a>
+        <!-- ---------- -->
+        <!-- Pagination -->
+        <!-- ---------- -->
+        <div style="display: none;" class="log-pagination-container">
+          <div class="nav d-flex justify-content-center mb-n4">
+            <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
+            <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a>
+            </div>
+          </div>
         </div>
       </div>
 
