@@ -229,16 +229,17 @@
           <span class="role text-nowrap">
           </span>
         </div>
-        <div class="col-auto my-1 script subcategory">
+        <div class="col-auto script my-1">
+          <span class="category"></span> ◆
+          <span class="subcategory">
         </div>
-        <div class="col-auto my-1 categorybadge"></div>
       </div>
       <hr>
 
       <!-- ---------------- -->
       <!-- Image and Basics -->
       <!-- ---------------- -->
-      <div class="row mx-3 mb-2">
+      <div class="row p-md-3 p-2">
 
         <!-- image -->
         <div class="col-md-5 col-12 mx-auto d-flex justify-content-center align-items-center order-0">
@@ -262,7 +263,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Name
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="name"></span>
             </div>
           </div>
@@ -270,7 +271,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Alias
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="alias"></span>
             </div>
           </div>
@@ -278,7 +279,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Age
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="age"></span>
             </div>
           </div>
@@ -286,7 +287,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Gender
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="gender"></span>
             </div>
           </div>
@@ -294,7 +295,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Pronouns
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="pronouns"></span>
             </div>
           </div>
@@ -302,7 +303,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Sexuality
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="sexuality"></span>
             </div>
           </div>
@@ -310,7 +311,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Birthday
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="birthday"></span>
             </div>
           </div>
@@ -318,7 +319,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Height
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="height"></span>
             </div>
           </div>
@@ -326,7 +327,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Build
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <span class="build"></span>
             </div>
           </div>
@@ -334,7 +335,7 @@
             <div class="col-4 ps-0 text-end text-truncate script">
               Playlist
             </div>
-            <div class="col-8 text-center">
+            <div class="col-8 card">
               <a href="" class="playlistlink" target="_blank">
                 <i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>&nbsp;<i
                   class="fa-solid fa-music"></i>
@@ -349,6 +350,7 @@
       <!-- ---------------- -->
       <!--    Abilities     -->
       <!-- ---------------- -->
+      <hr>
       <div class="row mx-3 mb-2">
 
         <div class="col-12 order-3">
@@ -410,14 +412,14 @@
         </div>
       </div>
 
-      <div class="mx-3 mb-2 p-3 personality"></div>
+      <div class="p-md-3 p-2 personality"></div>
 
       <!-- ---------------- -->
       <!--       Lore       -->
       <!-- ---------------- -->
       <hr>
       <h2 class="text-center mt-2" id="lore"><a href="#lore">Lore</a></h2>
-      <div class="mx-3 mb-2 p-3 lore"></div>
+      <div class="p-md-3 p-2 lore"></div>
 
       <!-- ------------- -->
       <!-- Relationships -->
@@ -426,7 +428,7 @@
       <h2 class="text-center mt-2" id="relationships"><a href="#relationships">Relationships</a></h2>
       
       <!-- list container -->
-      <div id="rel-container" class="row no-gutters m-n2"></div>
+      <div id="rel-container" class="row no-gutters m-n2 p-md-3 p-2 justify-content-center"></div>
 
       <!-- ---- -->
       <!-- Logs -->
@@ -435,30 +437,28 @@
       <h2 class="text-center mt-2" id="logs"><a href="#logs">Activity Logs</a></h2>
 
       <!-- list containers -->
-      <div id="log-gallery" class="my-4 mx-3">
+      <div id="log-gallery" class="p-md-3 p-2">
         <!-- ---- -->
         <!-- List -->
         <!-- ---- -->
-        <div class="p-3">
-          <div class="row pb-1 border-bottom">
-            <div class="col-md-3"><b>Timestamp</b></div>
-            <div class="col-md-9"><b>Reason</b></div>
-          </div>
-          <!-- ---------------------- -->
-          <!-- List Items Render Here -->
-          <!-- ---------------------- -->
-          <div class="log-list list"></div>
+        <div class="row pb-1 border-bottom">
+          <div class="col-md-3"><b>Timestamp</b></div>
+          <div class="col-md-9"><b>Reason</b></div>
         </div>
-        <!-- ---------- -->
-        <!-- Pagination -->
-        <!-- ---------- -->
-        <div style="display: none;" class="log-pagination-container">
-          <div class="nav d-flex justify-content-center mb-n4">
-            <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a>
-            </div>
-            <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
-            <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a>
-            </div>
+        <!-- ---------------------- -->
+        <!-- List Items Render Here -->
+        <!-- ---------------------- -->
+        <div class="log-list list"></div>
+      </div>
+      <!-- ---------- -->
+      <!-- Pagination -->
+      <!-- ---------- -->
+      <div style="display: none;" class="log-pagination-container">
+        <div class="nav d-flex justify-content-center mb-n4">
+          <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a>
+          </div>
+          <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
+          <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
       </div>

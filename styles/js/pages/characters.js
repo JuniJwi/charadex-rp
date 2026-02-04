@@ -63,18 +63,18 @@ document.addEventListener("DOMContentLoaded", async () => {
               let relTitle = rel[3] ? rel[3] : '--';
               let relText = rel[4] ? charadex.manageData.convertMarkdown(rel[4]) : `<span class="text-muted">--</span>`;
               // Create the DOM elements
-              relElement += `<div class="col-md-3 col-sm-6 p-2">
+              relElement += `<div class="col-md-4 col-12 p-2">
                               <div class="card bg-faded h-100">
                                 <div class="card-header text-center d-flex">
                                   <div class="m-auto z-1">
                                     <a class="stretched-link" href="${charLink}">${rel[0]}</a>
                                   </div>
                                 </div>
-                                <div class="card-body cd-gallery-card d-flex flex-column flex-fill">
-                                  <p class="script">${relTitle}</p>
+                                <div class="card-body d-flex flex-column flex-fill">
+                                  <h3 class="script">${relTitle}</h3>
                                   <div>${relText}</div>
                                 </div>
-                                <div class="card-footer text-muted">
+                                <div class="card-footer text-muted small">
                                   <div class="row">
                                     <div class="col">Last Updated:</div>
                                     <div class="col-auto">${rel[2]}</div>
