@@ -895,6 +895,8 @@ p:last-child {
 }
 @media (min-width: 768px) {
   .cd-hero-title {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     letter-spacing: 2px;
   }
 }
@@ -922,16 +924,8 @@ p:last-child {
 .z-1 {
   z-index: 1;
 }
-/* Makes profile card background invisible */
-@media (min-width: 768px) {
-  .cd-profile-card {
-    border: 0 !important;
-    background-color: transparent !important;
-    overflow: visible !important;
-  }
-}
 
-/* masterlist gallery */
+/* character list */
 #charadex-gallery .list .card-header {
   padding: .5em;
 }
@@ -940,13 +934,6 @@ p:last-child {
 }
 #charadex-gallery .list .card-body img {
   max-height: 200px;
-}
-
-/* character profile */
-@media (min-width: 768px) {
-  .cd-profile-card-body a {
-    text-decoration: none;
-  }
 }
 #profile-card .card-body {
   overflow: visible;
@@ -957,7 +944,7 @@ p:last-child {
   }
 }
 
-/* prompt gallery */
+/* prompt list */
 #prompt-gallery .list .card-header {
   padding: .5em;
 }
@@ -978,7 +965,7 @@ p:last-child {
   }
 }
 
-/* player gallery */
+/* player list */
 #player-gallery .list .card-header {
   padding: .5em;
 }
@@ -989,7 +976,7 @@ p:last-child {
   max-height: 200px;
 }
 
-/* item gallery */
+/* item list */
 #item-gallery .list .card-header {
   padding: .5em;
 }

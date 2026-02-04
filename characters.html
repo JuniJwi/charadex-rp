@@ -48,7 +48,9 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
 </head>
 
 <body id="charadex-body" class="d-flex">
@@ -123,7 +125,7 @@
             <!-- Search Bar -->
             <div class="col d-flex">
               <input class="form-control search" type="search" placeholder="Search" id="charadex-search"
-              aria-label="Input search.">
+                aria-label="Input search.">
             </div>
           </div>
         </div>
@@ -214,339 +216,259 @@
     <!-- Gallery Profile - Character Card                                -->
     <!-- --------------------------------------------------------------- -->
     <div class="col-12 p-md-2 p-0" id="charadex-profile">
-      <div id="profile-card" class="card">
-        <div class="card-header text-center d-flex p-0">
-          <div class="cd-profile-card-header d-md-block d-none"></div>
-          <div class="m-auto z-1">
-            <h3 class="mb-0"><a class="profilelink profileid"></a></h3>
+
+      <!-- Character Name -->
+      <h1 class="cd-hero-title">
+        <a class="profileid"></a>
+      </h1>
+
+      <!-- Status Info -->
+      <hr>
+      <div class="row mx-3 mb-2">
+        <div class="col script my-1 mx-3">
+          <a class="player playerlink"></a> ◆
+          <span class="status"></span> ◆
+          <span class="role text-nowrap">
+          </span>
+        </div>
+        <div class="col-auto">
+          <span class="subcategory"></span>
+          <span class="categorystamp"></span>
+        </div>
+      </div>
+      <hr>
+
+      <!-- ---------------- -->
+      <!-- Image and Basics -->
+      <!-- ---------------- -->
+      <div class="row mx-3 mb-2">
+
+        <!-- image -->
+        <div class="col-md-5 col-12 mx-auto d-flex justify-content-center align-items-center order-0">
+          <div class="my-auto d-inline-block align-self-center position-relative">
+            <img src="" class="m-1 img-fluid img-thumbnail refthumbnail" alt="Reference image.">
+            <p class="text-center">
+              <a href="" class="reflink stretched-link" target="_blank">
+                reference <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i>
+              </a>
+            </p>
           </div>
         </div>
-        <div class="card-body cd-profile-card-body d-flex flex-column flex-fill px-md-3 p-0">
 
-          <!-- Banner Info -->
-          <div id="status-info" class="text-center cut-corners script mx-3 pb-1">
-            <a class="player playerlink"></a> ◆ <span class="status"></span> ◆ <span class="role text-nowrap"></span>
-          </div>
+        <!-- Basics -->
+        <div class="col order-1">
+          <!-- identity rows -->
+          <h2 class="text-center mt-2" id="basics"><a href="#basics">Basics</a></h2>
 
-          <div class="row mx-3 mb-2">
+          <div class="row align-items-center mb-2">
 
-            <!-- image -->
-            <div class="col-auto px-md-5 mx-auto py-2 d-flex justify-content-center align-items-center order-0">
-              <div class="my-auto p-3 bg-white d-inline-block align-self-center position-relative faux-photo">
-                <p>
-                  <img src="" class="refthumbnail img-fluid" alt="Reference image.">
-                </p>
-                <p class="text-center">
-                  <a href="" class="reflink stretched-link" target="_blank">
-                    reference
-                  </a>
-                </p>
-              </div>
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Name
             </div>
-
-            <!-- Basics -->
-            <div class="col order-1">
-              <!-- identity rows -->
-              <h2 class="text-center mt-2" id="basics"><a href="#basics">Basics</a></h2>
-
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Name
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="name"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Alias
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="alias"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Age
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="age"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Gender
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="gender"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Pronouns
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="pronouns"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Sexuality
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="sexuality"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Birthday
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="birthday"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Height
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="height"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Build
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="build"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Playlist
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <a href="" class="playlistlink" target="_blank">
-                    <i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>
-                  </a>
-                </div>
-              </div>
-
-            </div> <!-- end of basic section -->
-
+            <div class="col-8 text-center">
+              <span class="name"></span>
+            </div>
           </div>
-          
-          <!-- ------------- -->
-          <!-- Relationships -->
-          <!-- ------------- -->
-
-          <div class="frame-top">
-            <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
-              aria-controls="collapseRels">
-              X
-              <hr>
-            </a>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Alias
+            </div>
+            <div class="col-8 text-center">
+              <span class="alias"></span>
+            </div>
           </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Age
+            </div>
+            <div class="col-8 text-center">
+              <span class="age"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Gender
+            </div>
+            <div class="col-8 text-center">
+              <span class="gender"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Pronouns
+            </div>
+            <div class="col-8 text-center">
+              <span class="pronouns"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Sexuality
+            </div>
+            <div class="col-8 text-center">
+              <span class="sexuality"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Birthday
+            </div>
+            <div class="col-8 text-center">
+              <span class="birthday"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Height
+            </div>
+            <div class="col-8 text-center">
+              <span class="height"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Build
+            </div>
+            <div class="col-8 text-center">
+              <span class="build"></span>
+            </div>
+          </div>
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate script">
+              Playlist
+            </div>
+            <div class="col-8 text-center">
+              <a href="" class="playlistlink" target="_blank">
+                <i class="fa-solid fa-music"></i>&nbsp;<i class="fa-solid fa-music"></i>&nbsp;<i
+                  class="fa-solid fa-music"></i>
+              </a>
+            </div>
+          </div>
+
+        </div> <!-- end of basic section -->
+
+      </div> <!-- end of image and basic section -->
+
+      <!-- ---------------- -->
+      <!--    Abilities     -->
+      <!-- ---------------- -->
+      <div class="row mx-3 mb-2">
+
+        <div class="col-12 order-3">
+          <h2 class="text-center mt-2" id="abilities"><a href="#abilities">Abilities</a></h2>
+
+          <!-- ability rows -->
+
+          <div class="row no-gutters justify-content-center align-items-center mb-2">
+            <h3 class="col-md-3 text-center text-uppercase ability1 abilityactive1">
+            </h3>
+            <div class="col-md-9 p-2 text-center abilitydescription1">
+            </div>
+          </div>
+          <div class="row no-gutters justify-content-center align-items-center mb-2">
+            <h3 class="col-md-3 text-center text-uppercase ability2 abilityactive2">
+            </h3>
+            <div class="col-md-9 p-2 text-center abilitydescription2">
+            </div>
+          </div>
+          <div class="row no-gutters justify-content-center align-items-center mb-2">
+            <h3 class="col-md-3 text-center text-uppercase ability3 abilityactive3">
+            </h3>
+            <div class="col-md-9 p-2 text-center abilitydescription3">
+            </div>
+          </div>
+          <div class="row no-gutters justify-content-center align-items-center mb-2">
+            <h3 class="col-md-3 text-center text-uppercase ability4 abilityactive4">
+            </h3>
+            <div class="col-md-9 p-2 text-center abilitydescription4">
+            </div>
+          </div>
+          <div class="row no-gutters justify-content-center align-items-center mb-2">
+            <h3 class="col-md-3 text-center text-uppercase ability5 abilityactive5">
+            </h3>
+            <div class="col-md-9 p-2 text-center abilitydescription5">
+            </div>
+          </div>
+
+        </div>
+
+      </div> <!-- end of abilities section -->
+
+      <!-- ---------------- -->
+      <!--   Personality    -->
+      <!-- ---------------- -->
+      <hr>
+      <h2 class="text-center mt-2" id="personality"><a href="#personality">Personality</a></h2>
+
+      <!-- Banner Info -->
+      <div class="row mx-2 mb-2">
+        <div class="col-md-4 col-12 text-center script p-1">
+          <p class="p-1 goodtraits text-success"></p>
+        </div>
+        <div class="col-md-4 col-12 text-center script p-1">
+          <p class="p-1 neutraltraits"></p>
+        </div>
+        <div class="col-md-4 col-12 text-center script p-1">
+          <p class="p-1 goodtraits badtraits text-danger"></p>
+        </div>
+      </div>
+
+      <div class="mx-3 mb-2 p-3 personality"></div>
+
+      <!-- ---------------- -->
+      <!--       Lore       -->
+      <!-- ---------------- -->
+      <hr>
+      <h2 class="text-center mt-2" id="lore"><a href="#lore">Lore</a></h2>
+      <div class="mx-3 mb-2 p-3 lore"></div>
+
+      <!-- ------------- -->
+      <!-- Relationships -->
+      <!-- ------------- -->
+      <div id="relationships" class="card">
+        <div class="card-header">
+          <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
+            aria-controls="collapseRels">
+            Relationships
+          </a>
+        </div>
+        <div class="card-body">
           <!-- vv collapse vv -->
           <div class="collapse" id="collapseRels">
 
+            <!-- list containers -->
             <div id="rel-list" class="my-4 mx-3">
-              <!-- ----- -->
-              <!-- Title -->
-              <!-- ----- -->
-              <h2 class="text-center mt-2" id="relationships"><a href="#relationships">Relationships</a></h2>
-              <!-- ---- -->
-              <!-- List -->
-              <!-- ---- -->
               <div id="rel-container" class="p-md-3"></div>
             </div>
 
           </div>
           <!-- ^^ collapse ^^ -->
-          <div class="frame-bottom mb-2">
-            <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
-              aria-controls="collapseRels">
-              X
-              <hr>
-            </a>
-          </div>
+        </div>
+        <div class="card-footer">
+          <a data-bs-toggle="collapse" href="#collapseRels" role="button" aria-expanded="false"
+            aria-controls="collapseRels">
+            <i class="fa-solid fa-people-group"></i>
+            <hr>
+          </a>
+        </div>
+      </div>
 
-          <div class="row mx-3 mb-2">
-
-            <!-- image -->
-            <div class="col-auto px-md-5 mx-auto py-2 d-flex justify-content-center align-items-center order-1">
-              <div class="my-auto p-3 bg-white d-inline-block align-self-center position-relative faux-photo">
-                <p>
-                  <img src="" class="mythosrefthumbnail img-fluid" alt="Mythos form reference image.">
-                </p>
-                <p class="text-center">
-                  <a href="" class="mythosreflink stretched-link" target="_blank">
-                    reference
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            <!-- Mythos -->
-            <div class="col order-0">
-              <!-- identity rows -->
-              <h2 class="text-center mt-2" id="category"><a href="#category">Category</a></h2>
-
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Category
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="category"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Subcategory
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="subcategory"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Partner
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <a class="partner partnerlink"></a>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Token
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="token"></span>
-                </div>
-              </div>
-
-              <!-- mythos rows -->
-              <h2 class="text-center mt-2" id="mythos"><a href="#mythos">Mythos</a></h2>
-
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Species
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="species"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Size
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="size"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Inheritance
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="inheritance"></span>
-                </div>
-              </div>
-              <div class="row align-items-center mb-2">
-                <div class="col-4 ps-0 text-end text-truncate script">
-                  Magic
-                </div>
-                <div class="col-8 cut-corners text-center">
-                  <span class="magic"></span>
-                </div>
-              </div>
-
-            </div> <!-- end of mythos section -->
-
-            <div class="col-12 order-2 cut-corners my-2 p-3 mythosdescription"></div>
-
-            <!-- Abilities -->
-            <div class="col-12 order-3">
-
-              <!-- mythos rows -->
-              <h2 class="text-center mt-2" id="abilities"><a href="#abilities">Mythos Abilities</a></h2>
-
-              <div class="row no-gutters justify-content-center align-items-center mb-2">
-                <h3 class="col-md-3 text-center text-uppercase ability1 abilityactive1">
-                </h3>
-                <div class="col-md-9 p-2 cut-corners text-center abilitydescription1">
-                </div>
-              </div>
-              <div class="row no-gutters justify-content-center align-items-center mb-2">
-                <h3 class="col-md-3 text-center text-uppercase ability2 abilityactive2">
-                </h3>
-                <div class="col-md-9 p-2 cut-corners text-center abilitydescription2">
-                </div>
-              </div>
-              <div class="row no-gutters justify-content-center align-items-center mb-2">
-                <h3 class="col-md-3 text-center text-uppercase ability3 abilityactive3">
-                </h3>
-                <div class="col-md-9 p-2 cut-corners text-center abilitydescription3">
-                </div>
-              </div>
-              <div class="row no-gutters justify-content-center align-items-center mb-2">
-                <h3 class="col-md-3 text-center text-uppercase ability4 abilityactive4">
-                </h3>
-                <div class="col-md-9 p-2 cut-corners text-center abilitydescription4">
-                </div>
-              </div>
-              <div class="row no-gutters justify-content-center align-items-center mb-2">
-                <h3 class="col-md-3 text-center text-uppercase ability5 abilityactive5">
-                </h3>
-                <div class="col-md-9 p-2 cut-corners text-center abilitydescription5">
-                </div>
-              </div>
-
-            </div> <!-- end of abilities section -->
-
-          </div>
-
-          <hr>
-          <h2 class="text-center mt-2" id="personality"><a href="#personality">Personality</a></h2>
-          
-          <!-- Banner Info -->
-          <div class="row mx-2 mb-2">
-            <div class="col-md-4 col-12 text-center script p-1">
-              <p class="cut-corners p-1 goodtraits text-success"></p>
-            </div>
-            <div class="col-md-4 col-12 text-center script p-1">
-              <p class="cut-corners p-1 neutraltraits"></p>
-            </div>
-            <div class="col-md-4 col-12 text-center script p-1">
-              <p class="cut-corners p-1 goodtraits badtraits text-danger"></p>
-            </div>
-          </div>
-
-          <div class="cut-corners mx-3 mb-2 p-3 personality"></div>
-
-          <hr>
-          <h2 class="text-center mt-2" id="lore"><a href="#lore">Lore</a></h2>
-          <div class="cut-corners mx-3 mb-2 p-3 lore"></div>
-
-          <!-- ---- -->
-          <!-- Logs -->
-          <!-- ---- -->
-
-          <div class="frame-top">
-            <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
-              aria-controls="collapseLogs">
-              X
-              <hr>
-            </a>
-          </div>
+      <!-- ---- -->
+      <!-- Logs -->
+      <!-- ---- -->
+      <div id="logs" class="card">
+        <div class="card-header">
+          <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
+            aria-controls="collapseLogs">
+            Activity Logs
+          </a>
+        </div>
+        <div class="card-body">
           <!-- vv collapse vv -->
           <div class="collapse" id="collapseLogs">
 
+            <!-- list containers -->
             <div id="log-gallery" class="my-4 mx-3">
-              <!-- ----- -->
-              <!-- Title -->
-              <!-- ----- -->
-              <h2 class="text-center mt-2" id="transactions"><a href="#transactions">Transaction Log</a></h2>
               <!-- ---- -->
               <!-- List -->
               <!-- ---- -->
@@ -576,16 +498,16 @@
 
           </div>
           <!-- ^^ collapse ^^ -->
-          <div class="frame-bottom mb-2">
-            <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
-              aria-controls="collapseLogs">
-              X
-              <hr>
-            </a>
-          </div>
-
+        </div>
+        <div class="card-footer">
+          <a data-bs-toggle="collapse" href="#collapseLogs" role="button" aria-expanded="false"
+            aria-controls="collapseLogs">
+            <i class="fa-solid fa-list"></i>
+            <hr>
+          </a>
         </div>
       </div>
+
     </div> <!-- End of Character Card -->
     <!-- --------------------------------------------------------------- -->
     <!-- List Item - Log Thumb                                           -->

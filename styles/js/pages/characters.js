@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("LIST DATA:", listData); 
       if (listData.type == 'profile') {
         
-        $('#gallery-card').addClass('cd-profile-card');
         $('#main-container').css('height','auto');
         $('#anchor-nav').show();
 
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 <h3><a href="${charLink}">${rel[0]}</a></h3>
                                 <p class="small"><span class="script">Last Updated:</span> ${rel[2]}</p>
                               </div>
-                              <div class="col-md-9 p-2 cut-corners text-center">
+                              <div class="col-md-9 p-2 text-center">
                                 <p class="script">${relTitle}</p>
                                 <div>${relText}</div>
                               </div>
