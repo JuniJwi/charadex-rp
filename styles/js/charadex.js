@@ -145,11 +145,11 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     for (let entry of charadexData) {
       if (entry.category) {
         let categories = entry.category.split(', ');
-        let stamps = [];
+        let badges = [];
         for (let category of categories) {
-          stamps.push(`<span class="badge badge-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
+          badges.push(`<span class="badge badge-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
         }
-        entry.categorybadge = stamps.join('');
+        entry.categorybadge = badges.join('');
       }
     }
 
