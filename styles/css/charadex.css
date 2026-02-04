@@ -640,6 +640,10 @@ a:active {
   color: var(--cd-link-text-color-hover);
   text-decoration: none;
 }
+blockquote {
+  margin: 0 2rem 1rem;
+  color: var(--cd-faded-background-color) !important;
+}
 
 /* Text */
 .text-primary {
@@ -886,12 +890,12 @@ p:last-child {
   display: flex;
   font-weight: 800;
   font-size: 2.5rem;
+  line-height: 2.5rem;
+  padding: 1rem;
 }
-
 @media (min-width: 768px) {
   .cd-hero-title {
     letter-spacing: 2px;
-    font-size: 3rem;
   }
 }
 
