@@ -17,7 +17,7 @@
   --bs-white-rgb: 255, 255, 255;
 
   /* greys range from the first to the second */
-  --bs-gray: #6c757d;
+  --bs-gray: #afb6bd;
   --bs-gray-dark: #343a40;
 
   /* used for alerts, cards, buttons, etc */
@@ -72,14 +72,14 @@
   --bs-light-text-emphasis: color-mix(in srgb,var(--bs-light),var(--bs-black) 75%);
   --bs-dark-text-emphasis: color-mix(in srgb,var(--bs-dark),var(--bs-black) 75%);
 
-  --bs-primary-bg-subtle: color-mix(in srgb,var(--bs-primary),var(--bs-white) 40%);
-  --bs-secondary-bg-subtle: color-mix(in srgb,var(--bs-secondary),var(--bs-white) 75%);
-  --bs-success-bg-subtle: color-mix(in srgb,var(--bs-success),var(--bs-white) 75%);
-  --bs-info-bg-subtle: color-mix(in srgb,var(--bs-info),var(--bs-white) 75%);
-  --bs-warning-bg-subtle: color-mix(in srgb,var(--bs-warning),var(--bs-white) 75%);
-  --bs-danger-bg-subtle: color-mix(in srgb,var(--bs-danger),var(--bs-white) 75%);
-  --bs-light-bg-subtle: color-mix(in srgb,var(--bs-light),var(--bs-white) 75%);
-  --bs-dark-bg-subtle: color-mix(in srgb,var(--bs-dark),var(--bs-white) 75%);
+  --bs-primary-bg-subtle: color-mix(in srgb,var(--bs-primary),var(--bs-white) 90%);
+  --bs-secondary-bg-subtle: color-mix(in srgb,var(--bs-secondary),var(--bs-white) 90%);
+  --bs-success-bg-subtle: color-mix(in srgb,var(--bs-success),var(--bs-white) 90%);
+  --bs-info-bg-subtle: color-mix(in srgb,var(--bs-info),var(--bs-white) 90%);
+  --bs-warning-bg-subtle: color-mix(in srgb,var(--bs-warning),var(--bs-white) 90%);
+  --bs-danger-bg-subtle: color-mix(in srgb,var(--bs-danger),var(--bs-white) 90%);
+  --bs-light-bg-subtle: color-mix(in srgb,var(--bs-light),var(--bs-white) 90%);
+  --bs-dark-bg-subtle: color-mix(in srgb,var(--bs-dark),var(--bs-white) 90%);
 
   --bs-primary-border-subtle: color-mix(in srgb,var(--bs-primary),var(--bs-white) 40%);
   --bs-secondary-border-subtle: color-mix(in srgb,var(--bs-secondary),var(--bs-white) 40%);
@@ -105,11 +105,11 @@
   --bs-cyan: #0dcaf0;
 
   /* Fonts will default to the first available. Universal fonts are listed just in case. */
-  --bs-font-sans-serif:var(--cd-font-serif), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif:var(--cd-font-body), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: var(--cd-font-monospace), SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-body-font-family: var(--bs-font-sans-serif);
 
-  --bs-body-font-size: 1rem;
+  --bs-body-font-size: .9rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
 
@@ -205,10 +205,11 @@ body {
 /* Header and Footer */
 .header {
   background-color: transparent;
+  margin-bottom: 1em;
 }
 .footer {
   background-color: transparent;
-  color: var(--bs-gray-500);
+  color: var(--bs-gray);
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -295,18 +296,20 @@ img {
 /* ============================================================= */
 /* Navbar
 /* ============================================================= */
-/*
 .navbar {
   font-family: var(--cd-font-header);
   text-transform: uppercase;
   z-index: 2000;
 }
 
+/* Navbar Logo */
 .navbar .navbar-brand {
   color: var(--bs-primary);
-  font-size: 5vw;
+  font-size: 2rem;
   font-weight: bold;
+  transition: color 0.2s ease-in-out;
 }
+
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
   color: var(--bs-secondary);
@@ -319,7 +322,6 @@ img {
 }
 
 /* Navbar Links */
-/*
 .navbar .navbar-nav .nav-link {
   color: var(--bs-link-color);
   font-size: 1.5em;
@@ -335,19 +337,9 @@ img {
 .navbar .navbar-nav .nav-link:focus {
   color: var(--bs-link-hover-color);
 }
-.navbar .navbar-toggler {
-  color: var(--cd-navbar-link-color) !important;
-  border: none !important;
-}
-.navbar .nav-link {
-  align-items: center;
-}
-.navbar .nav-link-icon {
-  font-size: 0.5rem;
-  margin-left: 0.25rem;
-}
-.navbar .nav-link.disabled {
-  color: var(--cd-faded-text-color) !important;
+
+.navbar .navbar-nav .nav-link.disabled {
+  color: var(--bs-gray) ;
 }
 
 /* Navbar Dropdowns */
@@ -632,12 +624,12 @@ h4 {
   font-family: var(--cd-font-header);
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--bs-gray-500);
+  color: var(--bs-gray);
 }
 .subtitle {
   font-family: var(--cd-fond-header);
   font-weight: bold;
-  color: var(--bs-gray-500);
+  color: var(--bs-gray);
   font-size: 1.4rem;
   text-align: center;
   margin-bottom: 0.5rem;
