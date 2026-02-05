@@ -138,42 +138,42 @@
   --bs-border-radius-pill: 50rem;
 }
 /* We can override button variables at the class level... */
-.btn-primary, .btn-outline-primary {
+.btn-primary {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
 }
-.btn-secondary, .btn-outline-secondary {
+.btn-secondary {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-secondary);
   --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
 }
-.btn-success, .btn-outline-success {
+.btn-success {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-success);
   --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
 }
-.btn-info, .btn-outline-info {
+.btn-info {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-info);
   --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
 }
-.btn-warning, .btn-outline-warning {
+.btn-warning {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-warning);
   --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
 }
-.btn-danger, .btn-outline-danger {
+.btn-danger {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-danger);
   --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
 }
-.btn-light, .btn-outline-light {
+.btn-light {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-light);
   --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
 }
-.btn-dark, .btn-outline-dark {
+.btn-dark {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-dark);
   --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
@@ -191,17 +191,47 @@
   --bs-btn-disabled-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
   --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
 }
-.btn-outline-primary, .btn-outline-secondary, 
-.btn-outline-success, .btn-outline-info, 
-.btn-outline-warning, .btn-outline-danger, 
-.btn-outline-light, .btn-outline-dark {
-  --bs-btn-border-color: var(--bs-btn-color);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: var(--bs-btn-color);
-  --bs-btn-active-color: var(--bs-white);
-  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
-  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
 }
+.btn-outline-secondary {
+  --bs-btn-color: var(--bs-secondary);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+.btn-outline-success {
+  --bs-btn-color: var(--bs-success);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
+}
+.btn-outline-info {
+  --bs-btn-color: var(--bs-info);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
+}
+.btn-outline-warning {
+  --bs-btn-color: var(--bs-warning);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
+}
+.btn-outline-danger {
+  --bs-btn-color: var(--bs-danger);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
+}
+.btn-outline-light {
+  --bs-btn-color: var(--bs-light);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
+}
+.btn-outline-dark {
+  --bs-btn-color: var(--bs-dark);
+  --bs-btn-bg: transparent;
+  --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
+}
+
 /* misc fixes */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   --bs-nav-pills-link-active-bg: var(--bs-primary);
