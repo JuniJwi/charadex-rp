@@ -138,42 +138,42 @@
   --bs-border-radius-pill: 50rem;
 }
 /* We can override button variables at the class level... */
-.btn-primary {
+.btn-primary, .btn-outline-primary {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
 }
-.btn-secondary {
+.btn-secondary, .btn-outline-secondary {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-secondary);
   --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
 }
-.btn-success {
+.btn-success, .btn-outline-success {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-success);
   --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
 }
-.btn-info {
+.btn-info, .btn-outline-info {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-info);
   --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
 }
-.btn-warning {
+.btn-warning, .btn-outline-warning {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-warning);
   --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
 }
-.btn-danger {
+.btn-danger, .btn-outline-danger {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-danger);
   --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
 }
-.btn-light {
+.btn-light, .btn-outline-light {
   --bs-btn-color: var(--bs-black);
   --bs-btn-bg: var(--bs-light);
   --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
 }
-.btn-dark {
+.btn-dark, .btn-outline-dark {
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bs-dark);
   --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
@@ -191,7 +191,6 @@
   --bs-btn-disabled-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
   --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
 }
-/* Outline buttons have their own rules */
 .btn-outline-primary, .btn-outline-secondary, 
 .btn-outline-success, .btn-outline-info, 
 .btn-outline-warning, .btn-outline-danger, 
@@ -199,6 +198,7 @@
   --bs-btn-border-color: var(--bs-btn-color);
   --bs-btn-hover-color: var(--bs-white);
   --bs-btn-hover-bg: var(--bs-btn-color);
+  --bs-btn-active-color: var(--bs-white);
   --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
   --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
 }
@@ -724,6 +724,10 @@ ol li::marker {
 .card-body ul li, .card-body ol li {
   margin-bottom: 0.5em;
   padding-left: 0.5em;
+}
+.nav-item ul li, .nav-item ol li {
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 /* ============================================================= */
