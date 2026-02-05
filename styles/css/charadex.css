@@ -196,7 +196,18 @@
 .btn-outline-success, .btn-outline-info, 
 .btn-outline-warning, .btn-outline-danger, 
 .btn-outline-light, .btn-outline-dark {
-  --bs-btn-hover-bg: var(--bs-btn-bg);
+  --bs-btn-border-color: var(--bs-btn-color);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-btn-color);
+  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
+  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 10%);
+}
+/* misc fixes */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  --bs-nav-pills-link-active-bg: var(--bs-primary);
+}
+.progress, .progress-stacked {
+  --bs-progress-bar-bg: var(--bs-primary);
 }
 
 body {
@@ -252,10 +263,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  /* Global Text */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   /* Main Background */
   background-color: var(--cd-body-background-color);
