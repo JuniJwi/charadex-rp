@@ -63,14 +63,14 @@
   --bs-gray-800: color-mix(in srgb,var(--bs-gray),var(--bs-gray-dark) 80%);
   --bs-gray-900: color-mix(in srgb,var(--bs-gray),var(--bs-gray-dark) 90%);
 
-  --bs-primary-text-emphasis: color-mix(in srgb,var(--bs-primary),var(--bs-black) 75%);
-  --bs-secondary-text-emphasis: color-mix(in srgb,var(--bs-secondary),var(--bs-black) 75%);
-  --bs-success-text-emphasis: color-mix(in srgb,var(--bs-success),var(--bs-black) 75%);
-  --bs-info-text-emphasis: color-mix(in srgb,var(--bs-info),var(--bs-black) 75%);
-  --bs-warning-text-emphasis: color-mix(in srgb,var(--bs-warning),var(--bs-black) 75%);
-  --bs-danger-text-emphasis: color-mix(in srgb,var(--bs-danger),var(--bs-black) 75%);
-  --bs-light-text-emphasis: color-mix(in srgb,var(--bs-light),var(--bs-black) 75%);
-  --bs-dark-text-emphasis: color-mix(in srgb,var(--bs-dark),var(--bs-black) 75%);
+  --bs-primary-text-emphasis: color-mix(in srgb,var(--bs-primary),var(--bs-black) 50%);
+  --bs-secondary-text-emphasis: color-mix(in srgb,var(--bs-secondary),var(--bs-black) 50%);
+  --bs-success-text-emphasis: color-mix(in srgb,var(--bs-success),var(--bs-black) 50%);
+  --bs-info-text-emphasis: color-mix(in srgb,var(--bs-info),var(--bs-black) 50%);
+  --bs-warning-text-emphasis: color-mix(in srgb,var(--bs-warning),var(--bs-black) 50%);
+  --bs-danger-text-emphasis: color-mix(in srgb,var(--bs-danger),var(--bs-black) 50%);
+  --bs-light-text-emphasis: color-mix(in srgb,var(--bs-light),var(--bs-black) 50%);
+  --bs-dark-text-emphasis: color-mix(in srgb,var(--bs-dark),var(--bs-black) 50%);
 
   --bs-primary-bg-subtle: color-mix(in srgb,var(--bs-primary),var(--bs-white) 90%);
   --bs-secondary-bg-subtle: color-mix(in srgb,var(--bs-secondary),var(--bs-white) 90%);
@@ -118,6 +118,7 @@
   --bs-body-bg: var(--bs-white);
   --bs-body-bg-rgb: var(--bs-white-rgb);
   
+  --bs-link-color-rgb: var(--bs-primary-rgb);
   --bs-link-color: var(--bs-primary);
   --bs-link-hover-color: var(--bs-secondary);
   --bs-code-color: #d63384;
@@ -134,6 +135,30 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
+}
+/* We can override button variables at the class level... */
+.btn-primary {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-btn-primary);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+.btn-secondary {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-btn-secondary);
+  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+/* Other button colors are calculated */
+.btn {
+  --bs-btn-border-color: var(--bs-btn-color);
+  --bs-btn-hover-color: var(--bs-btn-color);
+  --bs-btn-hover-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 20%);
+  --bs-btn-hover-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 30%);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--bs-btn-hover-bg);
+  --bs-btn-active-border-color: var(--bs-btn-hover-border);
+  --bs-btn-disabled-color: var(--bs-btn-color);
+  --bs-btn-disabled-bg: var(--bs-btn-bg);
+  --bs-btn-disabled-border-color: var(--bs-btn-bg);
 }
 
 body {
