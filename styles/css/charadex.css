@@ -117,10 +117,11 @@
   --bs-body-color-rgb: var(--bs-dark-rgb);
   --bs-body-bg: var(--bs-white);
   --bs-body-bg-rgb: var(--bs-white-rgb);
-  
-  --bs-link-color-rgb: var(--bs-primary-rgb);
+
   --bs-link-color: var(--bs-primary);
+  --bs-link-color-rgb: var(--bs-primary-rgb);
   --bs-link-hover-color: var(--bs-secondary);
+  --bs-link-hover-color-rgb: var(--bs-secondary-rgb);
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 
@@ -139,26 +140,63 @@
 /* We can override button variables at the class level... */
 .btn-primary {
   --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-btn-primary);
+  --bs-btn-bg: var(--bs-primary);
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
 }
 .btn-secondary {
   --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-btn-secondary);
+  --bs-btn-bg: var(--bs-secondary);
   --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+.btn-success {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
+}
+.btn-info {
+  --bs-btn-color: var(--bs-black);
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
+}
+.btn-warning {
+  --bs-btn-color: var(--bs-black);
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
+}
+.btn-danger {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
+}
+.btn-light {
+  --bs-btn-color: var(--bs-black);
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
+}
+.btn-dark {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
 }
 /* Other button colors are calculated */
 .btn {
-  --bs-btn-border-color: var(--bs-btn-color);
+  --bs-btn-border-color: var(--bs-btn-bg);
   --bs-btn-hover-color: var(--bs-btn-color);
-  --bs-btn-hover-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 20%);
-  --bs-btn-hover-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 30%);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: var(--bs-btn-hover-bg);
-  --bs-btn-active-border-color: var(--bs-btn-hover-border);
+  --bs-btn-hover-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
+  --bs-btn-hover-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
+  --bs-btn-active-color: var(--bs-btn-color);
+  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 10%);
+  --bs-btn-active-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 15%);
   --bs-btn-disabled-color: var(--bs-btn-color);
-  --bs-btn-disabled-bg: var(--bs-btn-bg);
-  --bs-btn-disabled-border-color: var(--bs-btn-bg);
+  --bs-btn-disabled-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
+  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
+}
+/* Outline buttons have their own rules */
+.btn-outline-primary, .btn-outline-secondary, 
+.btn-outline-success, .btn-outline-info, 
+.btn-outline-warning, .btn-outline-danger, 
+.btn-outline-light, .btn-outline-dark {
+  --bs-btn-hover-bg: var(--bs-btn-bg);
 }
 
 body {
