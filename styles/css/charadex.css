@@ -442,17 +442,6 @@ body {
   font-weight: bold;
 }
 
-/*
-.dropdown-menu {
-  background-color: var(--bs-body-bg) !important;
-}
-*/
-
-.dropdown-menu .nav-item .nav-link {
-  font-size: 1em;
-  padding-left: 1em;
-}
-
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
   color: var(--bs-link-hover-color);
@@ -463,33 +452,41 @@ body {
 }
 
 /* Navbar Dropdowns */
-.navbar .dropdown-menu {
-  color: var(--bs-link-color);
-  background-color: var(--bs-body-bg);
-  border-radius: var(--bs-border-radius);
-  border: var(--bs-border-color) var(--bs-border-style) var(--bs-border-width);
-/*  margin-top: 0; */
+.dropdown-menu {
+  color: var(--bs-link-color) !important;
+  background-color: var(--bs-body-bg) !important;
+  border: var(--bs-border-color) var(--bs-border-style) var(--bs-border-width) !important;
+  border-radius: var(--bs-border-radius) !important;
 }
-/*
+
+.dropdown-menu .dropdown-header {
+  color: var(--bs-body-color) !important;
+}
+
+.dropdown-item, .dropdown-menu .nav-item {
+  color: var(--bs-body-color) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item.selected,
+.dropdown-menu .nav-item:hover,
+.dropdown-menu .nav-item:focus,
+.dropdown-menu .nav-item:active {
+  color: var(--bs-link-hover-color) !important;
+}
+
+.dropdown-menu .nav-item .nav-link {
+  font-size: 1em;
+  padding-left: 1em;
+}
+
 .navbar .dropdown-divider {
-  border-top: 1px solid var(--cd-navbar-dropdown-divider) !important;
+  border-top: var(--bs-border-color) var(--bs-border-style) var(--bs-border-width) !important;
   width: 100%;
   padding: 0;
-}
-  */
-  /*
-.navbar .dropdown-menu .nav-item {
-  color: var(--bs-link-color);
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-.navbar .dropdown-menu .nav-item:hover,
-.navbar .dropdown-menu .nav-item:focus,
-.navbar .dropdown-menu .nav-item:active {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
-  background-color: var(--cd-navbar-dropdown-background-hover) !important;
-}
-.navbar .dropdown-menu .dropdown-header {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
 }
 
 /* ************************************************************* */
@@ -807,6 +804,7 @@ label {
   font-weight: bold;
   text-transform: uppercase;
 }
+
 .bootstrap-select > .dropdown-toggle,
 .bootstrap-select > .dropdown-toggle:active,
 .bootstrap-select > .dropdown-toggle:focus,
@@ -816,70 +814,55 @@ label {
   outline: none !important;
   color: var(--bs-body-color) !important;
 }
-/*
-.dropdown-menu {
-  border-radius: var(--bs-border-radius) !important;
-  color: var(--bs-link-color) !important;
-  background-color: var(--bs-body-bg) !important;
-}
-.dropdown-item {
-  color: var(--bs-body-color) !important;
-}
-.dropdown-item:hover,
-.dropdown-item:focus,
-.dropdown-item:active,
-.dropdown-item.selected {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
-  background-color: var(--cd-navbar-dropdown-background-hover) !important;
-}
-  */
+
 option:checked {
-  background-color: var(--cd-primary-color);
-  border-radius: var(--cd-border-radius);
-  color: var(--cd-primary-text-color);
-  padding: .2rem .5rem;
+  background-color: var(--cd-primary-color) !important;
+  border-radius: var(--cd-border-radius) !important;
+  color: var(--cd-primary-text-color) !important;
+  padding: .2rem .5rem !important;
 }
+
 .bs-actionsbox .btn-group {
   display: flex !important;
 }
+
 .bs-actionsbox .btn-group button {
   width: auto;
 }
-/*
+
 .btn.btn-light {
-  color: var(--cd-button-text-color) !important;
-  background-color: var(--cd-button-background-color) !important;
-  border-color: var(--cd-button-border-color) !important;
+  color: var(--bs-black) !important;
+  background-color: var(--bs-light) !important;
+  border-color: var(--bs-light) !important;
   margin: 0 .5rem;
 }
+
 .btn.btn-light:hover,
 .btn.btn-light:focus,
 .btn.btn-light:active {
-  color: var(--cd-button-text-color-hover) !important;
-  border-color: var(--cd-button-border-color-hover) !important;
-  background-color: var(--cd-button-background-color-hover) !important;
+  color: var(--bs-black) !important;
+  border-color: var(--bs-light-text-emphasis) !important;
+  background-color: var(--bs-light-text-emphasis) !important;
   box-shadow: none !important;
 }
-  */
+
 .bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
   right: 1rem;
   top: .5rem;
 }
 
 /* Input */
-/*
 .form-control {
-  background-color: var(--cd-input-background-color) !important;
-  color: var(--cd-input-text-color) !important;
-  border-width: var(--cd-input-border-width) !important;
-  border-style: var(--cd-input-border-style) !important;
-  border-color: var(--cd-input-border-color) !important;
-  border-radius: var(--cd-input-border-radius) !important;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-radius: var(--bs-border-radius) !important;
 }
+
 .form-control:focus,
 .form-control:active {
-  background-color: var(--cd-input-background-color) !important;
-  border-color: var(--cd-input-border-color-hover) !important;
+  background-color: var(--bs-body-bg) !important;
+  border-color: var(--bs-primary) !important;
 }
 
 /* ************************************************************* */
