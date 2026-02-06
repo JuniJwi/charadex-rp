@@ -191,6 +191,7 @@
 }
 /* Overriding bootstrap colors for buttons */
 .btn {
+  --bs-btn-font-size: var(--bs-body-font-size);
   --bs-btn-color: var(--cd-btn-text-color);
   --bs-btn-bg: var(--cd-btn-class-color);
   --bs-btn-border-color: var(--cd-btn-class-color);
@@ -410,6 +411,7 @@ body {
 /* Navbar
 /* ************************************************************* */
 .navbar {
+  font-family: var(--cd-font-header);
   text-transform: uppercase;
   z-index: 2000;
 }
@@ -453,225 +455,6 @@ body {
 .navbar .navbar-nav .nav-link.disabled {
   color: var(--bs-gray) ;
 }
-
-/* Navbar Dropdowns */
-.navbar .dropdown-menu {
-  color: var(--bs-primary);
-  background-color: var(--cd-navbar-dropdown-background-color) !important;
-  border-radius: var(--cd-navbar-dropdown-border-radius) !important;
-  border: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
-  margin-top: 0;
-}
-.navbar .dropdown-divider {
-  border-top: 1px solid var(--cd-navbar-dropdown-divider) !important;
-  width: 100%;
-  padding: 0;
-}
-.navbar .dropdown-menu .nav-item {
-  color: var(--cd-navbar-dropdown-link-color) !important;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-.navbar .dropdown-menu .nav-item:hover,
-.navbar .dropdown-menu .nav-item:focus,
-.navbar .dropdown-menu .nav-item:active {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
-  background-color: var(--cd-navbar-dropdown-background-hover) !important;
-}
-.navbar .dropdown-menu .dropdown-header {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
-}
-
-/* ************************************************************* */
-/*                        6. Tweaks
-/* ************************************************************* */
-/* Adjustments to things that probably don't need changing
-/* unless they're really screwing with your styles.
-/*
-/* ************************************************************* */
-
-img {
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.img-fluid {
-  object-fit: contain;
-  max-height: 600px;
-}
-
-
-/* ************************************************************* */
-/* Pagination
-/* ************************************************************* */
-/*
-.page-link {
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-  border-width: var(--cd-pagination-border-width) !important;
-  border-style: var(--cd-pagination-border-style) !important;
-}
-.page-link,
-.page-item.disabled .page-link {
-  color: var(--cd-pagination-text-color) !important;
-  background-color: var(--cd-pagination-background-color) !important;
-  border-color: var(--cd-pagination-border-color) !important;
-}
-.page-item.active .page-link,
-.page-link:hover,
-.page-link:focus,
-.page-link:active {
-  color: var(--cd-pagination-text-color-hover) !important;
-  background-color: var(--cd-pagination-background-hover) !important;
-  border-color: var(--cd-pagination-border-color-hover) !important;
-}
-
-/* Keeps users from accidentally highlighting */
-
-.page-link {
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Fixes my jank nav/pagination hybrid */
-.nav .pagination .page-item:first-child .page-link {
-  border-radius: 0 !important;
-  border-left: 0 !important;
-}
-.nav .pagination .page-item:last-child .page-link {
-  border-radius: 0 !important;
-}
-.nav .page-item:first-child .page-link {
-  border-radius: var(--cd-pagination-border-radius) 0 0
-    var(--cd-pagination-border-radius) !important;
-}
-.nav .page-item:last-child .page-link {
-  border-radius: 0 var(--cd-pagination-border-radius)
-    var(--cd-pagination-border-radius) 0 !important;
-}
-
-/* ************************************************************* */
-/* Multi Select Fixes - mostly Bootstrap Select
-/* ************************************************************* */
-/*
-label {
-  color: var(--cd-link-text-color);
-  font-family: var(--cd-font-header);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.bootstrap-select > .dropdown-toggle,
-.bootstrap-select > .dropdown-toggle:active,
-.bootstrap-select > .dropdown-toggle:focus,
-.bootstrap-select > .dropdown-toggle:hover {
-  border: 0 !important;
-  box-shadow: none !important;
-  outline: none !important;
-  color: var(--cd-body-text-color) !important;
-}
-.dropdown-menu {
-  border-radius: var(--cd-border-radius) !important;
-  color: var(--cd-navbar-dropdown-link-color) !important;
-  background-color: var(--cd-navbar-dropdown-background-color) !important;
-}
-.dropdown-item {
-  color: var(--cd-body-text-color) !important;
-}
-.dropdown-item:hover,
-.dropdown-item:focus,
-.dropdown-item:active,
-.dropdown-item.selected {
-  color: var(--cd-navbar-dropdown-link-color-hover) !important;
-  background-color: var(--cd-navbar-dropdown-background-hover) !important;
-}
-option:checked {
-  background-color: var(--cd-primary-color);
-  border-radius: var(--cd-border-radius);
-  color: var(--cd-primary-text-color);
-  padding: .2rem .5rem;
-}
-.bs-actionsbox .btn-group {
-  display: flex !important;
-}
-.bs-actionsbox .btn-group button {
-  width: auto;
-}
-.btn.btn-light {
-  color: var(--cd-button-text-color) !important;
-  background-color: var(--cd-button-background-color) !important;
-  border-color: var(--cd-button-border-color) !important;
-  margin: 0 .5rem;
-}
-.btn.btn-light:hover,
-.btn.btn-light:focus,
-.btn.btn-light:active {
-  color: var(--cd-button-text-color-hover) !important;
-  border-color: var(--cd-button-border-color-hover) !important;
-  background-color: var(--cd-button-background-color-hover) !important;
-  box-shadow: none !important;
-}
-.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
-  right: 1rem;
-  top: .5rem;
-}
-
-/* ************************************************************* */
-/* Input
-/* ************************************************************* */
-/*
-.form-control {
-  background-color: var(--cd-input-background-color) !important;
-  color: var(--cd-input-text-color) !important;
-  border-width: var(--cd-input-border-width) !important;
-  border-style: var(--cd-input-border-style) !important;
-  border-color: var(--cd-input-border-color) !important;
-  border-radius: var(--cd-input-border-radius) !important;
-}
-.form-control:focus,
-.form-control:active {
-  background-color: var(--cd-input-background-color) !important;
-  border-color: var(--cd-input-border-color-hover) !important;
-}
-
-
-/* ************************************************************* */
-/* Card
-/* ************************************************************* */
-/*
-.card {
-  background-color: var(--cd-card-background-color) !important;
-  border-width: var(--cd-card-border-width) !important;
-  border-style: var(--cd-card-border-style) !important;
-  border-color: var(--cd-card-border-color) !important;
-  border-radius: var(--cd-border-radius) !important;
-}
-
-.card-header {
-  background-color: var(--cd-card-header-background-color) !important;
-  color: var(--cd-card-header-font-color) !important;
-  border-bottom-color: var(--cd-card-border-color) !important;
-  border-bottom-width: var(--cd-card-border-width) !important;
-  border-bottom-style: var(--cd-card-border-style) !important;
-  font-family: var(--cd-card-header-font-family) !important;
-  border-radius: calc(var(--cd-border-radius) - 1px)
-    calc(var(--cd-border-radius) - 1px) 0 0 !important;
-}
-.card-header a, .card-header a:visited {
-  transition: opacity 0.2s ease-in-out;
-  color: var(--cd-card-header-font-color) !important;
-  font-weight: bold;
-}
-.card-header a:hover {
-  opacity: .8;
-}
-
-.card-footer {
-  border-top-color: var(--cd-card-border-color) !important;
-  border-top-width: var(--cd-card-border-width) !important;
-  border-top-style: var(--cd-card-border-style) !important;
-  font-family: var(--cd-card-header-font-family) !important;
-  border-radius: 0 0 calc(var(--cd-border-radius) - 1px)
-    calc(var(--cd-border-radius) - 1px) !important;
-  font-size: .875em;
-}
-
 
 /* ************************************************************* */
 /* Various Text Styling
@@ -917,11 +700,152 @@ a.badge.badge-primary:active,
 }
 
 /* ************************************************************* */
+/*                        6. Tweaks
+/* ************************************************************* */
+/* Adjustments to things that probably don't need changing
+/* unless they're really screwing with your styles.
+/*
+/* ************************************************************* */
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.img-fluid {
+  object-fit: contain;
+  max-height: 600px;
+}
+
+
+/* ************************************************************* */
+/* Pagination
+/* ************************************************************* */
+/*
+.page-link {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+  border-width: var(--cd-pagination-border-width) !important;
+  border-style: var(--cd-pagination-border-style) !important;
+}
+.page-link,
+.page-item.disabled .page-link {
+  color: var(--cd-pagination-text-color) !important;
+  background-color: var(--cd-pagination-background-color) !important;
+  border-color: var(--cd-pagination-border-color) !important;
+}
+.page-item.active .page-link,
+.page-link:hover,
+.page-link:focus,
+.page-link:active {
+  color: var(--cd-pagination-text-color-hover) !important;
+  background-color: var(--cd-pagination-background-hover) !important;
+  border-color: var(--cd-pagination-border-color-hover) !important;
+}
+
+/* Keeps users from accidentally highlighting */
+.page-link {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Fixes nav/pagination hybrid */
+.nav .pagination .page-item:first-child .page-link {
+  border-radius: 0 !important;
+  border-left: 0 !important;
+}
+.nav .pagination .page-item:last-child .page-link {
+  border-radius: 0 !important;
+}
+.nav .page-item:first-child .page-link {
+  border-radius: var(--cd-pagination-border-radius) 0 0
+    var(--cd-pagination-border-radius) !important;
+}
+.nav .page-item:last-child .page-link {
+  border-radius: 0 var(--cd-pagination-border-radius)
+    var(--cd-pagination-border-radius) 0 !important;
+}
+
+/* Multi Select Fixes - mostly Bootstrap Select */
+label {
+  color: var(--bs-link-color);
+  font-family: var(--cd-font-body);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.bootstrap-select > .dropdown-toggle,
+.bootstrap-select > .dropdown-toggle:active,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:hover {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: var(--cd-body-text-color) !important;
+}
+.dropdown-menu {
+  border-radius: var(--cd-border-radius) !important;
+  color: var(--cd-navbar-dropdown-link-color) !important;
+  background-color: var(--cd-navbar-dropdown-background-color) !important;
+}
+.dropdown-item {
+  color: var(--cd-body-text-color) !important;
+}
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item.selected {
+  color: var(--cd-navbar-dropdown-link-color-hover) !important;
+  background-color: var(--cd-navbar-dropdown-background-hover) !important;
+}
+option:checked {
+  background-color: var(--cd-primary-color);
+  border-radius: var(--cd-border-radius);
+  color: var(--cd-primary-text-color);
+  padding: .2rem .5rem;
+}
+.bs-actionsbox .btn-group {
+  display: flex !important;
+}
+.bs-actionsbox .btn-group button {
+  width: auto;
+}
+.btn.btn-light {
+  color: var(--cd-button-text-color) !important;
+  background-color: var(--cd-button-background-color) !important;
+  border-color: var(--cd-button-border-color) !important;
+  margin: 0 .5rem;
+}
+.btn.btn-light:hover,
+.btn.btn-light:focus,
+.btn.btn-light:active {
+  color: var(--cd-button-text-color-hover) !important;
+  border-color: var(--cd-button-border-color-hover) !important;
+  background-color: var(--cd-button-background-color-hover) !important;
+  box-shadow: none !important;
+}
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+  right: 1rem;
+  top: .5rem;
+}
+
+/* Input */
+.form-control {
+  background-color: var(--cd-input-background-color) !important;
+  color: var(--cd-input-text-color) !important;
+  border-width: var(--cd-input-border-width) !important;
+  border-style: var(--cd-input-border-style) !important;
+  border-color: var(--cd-input-border-color) !important;
+  border-radius: var(--cd-input-border-radius) !important;
+}
+.form-control:focus,
+.form-control:active {
+  background-color: var(--cd-input-background-color) !important;
+  border-color: var(--cd-input-border-color-hover) !important;
+}
+
+/* ************************************************************* */
 /* Chee's Tweaks
 /* ************************************************************* */
 
 /* Remove ugly box shadow */
-/*
 button:focus,
 .page-link:focus,
 .form-control:focus {
