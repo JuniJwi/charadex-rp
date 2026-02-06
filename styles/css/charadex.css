@@ -442,6 +442,12 @@ body {
   font-weight: bold;
 }
 
+/*
+.dropdown-menu {
+  background-color: var(--bs-body-bg) !important;
+}
+*/
+
 .dropdown-menu .nav-item .nav-link {
   font-size: 1em;
   padding-left: 1em;
@@ -786,12 +792,12 @@ img {
   border-radius: 0 !important;
 }
 .nav .page-item:first-child .page-link {
-  border-radius: var(--cd-pagination-border-radius) 0 0
-    var(--cd-pagination-border-radius) !important;
+  border-radius: var(--bs-border-radius) 0 0
+    var(--bs-border-radius) !important;
 }
 .nav .page-item:last-child .page-link {
-  border-radius: 0 var(--cd-pagination-border-radius)
-    var(--cd-pagination-border-radius) 0 !important;
+  border-radius: 0 var(--bs-border-radius)
+    var(--bs-border-radius) 0 !important;
 }
 
 /* Multi Select Fixes - mostly Bootstrap Select */
@@ -808,15 +814,16 @@ label {
   border: 0 !important;
   box-shadow: none !important;
   outline: none !important;
-  color: var(--cd-body-text-color) !important;
+  color: var(--bs-body-color) !important;
 }
+/*
 .dropdown-menu {
-  border-radius: var(--cd-border-radius) !important;
-  color: var(--cd-navbar-dropdown-link-color) !important;
-  background-color: var(--cd-navbar-dropdown-background-color) !important;
+  border-radius: var(--bs-border-radius) !important;
+  color: var(--bs-link-color) !important;
+  background-color: var(--bs-body-bg) !important;
 }
 .dropdown-item {
-  color: var(--cd-body-text-color) !important;
+  color: var(--bs-body-color) !important;
 }
 .dropdown-item:hover,
 .dropdown-item:focus,
@@ -825,6 +832,7 @@ label {
   color: var(--cd-navbar-dropdown-link-color-hover) !important;
   background-color: var(--cd-navbar-dropdown-background-hover) !important;
 }
+  */
 option:checked {
   background-color: var(--cd-primary-color);
   border-radius: var(--cd-border-radius);
@@ -837,6 +845,7 @@ option:checked {
 .bs-actionsbox .btn-group button {
   width: auto;
 }
+/*
 .btn.btn-light {
   color: var(--cd-button-text-color) !important;
   background-color: var(--cd-button-background-color) !important;
@@ -851,12 +860,14 @@ option:checked {
   background-color: var(--cd-button-background-color-hover) !important;
   box-shadow: none !important;
 }
+  */
 .bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
   right: 1rem;
   top: .5rem;
 }
 
 /* Input */
+/*
 .form-control {
   background-color: var(--cd-input-background-color) !important;
   color: var(--cd-input-text-color) !important;
