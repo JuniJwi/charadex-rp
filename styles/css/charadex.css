@@ -149,42 +149,42 @@
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 /* Setting our color palettes for buttons... */
-.btn-primary {
+.btn-primary, .btn-outline-primary {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-primary);
   --cd-btn-class-color-rgb: var(--bs-primary-rgb);
 }
-.btn-secondary {
+.btn-secondary, .btn-outline-secondary {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-secondary);
   --cd-btn-class-color-rgb: var(--bs-secondary-rgb);
 }
-.btn-success {
+.btn-success, .btn-outline-success {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-success);
   --cd-btn-class-color-rgb: var(--bs-success-rgb);
 }
-.btn-info {
+.btn-info, .btn-outline-info {
   --cd-btn-text-color: var(--bs-black);
   --cd-btn-class-color: var(--bs-info);
   --cd-btn-class-color-rgb: var(--bs-info-rgb);
 }
-.btn-warning {
+.btn-warning, .btn-outline-warning {
   --cd-btn-text-color: var(--bs-black);
   --cd-btn-class-color: var(--bs-warning);
   --cd-btn-class-color-rgb: var(--bs-warning-rgb);
 }
-.btn-danger {
+.btn-danger, .btn-outline-danger {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-danger);
   --cd-btn-class-color-rgb: var(--bs-danger-rgb);
 }
-.btn-light {
+.btn-light, .btn-outline-light {
   --cd-btn-text-color: var(--bs-black);
   --cd-btn-class-color: var(--bs-light);
   --cd-btn-class-color-rgb: var(--bs-light-rgb);
 }
-.btn-dark {
+.btn-dark, .btn-outline-dark {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-dark);
   --cd-btn-class-color-rgb: var(--bs-dark-rgb);
