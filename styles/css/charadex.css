@@ -456,6 +456,36 @@ body {
   color: var(--bs-gray) ;
 }
 
+/* Navbar Dropdowns */
+.navbar .dropdown-menu {
+  color: var(--bs-link-color);
+  background-color: var(--bs-body-bg);
+  border-radius: var(--bs-border-radius);
+  border: var(--bs-border-color) var(--bs-border-style) var(--bs-border-width);
+/*  margin-top: 0; */
+}
+/*
+.navbar .dropdown-divider {
+  border-top: 1px solid var(--cd-navbar-dropdown-divider) !important;
+  width: 100%;
+  padding: 0;
+}
+  */
+  /*
+.navbar .dropdown-menu .nav-item {
+  color: var(--bs-link-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.navbar .dropdown-menu .nav-item:hover,
+.navbar .dropdown-menu .nav-item:focus,
+.navbar .dropdown-menu .nav-item:active {
+  color: var(--cd-navbar-dropdown-link-color-hover) !important;
+  background-color: var(--cd-navbar-dropdown-background-hover) !important;
+}
+.navbar .dropdown-menu .dropdown-header {
+  color: var(--cd-navbar-dropdown-link-color-hover) !important;
+}
+
 /* ************************************************************* */
 /* Various Text Styling
 /* ************************************************************* */
