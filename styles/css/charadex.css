@@ -1,26 +1,57 @@
-:root {
-  /* ============================================================= */
-  /*
-  /* Bootstrap Overrides
-  /*
-  /* ============================================================= */
-  /* These variables override bootstrap's color and styling.
-  /* https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables
-  /* ============================================================= */
+/* ************************************************************* */
+/*
+/* Charadex CSS Styling
+/*
+/* ************************************************************* */
+/* You should visit any section with [!!!] and adjust their settings.
+/*
+/* INDEX
+/*   1. Basic Variables       [!!!]
+/*   2. Color Calculations
+/*   3. Bootstrap Overrides   [!!!]
+/*   4. 
+/*
+/* ************************************************************* */
+/* Some notes about CSS:
+/*   - CSS reads from top to bottom. If something is re-defined
+/*     further below, that definition takes precedence.
+/*
+/*   - The more specific a definition is, the more important it is.
+/*
+/*   - You can use !important to prevent a definition from being
+/*     overridden by other classes.
+/*
+/*   - "bs" is used as a prefix for Boostrap. "cd" is used as
+/*     a prefix for charadex.
+/*
+/* ************************************************************* */
 
-  /* THEME colors for your site */
+/* ************************************************************* */
+/*                      1. Basic Variables
+/* ************************************************************* */
+/* These variables override bootstrap's color and styling.
+/*
+/* https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables
+/*
+/* ************************************************************* */
+:root {
+/* RGB variables use RGB values. You can use a color picker like
+/* https://www.w3schools.com/colors/colors_picker.asp
+/* to select RGB values.
+
+/* THEME colors for your site */
   --bs-primary-rgb: 187, 95, 19;
   --bs-secondary-rgb: 108, 117, 125;
   
-  /* may want to flip these if going dark mode */
+/* may want to flip these if going dark mode */
   --bs-black-rgb: 0, 0, 0;
   --bs-white-rgb: 255, 255, 255;
 
-  /* greys range from the first to the second */
+/* greys range from the first to the second */
   --bs-gray: #afb6bd;
   --bs-gray-dark: #343a40;
 
-  /* used for alerts, cards, buttons, etc */
+/* used for alerts, cards, buttons, etc */
   --bs-success-rgb: 25, 135, 84; /* for success, approve, save, etc */
   --bs-info-rgb: 13, 202, 240;   /* for info popups and tips */
   --bs-warning-rgb: 255, 193, 7; /* for warnings and alerts */
@@ -28,20 +59,40 @@
   --bs-light-rgb: 248, 249, 250; /* if you want light text or cards */
   --bs-dark-rgb: 33, 37, 41;     /* if you want dark text or cards */
 
-  /* font variables */
+/* font variables */
   --cd-font-header: "Comfortaa";
   --cd-font-body: "Montserrat";
   --cd-font-monospace: SFMono-Regular;
   --cd-font-serif: "Domine";
   --cd-font-decorative: "Permanent Marker";
 
-  /* ============================================================= */
-  /* 
-  /* These bootstrap variables are calculated based on the above and
-  /* do not need to be adjusted... unless you have specific color needs
-  /* such as tweaking contrast or specifying hues.
-  /*
-  /* ============================================================= */
+  --bs-body-font-size: .9rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+
+/* technically you can change these colors but bootstrap doesn't really use em */
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+
+/* ************************************************************* */
+/*                    2. Color Calculations
+/* ************************************************************* */
+/* 
+/* These bootstrap variables are calculated based on the above and
+/* do not need to be adjusted... unless you have specific color needs
+/* such as tweaking contrast or specifying hues.
+/*
+/* You can ignore this section, at least to start.
+/* 
+/* ************************************************************* */
   --bs-primary: rgb(var(--bs-primary-rgb));
   --bs-secondary: rgb(var(--bs-secondary-rgb));
   --bs-black: rgb(var(--bs-black-rgb));
@@ -92,27 +143,113 @@
 
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
-  /* technically you can change these colors but bootstrap doesn't really use em */
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-
-  /* Fonts will default to the first available. Universal fonts are listed just in case. */
+/* Fonts will default to the first available. Universal fonts are listed just in case. */
   --bs-font-sans-serif:var(--cd-font-body), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: var(--cd-font-monospace), SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-body-font-family: var(--bs-font-sans-serif);
+}
+/* Setting our color palettes for buttons... */
+.btn-primary {
+  --cd-btn-text-color: var(--bs-white);
+  --cd-btn-class-color: var(--bs-primary);
+  --cd-btn-class-color-rgb: var(--bs-primary-rgb);
+}
+.btn-secondary {
+  --cd-btn-text-color: var(--bs-white);
+  --cd-btn-class-color: var(--bs-secondary);
+  --cd-btn-class-color-rgb: var(--bs-secondary-rgb);
+}
+.btn-success {
+  --cd-btn-text-color: var(--bs-white);
+  --cd-btn-class-color: var(--bs-success);
+  --cd-btn-class-color-rgb: var(--bs-success-rgb);
+}
+.btn-info {
+  --cd-btn-text-color: var(--bs-black);
+  --cd-btn-class-color: var(--bs-info);
+  --cd-btn-class-color-rgb: var(--bs-info-rgb);
+}
+.btn-warning {
+  --cd-btn-text-color: var(--bs-black);
+  --cd-btn-class-color: var(--bs-warning);
+  --cd-btn-class-color-rgb: var(--bs-warning-rgb);
+}
+.btn-danger {
+  --cd-btn-text-color: var(--bs-white);
+  --cd-btn-class-color: var(--bs-danger);
+  --cd-btn-class-color-rgb: var(--bs-danger-rgb);
+}
+.btn-light {
+  --cd-btn-text-color: var(--bs-black);
+  --cd-btn-class-color: var(--bs-light);
+  --cd-btn-class-color-rgb: var(--bs-light-rgb);
+}
+.btn-dark {
+  --cd-btn-text-color: var(--bs-white);
+  --cd-btn-class-color: var(--bs-dark);
+  --cd-btn-class-color-rgb: var(--bs-dark-rgb);
+}
+/* Overriding bootstrap colors for buttons */
+.btn {
+  --bs-btn-color: var(--cd-btn-text-color);
+  --bs-btn-bg: var(--cd-btn-class-color);
+  --bs-btn-border-color: var(--cd-btn-class-color);
 
-  --bs-body-font-size: .9rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
+  --bs-btn-focus-shadow-rgb: var(--cd-btn-class-color-rgb);
+  --bs-btn-hover-color: var(--bs-btn-color);
+  --bs-btn-hover-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
+  --bs-btn-hover-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
 
+  --bs-btn-active-color: var(--bs-btn-color);
+  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 10%);
+  --bs-btn-active-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 15%);
+
+  --bs-btn-disabled-color: var(--bs-btn-color);
+  --bs-btn-disabled-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
+  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
+}
+/* special rules for outline buttons */
+.btn-outline-primary, .btn-outline-secondary, 
+.btn-outline-success, .btn-outline-info, 
+.btn-outline-warning, .btn-outline-danger, 
+.btn-outline-light, .btn-outline-dark {
+  --bs-btn-color: var(--cd-btn-class-color);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--cd-btn-class-color);
+
+  --bs-btn-focus-shadow-rgb: var(--cd-btn-class-color-rgb);
+  --bs-btn-hover-color: var(--cd-btn-text-color);
+  --bs-btn-hover-bg: var(--cd-btn-class-color);
+  --bs-btn-hover-border-color: var(--cd-btn-class-color);
+
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-hover-bg),var(--bs-black) 10%);
+  --bs-btn-active-border-color: color-mix(in srgb,var(--bs-btn-hover-bg),var(--bs-black) 15%);
+
+  --bs-btn-disabled-color: color-mix(in srgb,var(--bs-btn-color),var(--bs-white) 5%);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-border-color),var(--bs-white) 5%);
+}
+
+/* misc fixes */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  --bs-nav-pills-link-active-bg: var(--bs-primary);
+}
+.progress, .progress-stacked {
+  --bs-progress-bar-bg: var(--bs-primary);
+}
+
+:root {
+  /* ************************************************************* */
+  /*                 3. Bootstrap Overrides
+  /* ************************************************************* */
+  /* 
+  /* Tweak these to further adjust bootstrap CSS
+  /*
+  /* The reason these are below the calculations is because
+  /* they rely on the variables defined above in some cases.
+  /*
+  /* ************************************************************* */
   --bs-body-color: var(--bs-dark);
   --bs-body-color-rgb: var(--bs-dark-rgb);
   --bs-body-bg: var(--bs-white);
@@ -137,131 +274,29 @@
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
 }
-/* We can override button variables at the class level... */
-.btn-primary {
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-primary);
-  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
-}
-.btn-secondary {
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-secondary);
-  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
-}
-.btn-success {
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-success);
-  --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
-}
-.btn-info {
-  --bs-btn-color: var(--bs-black);
-  --bs-btn-bg: var(--bs-info);
-  --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
-}
-.btn-warning {
-  --bs-btn-color: var(--bs-black);
-  --bs-btn-bg: var(--bs-warning);
-  --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
-}
-.btn-danger {
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-danger);
-  --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
-}
-.btn-light {
-  --bs-btn-color: var(--bs-black);
-  --bs-btn-bg: var(--bs-light);
-  --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
-}
-.btn-dark {
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bs-dark);
-  --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
-}
-/* Other button colors are calculated */
-.btn {
-  --bs-btn-border-color: var(--bs-btn-bg);
-  --bs-btn-hover-color: var(--bs-btn-color);
-  --bs-btn-hover-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
-  --bs-btn-hover-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
-  --bs-btn-active-color: var(--bs-btn-color);
-  --bs-btn-active-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 10%);
-  --bs-btn-active-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-black) 15%);
-  --bs-btn-disabled-color: var(--bs-btn-color);
-  --bs-btn-disabled-bg: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 10%);
-  --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-bg),var(--bs-white) 5%);
-}
-.btn-outline-primary {
-  --bs-btn-color: var(--bs-primary);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
-}
-.btn-outline-secondary {
-  --bs-btn-color: var(--bs-secondary);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
-}
-.btn-outline-success {
-  --bs-btn-color: var(--bs-success);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
-}
-.btn-outline-info {
-  --bs-btn-color: var(--bs-info);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-info-rgb);
-}
-.btn-outline-warning {
-  --bs-btn-color: var(--bs-warning);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-warning-rgb);
-}
-.btn-outline-danger {
-  --bs-btn-color: var(--bs-danger);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
-}
-.btn-outline-light {
-  --bs-btn-color: var(--bs-light);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-light-rgb);
-}
-.btn-outline-dark {
-  --bs-btn-color: var(--bs-dark);
-  --bs-btn-bg: transparent;
-  --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
-}
-
-/* misc fixes */
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  --bs-nav-pills-link-active-bg: var(--bs-primary);
-}
-.progress, .progress-stacked {
-  --bs-progress-bar-bg: var(--bs-primary);
-}
 
 body {
-  /* ============================================================= */
+  /* ************************************************************* */
   /*
   /* Charadex Variables
   /*
-  /* ============================================================= */
+  /* ************************************************************* */
   /* 
   /* These variables trickle down into all the .css styles, but you
   /* can fine tune them even further if you'd like. Some colors won't
   /* always play well together.
   /*
-  /* ============================================================= */
+  /* ************************************************************* */
   /* Main Background
-  ================================================================ */
+  *************************************************************=== */
   --cd-body-background-color: var(--bs-light);
   --cd-body-background-image: url("/charadex-rp/assets/bg-image.png");
   /* container background */
   --cd-faded-background-color: rgba(var(--bs-light), 0.2);
 
-  /* ============================================================= */
+  /* ************************************************************* */
   /* Category Badges
-  ================================================================ */
+  *************************************************************=== */
   /* Character categories appear as button "badges" in listings */
   /* You can customize these colors to suit factions and stuff  */
   --cd-rarity-one-bg: #143c81;
@@ -281,13 +316,13 @@ body {
 }
 
 
-/* =============================================================== */
+/* *************************************************************== */
 /*
 /* Charadex CSS
 /*
-/* =============================================================== */
+/* *************************************************************== */
 /* You can further tweak Charadex CSS styles here.
-/* =============================================================== */
+/* *************************************************************== */
 /* Global */
 body {
   min-height: 100vh;
@@ -352,9 +387,9 @@ body {
   margin-right: 0.3rem;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Containers
-/* ============================================================= */
+/* ************************************************************* */
 #main-container {
   padding: 1rem;
   -ms-flex: 1 1 auto !important;
@@ -380,9 +415,9 @@ body {
   max-width: 950px !important;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Images
-/* ============================================================= */
+/* ************************************************************* */
 
 img {
   image-rendering: -webkit-optimize-contrast;
@@ -393,9 +428,9 @@ img {
   max-height: 600px;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Navbar
-/* ============================================================= */
+/* ************************************************************* */
 .navbar {
   font-family: var(--cd-font-header);
   text-transform: uppercase;
@@ -470,9 +505,9 @@ img {
   color: var(--cd-navbar-dropdown-link-color-hover) !important;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Pagination
-/* ============================================================= */
+/* ************************************************************* */
 /*
 .page-link {
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border 0.2s ease-in-out;
@@ -518,9 +553,9 @@ img {
     var(--cd-pagination-border-radius) 0 !important;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Multi Select Fixes - mostly Bootstrap Select
-/* ============================================================= */
+/* ************************************************************* */
 /*
 label {
   color: var(--cd-link-text-color);
@@ -583,9 +618,9 @@ option:checked {
   top: .5rem;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Input
-/* ============================================================= */
+/* ************************************************************* */
 /*
 .form-control {
   background-color: var(--cd-input-background-color) !important;
@@ -602,9 +637,9 @@ option:checked {
 }
 
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Card
-/* ============================================================= */
+/* ************************************************************* */
 /*
 .card {
   background-color: var(--cd-card-background-color) !important;
@@ -644,9 +679,9 @@ option:checked {
 }
 
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Various Text Styling
-/* ============================================================= */
+/* ************************************************************* */
 
 /* Links */
 /*
@@ -755,14 +790,14 @@ ol li::marker {
   margin-bottom: 0.5em;
   padding-left: 0.5em;
 }
-.nav-item ul li, .nav-item ol li {
-  margin-bottom: 0;
-  padding-left: 0;
+.nav ul li {
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Horizontal Rule
-/* ============================================================= */
+/* ************************************************************* */
 /*
 hr {
   width: 100%;
@@ -774,9 +809,9 @@ hr {
   margin: 1em auto 1em auto;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Tooltips
-/* ============================================================= */
+/* ************************************************************* */
 /*
 .tooltip {
   z-index: 10000 !important;
@@ -805,9 +840,9 @@ hr {
     border-top-color: var(--cd-primary-color);
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Buttons & Badges
-/* ============================================================= */
+/* ************************************************************* */
 /*
 .btn,
 .nav-pills .nav-link {
@@ -839,9 +874,9 @@ a.badge.badge-primary:active,
   box-shadow: none !important;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* to Top & Bottom
-/* ============================================================= */
+/* ************************************************************* */
 .to-top {
   right: calc((100vw - 950px) / 2 - 99px);
   top: 45%;
@@ -853,9 +888,9 @@ a.badge.badge-primary:active,
   width: 100px;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Loading
-/* ============================================================= */
+/* ************************************************************* */
 
 /* Spinner icon */
 .loading {
@@ -887,9 +922,9 @@ a.badge.badge-primary:active,
   display: block;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Chee's Tweaks
-/* ============================================================= */
+/* ************************************************************* */
 
 /* Remove ugly box shadow */
 /*
@@ -925,9 +960,9 @@ p:last-child {
   }
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Charadex
-/* ============================================================= */
+/* ************************************************************* */
 /*
 #gallery-card,
 #prompt-card,
@@ -1038,9 +1073,9 @@ p:last-child {
   white-space: break-spaces;
 }
 
-/* ============================================================= */
+/* ************************************************************* */
 /* Category Badges
-/* ============================================================= */
+/* ************************************************************* */
 
 .badge-all {
   background-color: var(--cd-faded-background-color);
