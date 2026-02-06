@@ -9,7 +9,7 @@
 /*   1. Basic Variables       [!!!]
 /*   2. Color Calculations
 /*   3. Bootstrap Overrides   [!!!]
-/*   4. 
+/*   4. Charadex Variables    [!!!]
 /*
 /* ************************************************************* */
 /* Some notes about CSS:
@@ -23,21 +23,20 @@
 /*
 /*   - "bs" is used as a prefix for Boostrap. "cd" is used as
 /*     a prefix for charadex.
+/*   - RGB variables use RGB values. You can use a color picker like
+/*     https://www.w3schools.com/colors/colors_picker.asp
+/*     to select RGB values.
 /*
 /* ************************************************************* */
 
+:root {
 /* ************************************************************* */
 /*                      1. Basic Variables
 /* ************************************************************* */
 /* These variables override bootstrap's color and styling.
-/*
 /* https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables
 /*
 /* ************************************************************* */
-:root {
-/* RGB variables use RGB values. You can use a color picker like
-/* https://www.w3schools.com/colors/colors_picker.asp
-/* to select RGB values.
 
 /* THEME colors for your site */
   --bs-primary-rgb: 187, 95, 19;
@@ -93,6 +92,7 @@
 /* You can ignore this section, at least to start.
 /* 
 /* ************************************************************* */
+
   --bs-primary: rgb(var(--bs-primary-rgb));
   --bs-secondary: rgb(var(--bs-secondary-rgb));
   --bs-black: rgb(var(--bs-black-rgb));
@@ -240,21 +240,23 @@
 }
 
 :root {
-  /* ************************************************************* */
-  /*                 3. Bootstrap Overrides
-  /* ************************************************************* */
-  /* 
-  /* Tweak these to further adjust bootstrap CSS
-  /*
-  /* The reason these are below the calculations is because
-  /* they rely on the variables defined above in some cases.
-  /*
-  /* ************************************************************* */
+/* ************************************************************* */
+/*                 3. Bootstrap Overrides
+/* ************************************************************* */
+/* Tweak these to further adjust bootstrap CSS
+/*
+/* The reason these are below the calculations is because
+/* they rely on the variables defined above in some cases.
+/*
+/* ************************************************************* */
+
+/* body text */
   --bs-body-color: var(--bs-dark);
   --bs-body-color-rgb: var(--bs-dark-rgb);
   --bs-body-bg: var(--bs-white);
   --bs-body-bg-rgb: var(--bs-white-rgb);
 
+/* link text */
   --bs-link-color: var(--bs-primary);
   --bs-link-color-rgb: var(--bs-primary-rgb);
   --bs-link-hover-color: var(--bs-secondary);
@@ -262,6 +264,7 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 
+/* border styles */
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -276,29 +279,18 @@
 }
 
 body {
-  /* ************************************************************* */
-  /*
-  /* Charadex Variables
-  /*
-  /* ************************************************************* */
-  /* 
-  /* These variables trickle down into all the .css styles, but you
-  /* can fine tune them even further if you'd like. Some colors won't
-  /* always play well together.
-  /*
-  /* ************************************************************* */
-  /* Main Background
-  *************************************************************=== */
-  --cd-body-background-color: var(--bs-light);
-  --cd-body-background-image: url("/charadex-rp/assets/bg-image.png");
-  /* container background */
-  --cd-faded-background-color: rgba(var(--bs-light), 0.2);
+/* ************************************************************* */
+/*                   4. Charadex Variables
+/* ************************************************************* */
+/* These variables trickle down into all the .css styles, but you
+/* can fine tune them even further if you'd like. Some colors won't
+/* always play well together.
+/*
+/* ************************************************************* */
 
-  /* ************************************************************* */
-  /* Category Badges
-  *************************************************************=== */
-  /* Character categories appear as button "badges" in listings */
-  /* You can customize these colors to suit factions and stuff  */
+/* Category Badges */
+/* Character categories appear as "badges" in listings        */
+/* You can customize these colors to suit factions and stuff  */
   --cd-rarity-one-bg: #143c81;
   --cd-rarity-one-txt: #ffffff;
 
@@ -315,23 +307,22 @@ body {
   --cd-rarity-five-txt: #ffffff;
 }
 
-
-/* *************************************************************== */
-/*
-/* Charadex CSS
-/*
-/* *************************************************************== */
+/* ************************************************************* */
+/*                       5. Charadex Styles
+/* ************************************************************* */
 /* You can further tweak Charadex CSS styles here.
-/* *************************************************************== */
+/*
+/* ************************************************************* */
+
 /* Global */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
-  /* Main Background */
-  background-color: var(--cd-body-background-color);
-  background-image: var(--cd-body-background-image);
+/* Main Background */
+  background-color: var(--bs-light);
+  background-image: url("/charadex-rp/assets/bg-image.png");
   background-position: center top;
   background-size: auto;
   background-repeat: repeat;
@@ -352,7 +343,7 @@ body {
 /* Scrollbar */
 @media (min-width: 992px) {
   body::-webkit-scrollbar-track {
-    background-color: var(--cd-faded-background-color);
+    background-color: rgba(var(--bs-light), 0.2);
     border-width: 0px !important;
   }
 
@@ -416,28 +407,14 @@ body {
 }
 
 /* ************************************************************* */
-/* Images
-/* ************************************************************* */
-
-img {
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.img-fluid {
-  object-fit: contain;
-  max-height: 600px;
-}
-
-/* ************************************************************* */
 /* Navbar
 /* ************************************************************* */
 .navbar {
-  font-family: var(--cd-font-header);
   text-transform: uppercase;
   z-index: 2000;
 }
 
-/* Navbar Logo */
+/* Navbar "Brand" aka title/logo */
 .navbar .navbar-brand {
   color: var(--bs-primary);
   font-size: 2rem;
@@ -478,9 +455,8 @@ img {
 }
 
 /* Navbar Dropdowns */
-/*
 .navbar .dropdown-menu {
-  color: var(--cd-navbar-dropdown-link-color) !important;
+  color: var(--bs-primary);
   background-color: var(--cd-navbar-dropdown-background-color) !important;
   border-radius: var(--cd-navbar-dropdown-border-radius) !important;
   border: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
@@ -504,6 +480,24 @@ img {
 .navbar .dropdown-menu .dropdown-header {
   color: var(--cd-navbar-dropdown-link-color-hover) !important;
 }
+
+/* ************************************************************* */
+/*                        6. Tweaks
+/* ************************************************************* */
+/* Adjustments to things that probably don't need changing
+/* unless they're really screwing with your styles.
+/*
+/* ************************************************************* */
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.img-fluid {
+  object-fit: contain;
+  max-height: 600px;
+}
+
 
 /* ************************************************************* */
 /* Pagination
@@ -786,7 +780,7 @@ ol li::marker {
   font-family: var(--cd-font-header);
 }
 
-.container ul li, .container ol li {
+#main-container ul li, #main-container ol li {
   margin-bottom: 0.5em;
   padding-left: 0.5em;
 }
