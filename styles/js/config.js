@@ -243,7 +243,7 @@ charadex.page.masterlist = {
 
   pagination: {
     toggle: true,
-    bottomToggle: false,
+    bottomToggle: true,
     amount: 12,
   },
 
@@ -293,7 +293,7 @@ charadex.page.masterlist = {
 
       pagination: {
         toggle: true,
-        bottomToggle: false,
+        bottomToggle: true,
         amount: 12,
       },
 
@@ -351,7 +351,7 @@ charadex.page.player = {
 
   pagination: {
     toggle: true,
-    bottomToggle: false,
+    bottomToggle: true,
     amount: 24,
   },
 
@@ -398,7 +398,7 @@ charadex.page.player = {
 
       pagination: {
         toggle: true,
-        bottomToggle: false,
+        bottomToggle: true,
         amount: 12,
       },
 
