@@ -342,7 +342,7 @@ charadex.manageData = {
     let inventoryData = [];
     // Check if we have items in our inventory, and if so, attach data.
     for (let item of itemArr) {
-      if (item.item in inventory) {
+      if (item.item in inventory && inventory[item.item] != 0) {
         inventoryData.push({
           ... item,
           ... {
