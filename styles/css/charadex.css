@@ -738,29 +738,6 @@ img {
   border-color: var(--bs-primary) !important;
 }
 
-/* Keeps users from accidentally highlighting */
-.page-link {
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Fixes nav/pagination hybrid */
-.nav .pagination .page-item:first-child .page-link {
-  border-radius: 0 !important;
-}
-
-.nav .pagination .page-item:last-child .page-link {
-  border-radius: 0 !important;
-}
-
-.nav .page-item:first-child .page-link {
-  border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
-}
-
-.nav .page-item:last-child .page-link {
-  border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0 !important;
-}
-
 /* ------------------------------------------------------------- */
 /* Bootstrap Select
 /* ------------------------------------------------------------- */
