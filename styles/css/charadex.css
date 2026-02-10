@@ -296,22 +296,6 @@ h6 { font-size: var(--cd-header-min-size); }
   --bs-highlight-bg: #fff3cd;
 
 /* ------------------------------------------------------------- */
-/* link and text
-/* ------------------------------------------------------------- */
-  --bs-link-color: var(--bs-primary);
-  --bs-link-color-rgb: var(--bs-primary-rgb);
-  --bs-link-hover-color: var(--bs-secondary);
-  --bs-link-hover-color-rgb: var(--bs-secondary-rgb);
-
-  /* dropdown links */
-  --bs-dropdown-link-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-color: var(--bs-primary);
-  --bs-dropdown-link-hover-bg: var(--bs-primary-bg-subtle);
-  --bs-dropdown-link-active-color: var(--bs-white);
-  --bs-dropdown-link-active-bg: var(--bs-primary);
-  --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
-
-/* ------------------------------------------------------------- */
 /* border styles
 /* ------------------------------------------------------------- */
   --bs-border-width: 1px;
@@ -325,6 +309,24 @@ h6 { font-size: var(--cd-header-min-size); }
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
+
+/* ------------------------------------------------------------- */
+/* link and text
+/* ------------------------------------------------------------- */
+  --bs-link-color: var(--bs-primary);
+  --bs-link-color-rgb: var(--bs-primary-rgb);
+  --bs-link-hover-color: var(--bs-secondary);
+  --bs-link-hover-color-rgb: var(--bs-secondary-rgb);
+}
+
+  /* dropdown links */
+.dropdown-menu {
+  --bs-dropdown-link-color: var(--bs-body-color);
+  --bs-dropdown-link-hover-color: var(--bs-primary);
+  --bs-dropdown-link-hover-bg: var(--bs-primary-bg-subtle);
+  --bs-dropdown-link-active-color: var(--bs-white);
+  --bs-dropdown-link-active-bg: var(--bs-primary);
+  --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
 }
 
 /* ************************************************************* */
@@ -754,44 +756,13 @@ img {
 }
 
 /* ------------------------------------------------------------- */
-/* Bootstrap Select
+/* Field labels
 /* ------------------------------------------------------------- */
 label {
   color: var(--bs-link-color);
   font-family: var(--cd-font-header);
   font-weight: bold;
   text-transform: var(--cd-header-transform);
-}
-
-/*
-.bootstrap-select > .dropdown-toggle,
-.bootstrap-select > .dropdown-toggle:active,
-.bootstrap-select > .dropdown-toggle:focus,
-.bootstrap-select > .dropdown-toggle:hover {
-  border: 0 !important;
-  box-shadow: none !important;
-  outline: none !important;
-  color: var(--bs-body-color) !important;
-}
-
-option:checked {
-  background-color: var(--bs-primary) !important;
-  border-radius: var(--bs-border-radius) !important;
-  color: var(--bs-white) !important;
-  padding: .2rem .5rem !important;
-}
-
-.bs-actionsbox .btn-group {
-  display: flex !important;
-}
-
-.bs-actionsbox .btn-group button {
-  width: auto;
-}
-
-.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
-  right: 1rem;
-  top: .5rem;
 }
 
 /* ------------------------------------------------------------- */
