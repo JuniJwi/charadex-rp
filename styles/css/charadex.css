@@ -721,12 +721,14 @@ img {
               background-color 0.2s ease-in-out,
               border 0.2s ease-in-out;
 }
+
 .page-link,
 .page-item.disabled .page-link {
-  color: var(--bs-body-color) !important;
-  background-color: var(--bs-secondary) !important;
-  border-color: var(--bs-secondary) !important;
+  color: var(--bs-primary-text-emphasis) !important;
+  background-color: var(--bs-primary-bg-subtle) !important;
+  border-color: var(--bs-primary-bg-subtle) !important;
 }
+
 .page-item.active .page-link,
 .page-link:hover,
 .page-link:focus,
@@ -745,14 +747,16 @@ img {
 /* Fixes nav/pagination hybrid */
 .nav .pagination .page-item:first-child .page-link {
   border-radius: 0 !important;
-  border-left: 0 !important;
 }
+
 .nav .pagination .page-item:last-child .page-link {
   border-radius: 0 !important;
 }
+
 .nav .page-item:first-child .page-link {
   border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
 }
+
 .nav .page-item:last-child .page-link {
   border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0 !important;
 }
