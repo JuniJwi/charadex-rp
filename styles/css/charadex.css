@@ -787,18 +787,12 @@ p:last-child {
 /* Charadex
 /* ************************************************************* */
 /* overflow and spacing for content boxes */
-#gallery-card,
-#prompt-card,
-#player-card,
-#item-card {
+#gallery-card {
   overflow: scroll;
 }
 @media (min-width: 768px) {
-  #gallery-card,
-  #prompt-card,
-  #player-card,
-  #item-card {
-    padding: .5rem 1rem;
+  #gallery-card {
+    margin: .5rem 1rem;
   }
 }
 

@@ -202,61 +202,65 @@
     <!-- ----------------------------------------------------------------- -->
     <div class="col-12 item-body" id="item-profile">
 
-      <div id="item-card" class="card">
+      <!-- Hero Image -->
+      <div class="cd-hero-title m-1">
         <!-- Header -->
-        <div class="card-header">
-          <h1 class="profileid"></h1>
+        <div class="profileid m-auto"></div>
+      </div>
+
+      <!-- --------- -->
+      <!-- Main Info -->
+      <!-- --------- -->
+      <div class="row m-n2">
+
+        <!-- Image -->
+        <div class="col-md-4 d-flex justify-content-center align-items-start text-center p-2">
+          <img class="img-fluid image" src="" alt="Item image.">
         </div>
 
-        <!-- --------- -->
-        <!-- Main Info -->
-        <!-- --------- -->
-        <div class="card-body">
-          <div class="row m-n2">
+        <!-- Info -->
+        <div class="col-md-8 p-2">
 
-            <!-- Image -->
-            <div class="col-md-4 d-flex justify-content-center align-items-start text-center p-2">
-              <img class="img-fluid image" src="" alt="Item image.">
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate span-header">
+              Item
             </div>
-
-            <!-- Info -->
-            <div class="col-md-8 p-2">
-              <div class="card bg-body-tertiary p-4 h-100">
-
-                <!-- Item -->
-                <div class="d-flex mb-2">
-                  <b class="text-muted col-md-5 col-6">Item</b>
-                  <span class="item"></span>
-                </div>
-
-                <!-- Type -->
-                <div class="d-flex mb-2">
-                  <b class="text-muted col-md-5 col-6">Type</b>
-                  <span class="type"></span>
-                </div>
-
-                <!-- Price -->
-                <div class="d-flex">
-                  <b class="text-muted col-md-5 col-6">Price</b>
-                  <span>$<span class="price"></span></span>
-                </div>
-
-                <hr>
-
-                <!-- Description -->
-                <div>
-                  <b class="text-muted">Description</b>
-                  <div class="px-4 description"></div>
-                </div>
-
-              </div>
+            <div class="col-8 text-center card">
+              <span class="item"></span>
             </div>
+          </div>
+          
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate span-header">
+              Type
+            </div>
+            <div class="col-8 text-center card">
+              <span class="type"></span>
+            </div>
+          </div>
+          
+          <div class="row align-items-center mb-2">
+            <div class="col-4 ps-0 text-end text-truncate span-header">
+              Price
+            </div>
+            <div class="col-8 text-center card">
+              $<span class="price"></span>
+            </div>
+          </div>
 
+          <hr>
+
+          <!-- Description -->
+          <div>
+            <b class="text-muted">Description</b>
+            <div class="px-4 description"></div>
           </div>
 
         </div>
       </div>
+
     </div> <!-- End of Item Card -->
+
   </div>
 
   <!-- ----------------------------------------------------------------- -->
