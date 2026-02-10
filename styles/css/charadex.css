@@ -726,7 +726,7 @@ img {
 .page-item.disabled .page-link {
   color: var(--bs-primary-text-emphasis) !important;
   background-color: var(--bs-primary-bg-subtle) !important;
-  border-color: var(--bs-primary-bg-subtle) !important;
+  border-color: var(--bs-primary-border-subtle) !important;
 }
 
 .page-item.active .page-link,
