@@ -388,11 +388,13 @@ body {
 /* ------------------------------------------------------------- */
 /* Header and Footer
 /* ------------------------------------------------------------- */
-.header {
-  background-color: transparent;
-  margin-bottom: 1em;
+#header {
+  background-color: var(--bs-light);
+  margin-bottom: 1rem;
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-light-bg-subtle);
 }
-.footer {
+
+#footer {
   background-color: transparent;
   color: var(--bs-gray);
   margin-top: 1em;

@@ -118,11 +118,12 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
       // Find the label and add the filter name
       newFilter
       .find('label')
-      .text(filter);
+      .text(filter).attr('for', charadex.tools.scrub(filter));
 
       // Find the select and add the filter name & options
       let filterDOM = newFilter.find('select')
       .attr('name', charadex.tools.scrub(filter))
+      .attr('id', charadex.tools.scrub(filter))
       .append(charadex.tools.createSelectOptions(parameters[filter]));
 
       // Add multiselect

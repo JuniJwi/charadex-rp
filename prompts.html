@@ -87,7 +87,7 @@
         <!-- Filters                                                           -->
         <!-- ----------------------------------------------------------------- -->
         <div style="display:none;" id="prompt-filter-container">
-          <div class="row mb-2" id="prompt-filters"></div>
+          <div class="row mb-2 gy-2" id="prompt-filters"></div>
           <!-- Filters -->
           <div style="display: none;">
             <div class="col-md-4 col-12" id="prompt-filter">
@@ -105,11 +105,13 @@
           <div class="row mb-2">
             <!-- Search Filter -->
             <div class="col-md-4 col-6" style="display: none;">
+              <label class="px-2" for="prompt-search-filter">Search for</label>
               <select id="prompt-search-filter" class="form-control form-select"
                 aria-label="Select search parameter."></select>
             </div>
             <!-- Search Bar -->
             <div class="col d-flex">
+              <label class="px-2" for="prompt-search">Search</label>
               <input class="form-control search" type="search" placeholder="Search" id="prompt-search">
             </div>
           </div>
