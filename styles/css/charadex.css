@@ -738,6 +738,12 @@ img {
   border-color: var(--bs-primary) !important;
 }
 
+/* Adjusts pointer behavior on buttons */
+.page-link, .btn-prev, .btn-next {
+  cursor: pointer;
+  user-select: none;
+}
+
 /* ------------------------------------------------------------- */
 /* Bootstrap Select
 /* ------------------------------------------------------------- */
