@@ -786,7 +786,8 @@ p:last-child {
 /* ************************************************************* */
 /* Charadex
 /* ************************************************************* */
-/* overflow and spacing for content boxes */
+/* overflow and spacing for content boxes
+/* ------------------------------------------------------------- */
 #gallery-card {
   overflow: scroll;
 }
@@ -796,21 +797,6 @@ p:last-child {
   }
 }
 
-/* Fixes unique header covering text */
-.z-1 {
-  z-index: 1;
-}
-
-/* character list */
-#charadex-gallery .list .card-header {
-  padding: .5em;
-}
-#charadex-gallery .list .card-header a {
-  text-decoration: none;
-}
-#charadex-gallery .list .card-body img {
-  max-height: 200px;
-}
 #profile-card .card-body {
   overflow: visible;
 }
@@ -820,44 +806,25 @@ p:last-child {
   }
 }
 
-/* prompt list */
-#prompt-gallery .list .card-header {
-  padding: .5em;
-}
-#prompt-gallery .list .card-header a {
-  text-decoration: none;
-}
-#prompt-gallery .list .card-body img {
-  max-height: 200px;
-}
 @media (min-width: 768px) {
-  .prompt-body {
+  .prompt-body,
+  .item-body {
     padding: 1rem 7rem;
   }
 }
 
-/* player list */
-#player-gallery .list .card-header {
-  padding: .5em;
-}
-#player-gallery .list .card-header a {
-  text-decoration: none;
-}
-#player-gallery .list .card-body img {
-  max-height: 200px;
+.cd-profile-image-container > img {
+  max-height: 400px;
 }
 
-/* item list */
-#item-gallery .list .card-header {
-  padding: .5em;
-}
-#item-gallery .list .card-header a {
-  text-decoration: none;
-}
-#item-gallery .list .card-body img {
-  max-height: 100px;
+/* Fixes unique header covering text */
+.z-1 {
+  z-index: 1;
 }
 
+/* ------------------------------------------------------------- */
+/* Thumbnails
+/* ------------------------------------------------------------- */
 #charadex-gallery .cd-gallery-card {
   aspect-ratio: 1/1;
 }
@@ -869,7 +836,21 @@ p:last-child {
   border-style: var(--cd-card-border-style) !important;
   border-color: var(--cd-card-border-color) !important;
 }
-
-.cd-profile-image-container > img {
-  max-height: 400px;
+#charadex-gallery .list .card-header,
+#prompt-gallery .list .card-header,
+#player-gallery .list .card-header,
+#item-gallery .list .card-header {
+  padding: .5em;
+}
+#charadex-gallery .list .card-header a,
+#prompt-gallery .list .card-header a,
+#player-gallery .list .card-header a,
+#item-gallery .list .card-header a {
+  text-decoration: none;
+}
+#charadex-gallery .list .card-body img,
+#prompt-gallery .list .card-body img,
+#player-gallery .list .card-body img,
+#item-gallery .list .card-body img {
+  max-height: 200px;
 }
