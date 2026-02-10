@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (listData.type == 'profile') {
         $('#gallery-header').hide();
 
-        // Inventory
         let profile = listData.profileArray[0];
+        
+        // Inventory
         let inventoryData = await charadex.manageData.readInventoryLog(profile.inventorylog);
 
         charadex.initialize.groupGallery(
