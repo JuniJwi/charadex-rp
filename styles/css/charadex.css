@@ -766,22 +766,6 @@ label {
 }
 
 /* ------------------------------------------------------------- */
-/* Input
-/* ------------------------------------------------------------- */
-.form-control {
-  background-color: var(--bs-body-bg) !important;
-  color: var(--bs-body-color) !important;
-  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-  border-radius: var(--bs-border-radius) !important;
-}
-
-.form-control:focus,
-.form-control:active {
-  background-color: var(--bs-body-bg) !important;
-  border-color: var(--bs-primary) !important;
-}
-
-/* ------------------------------------------------------------- */
 /* Chee's Tweaks
 /* ------------------------------------------------------------- */
 /* Remove box shadow */
