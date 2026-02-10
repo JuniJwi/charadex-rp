@@ -783,9 +783,7 @@ p:last-child {
   margin-bottom: 0 !important;
 }
 
-/* ************************************************************* */
-/* Charadex
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* overflow and spacing for content boxes
 /* ------------------------------------------------------------- */
 #gallery-card {
@@ -808,6 +806,7 @@ p:last-child {
 
 @media (min-width: 768px) {
   .prompt-body,
+  .lore-body,
   .item-body {
     padding: 1rem 7rem;
   }
