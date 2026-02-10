@@ -328,7 +328,7 @@ charadex.manageData = {
     let inventory = {};
 
     // For each item in the log, add/subtract from our inventory's running total
-    for (let log in inventoryLog) {
+    for (let [num, log] in inventoryLog) {
       if(log['item'] in inventory) {
         inventory[log['item']] += Number(log['quantity']);
       } else {
