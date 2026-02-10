@@ -822,18 +822,10 @@ p:last-child {
 }
 
 /* ------------------------------------------------------------- */
-/* Thumbnails
+/* Gallery lists
 /* ------------------------------------------------------------- */
 #charadex-gallery .cd-gallery-card {
   aspect-ratio: 1/1;
-}
-.cd-gallery-card > img {
-  background-color: var(--cd-body-background-color);
-  aspect-ratio: 1/1;
-  border-radius: 3px;
-  border-width: var(--cd-card-border-width) !important;
-  border-style: var(--cd-card-border-style) !important;
-  border-color: var(--cd-card-border-color) !important;
 }
 #charadex-gallery .list .card-header,
 #prompt-gallery .list .card-header,
