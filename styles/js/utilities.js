@@ -340,17 +340,15 @@ charadex.manageData = {
     let itemArr = await charadex.importSheet(charadex.sheet.pages.items);
 
     let inventoryData = [];
-    // For each item in our inventory, attach the item data
-    for (let [name, qty] in inventory) {
-      for (let item of itemArr) {
-        if (charadex.tools.scrub(name) === charadex.tools.scrub(item.item) && qty != 0) {
-          inventoryData.push({
-            ... item,
-            ... {
-              quantity: qty
-              }
-          });
-        }
+    // Check if we have items in our inventory, and if so, attach data.
+    for (let item of itemArr) {
+      if (item.item in inventory) {
+        inventoryData.push({
+          ... item,
+          ... {
+            quantity: inventory[item.item]
+          }
+        });
       }
     }
     console.log("Inventory Data:", inventoryData);
