@@ -613,11 +613,14 @@ ol li::marker {
 .tooltip {
   z-index: 10000 !important;
 }
+.tooltip.show {
+  opacity: 1 !important;
+}
 
 .cd-tooltip {
   /* only applies to tooltips with data-bs-custom-class="cd-tooltip" */
   --bs-tooltip-bg: var(--bs-primary);
-  --bs-tooltip-color: var(--bs-primary-text);
+  --bs-tooltip-color: var(--bs-white);
 }
 
 /* ------------------------------------------------------------- */
@@ -894,9 +897,6 @@ p:last-child {
 }
 #prompt-gallery .list .card-body img {
   max-height: 200px;
-}
-.cd-prompt-background {
-  min-height: 150px;
 }
 @media (min-width: 768px) {
   .prompt-body {
