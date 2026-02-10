@@ -393,34 +393,174 @@
       <!-- list container -->
       <div id="rel-container" class="row m-n2 p-md-3 p-2 justify-content-center"></div>
 
-      <!-- ---- -->
-      <!-- Logs -->
-      <!-- ---- -->
-      <hr>
-      <h2 class="text-center mt-2" id="logs"><a href="#logs">Activity Log</a></h2>
-      <hr>
+      <!-- -------- -->
+      <!-- Nav Tabs -->
+      <!-- -------- -->
+        <li class="nav-item p-1" role="presentation">
+          <button class="nav-link active" id="item-tab" data-bs-toggle="tab" data-bs-target="#inventory" type="button"
+            role="tab" aria-controls="inventory" aria-selected="true">
+            Inventory
+            </a>
+        </li>
+        <li class="nav-item p-1" role="presentation">
+          <button class="nav-link" id="logs-tab" data-bs-toggle="tab" data-bs-target="#logs" type="button" role="tab"
+            aria-controls="logs" aria-selected="false">
+            Logs
+            </a>
+        </li>
+      </ul>
+      <!-- --------- -->
+      <!-- Main Body -->
+      <!-- --------- -->
+      <div class="tab-content">
+        <!-- --------- -->
+        <!-- Inventory -->
+        <!-- --------- -->
+        <div class="tab-pane fade active show" id="inventory" role="tabpanel" aria-labelledby="item-tab">
+          <div id="item-gallery">
+            <div class="card bg-body-tertiary p-4 mb-4">
 
-      <!-- list containers -->
-      <div id="log-gallery" class="p-md-3 p-2">
-        <!-- headers -->
-        <div class="row m-n2 span-header">
-          <div class="col-md-2 col-6">Timestamp</div>
-          <div class="col-md-2 col-6">Mod</div>
-          <div class="col">Reason</div>
+              <!-- ----- -->
+              <!-- Title -->
+              <!-- ----- -->
+              <h4 class="text-primary d-flex justify-content-between align-items-center mb-0">
+                Inventory
+                <a href="#item-filter-toggle" data-bs-toggle="collapse"><i class="fas fa-filter fa-fw"></i></a>
+              </h4>
+
+              <div class="collapse" id="item-filter-toggle">
+
+                <!-- ------- -->
+                <!-- Filters -->
+                <!-- ------- -->
+                <div style="display:none;" id="item-filter-container">
+                  <div class="row mb-2 gy-2" id="item-filters"></div>
+                  <!-- Filters -->
+                  <div style="display: none;">
+                    <div class="col-md-4 col-12" id="item-filter">
+                      <label class="px-2"></label>
+                      <select class="form-control" multiple data-actions-box="true" data-icon-base="fa-solid"
+                        data-tick-icon="fa-check"></select>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- ------ -->
+              <!-- Search -->
+              <!-- ------ -->
+              <div style="display:none;" id="item-search-container">
+                <div class="row mb-2">
+                  <!-- Search Filter -->
+                  <div class="col-md-4 col-6" style="display: none;">
+                    <label class="px-2" for="item-search-filter">Search for</label>
+                    <select id="item-search-filter" class="form-control form-select" 
+                      aria-label="Select search parameter."></select>
+                    </div>
+                  <!-- Search Bar -->
+                  <div class="col">
+                    <label class="px-2" for="item-search">Search</label>
+                    <input class="form-control search" type="search" placeholder="Search" id="item-search">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---------------------- -->
+            <!-- List Items Render Here -->
+            <!-- ---------------------- -->
+            <div id="item-group"></div>
+
+            <div style="display:none;">
+              <!-- ------------ -->
+              <!-- Gallery List -->
+              <!-- ------------ -->
+              <div class="mt-5 item-list-container" id="item-group-list">
+                <h4 class="item-group-title"></h4>
+                <div class="row m-n2 item-list list item-gallery-row"></div>
+              </div>
+
+              <!-- ----------------------------------------------------------------- -->
+              <!-- Gallery Items - Item Thumb                                        -->
+              <!-- ----------------------------------------------------------------- -->
+              <div class="col-md-3 col-6 p-2" id="item-gallery-item">
+                <div class="card bg-body-tertiary h-100">
+                  <div class="card-header text-center d-flex">
+                    <div class="m-auto z-1">
+                      <a class="stretched-link profileid profilelink" href=""></a>
+                    </div>
+                  </div>
+                  <!-- Image -->
+                  <div class="card-body d-flex flex-fill">
+                    <img class="img-thumbnail img-fluid m-auto image" src="" alt="Item thumbnail.">
+                  </div>
+                  <!-- Quantity -->
+                  <div class="card-footer text-muted text-center">
+                    Qty: <span class="quantity"></span>
+                  </div>
+                </div>
+              </div> <!-- End of Item Thumb -->
+
+            </div>
+
+          </div>
         </div>
-        <hr>
-        <!-- entries -->
-        <div class="log-list list"></div>
-      </div>
-      <!-- ---------- -->
-      <!-- Pagination -->
-      <!-- ---------- -->
-      <div style="display: none;" class="log-pagination-container">
-        <nav class="d-flex justify-content-center align-items-center">
-          <a class="btn-prev px-1"><i class="fa fa-chevron-left"></i></a>
-          <ul class="pagination log-pagination log-pagination-top justify-content-center mb-0"></ul>
-          <a class="btn-next px-1"><i class="fa fa-chevron-right"></i></a>
-        </nav>
+
+        <!-- ------------ -->
+        <!-- Transactions -->
+        <!-- ------------ -->
+        <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+          <div id="log-gallery">
+            <div class="card bg-body-tertiary mb-4 p-4">
+
+              <!-- ----- -->
+              <!-- Title -->
+              <!-- ----- -->
+              <h4 class="text-primary mb-0">Transaction Log</h4>
+            </div>
+
+            <!-- headers -->
+            <div class="row m-n2 span-header">
+              <div class="col-md-2 col-6">Timestamp</div>
+              <div class="col-md-2 col-6">Mod</div>
+              <div class="col-md-2 col-6">Item</div>
+              <div class="col-md-2 col-6">Qty</div>
+              <div class="col">Reason</div>
+            </div>
+            <hr>
+            <!-- entries -->
+            <div class="log-list list"></div>
+
+            <div style="display: none;">
+              <!-- --------------------------------------------------------------- -->
+              <!-- List Item - Log Thumb                                           -->
+              <!-- --------------------------------------------------------------- -->
+              <div class="position-relative mb-2" id="log-gallery-item">
+                <div class="row">
+                  <div class="col-md-2 col-6 text-muted timestamp"></div>
+                  <div class="col-md-2 col-6 mod"></div>
+                  <div class="col-md-2 col-6 item"></div>
+                  <div class="col-md-2 col-6 quantity"></div>
+                  <div class="col-md col-12 reason"></div>
+                </div>
+              </div> <!-- End of Log Thumb -->
+
+            <!-- ---------- -->
+            <!-- Pagination -->
+            <!-- ---------- -->
+            <div style="display: none;" class="log-pagination-container">
+              <nav class="d-flex justify-content-center align-items-center">
+                <a class="btn-prev px-1"><i class="fa fa-chevron-left"></i></a>
+                <ul class="pagination log-pagination log-pagination-top justify-content-center mb-0"></ul>
+                <a class="btn-next px-1"><i class="fa fa-chevron-right"></i></a>
+              </nav>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div> <!-- End of Character Card -->

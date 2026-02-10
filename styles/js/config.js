@@ -328,6 +328,38 @@ charadex.page.masterlist = {
     'personality',
     'lore',
   ],
+  
+  // This is a special config for their inventory
+  characterConfig: {
+
+    sheetPage: charadex.sheet.pages.items,
+    sitePage: 'items',
+    dexSelector: 'item',
+    profileProperty: 'item',
+    profileToggle: false,
+
+    sort: {
+      toggle: true,
+      sortProperty: 'sort',
+      order: 'asc',
+      parametersKey: 'type', 
+      parameters: [charadex.sheet.options.itemTypes]
+    },
+
+    search: {
+      toggle: true,
+      filterToggle: false,
+      parameters: ['Item']
+    },
+
+    filters: {
+      toggle: false,
+      parameters: {
+        'Type': charadex.sheet.options.itemTypes,
+      }
+    },
+
+  }
 
 };
 

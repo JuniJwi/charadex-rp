@@ -15,7 +15,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     null, 
     async (listData) => {
 
+      console.log("LIST DATA:", listData); 
       if (listData.type == 'profile') {
+
+        // Inventory
+        let profile = listData.profileArray[0];
+        let inventoryData = await charadex.manageData.readInventoryLog(profile.characterlog);
+
+        charadex.initialize.groupGallery(
+          charadex.page.player.characterConfig,
+          inventoryData,
+          'type',
+          charadex.url.getPageUrl('items')
+        );
+        console.log('Initialized inventory gallery!');
 
         // Create the log dex
         if (charadex.tools.checkArray(listData.profileArray[0].masterlistlog)) {
