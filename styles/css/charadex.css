@@ -354,34 +354,34 @@ body {
 /* Category Badges
 /* ------------------------------------------------------------- */
 /* Character categories appear as "badges" in listings           */
-/* In addition to '.badge-all', you want one for each category   */
-/* in the format of '.badge-[categoryname]'.                     */
+/* In addition to '.bg-all', you want one for each category   */
+/* in the format of '.bg-[categoryname]'.                     */
 /* all lowercase, no spaces. For example, if "Good Guys" is the  */
-/* category name, '.badge-goodguys' is the badge name.           */
-.badge-all {
-  background-color: var(--bs-secondary);
-  color: var(--bs-white);
+/* category name, '.bg-goodguys' is the badge name.           */
+.bg-all {
+  background-color: var(--bs-secondary) !important;
+  color: var(--bs-white) !important;
 }
 
-.badge-one {
-  background-color: #143c81;
-  color: #ffffff;
+.bg-one {
+  background-color: #143c81 !important;
+  color: #ffffff !important;
 }
-.badge-two {
-  background-color: #801a1a;
-  color: #ffffff;
+.bg-two {
+  background-color: #801a1a !important;
+  color: #ffffff !important;
 }
-.badge-three {
-  background-color: #1a7a1e;
-  color: #ffffff;
+.bg-three {
+  background-color: #1a7a1e !important;
+  color: #ffffff !important;
 }
-.badge-four {
-  background-color: #9ab2df;
-  color: #252525;
+.bg-four {
+  background-color: #9ab2df !important;
+  color: #252525 !important;
 }
-.badge-five {
-  background-color: #531a94;
-  color: #ffffff;
+.bg-five {
+  background-color: #531a94 !important;
+  color: #ffffff !important;
 }
 /* ------------------------------------------------------------- */
 /* Header and Footer

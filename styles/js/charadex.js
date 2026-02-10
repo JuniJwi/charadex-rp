@@ -40,7 +40,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
       let categories = entry.category.split(', ');
       let badges = [];
       for (let category of categories) {
-        badges.push(`<span class="badge badge-${charadex.tools.scrub(category)}">${category}</span>`);
+        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${category}</span>`);
       }
       entry.categorybadge = badges.join('');
     }
@@ -147,7 +147,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
         let categories = entry.category.split(', ');
         let badges = [];
         for (let category of categories) {
-          badges.push(`<span class="badge badge-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
+          badges.push(`<span class="badge bg-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
         }
         entry.categorybadge = badges.join('');
       }
