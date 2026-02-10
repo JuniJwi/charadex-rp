@@ -103,11 +103,13 @@
           <div class="row mb-2">
             <!-- Search Filter -->
             <div class="col-md-4 col-6" style="display: none;">
+              <label class="px-2" for="player-search-filter">Search for</label>
               <select id="player-search-filter" class="form-control form-select"
                 aria-label="Select search parameter."></select>
             </div>
             <!-- Search Bar -->
-            <div class="col d-flex">
+            <div class="col">
+              <label class="px-2" for="player-search">Search</label>
               <input class="form-control search" type="search" placeholder="Search" id="player-search">
             </div>
           </div>
@@ -253,12 +255,13 @@
                 <!-- Filters -->
                 <!-- ------- -->
                 <div style="display:none;" id="item-filter-container">
-                  <div class="row m-n1" id="item-filters"></div>
+                  <div class="row mb-2 gy-2" id="item-filters"></div>
                   <!-- Filters -->
                   <div style="display: none;">
-                    <div class="col-md-4 col-12 p-1" id="item-filter">
+                    <div class="col-md-4 col-12" id="item-filter">
                       <label class="px-2"></label>
-                      <select class="form-control" multiple></select>
+                      <select class="form-control" multiple data-actions-box="true" data-icon-base="fa-solid"
+                        data-tick-icon="fa-check"></select>
                     </div>
                   </div>
                 </div>
@@ -269,13 +272,16 @@
               <!-- Search -->
               <!-- ------ -->
               <div style="display:none;" id="item-search-container">
-                <div class="row m-n1">
+                <div class="row mb-2">
                   <!-- Search Filter -->
-                  <div class="col-md-4 col-6 p-1" style="display: none;">
-                    <select class="form-control" id="item-search-filter"></select>
-                  </div>
+                  <div class="col-md-4 col-6" style="display: none;">
+                    <label class="px-2" for="item-search-filter">Search for</label>
+                    <select id="item-search-filter" class="form-control form-select" 
+                      aria-label="Select search parameter."></select>
+                    </div>
                   <!-- Search Bar -->
-                  <div class="col d-flex p-1">
+                  <div class="col">
+                    <label class="px-2" for="item-search">Search</label>
                     <input class="form-control search" type="search" placeholder="Search" id="item-search">
                   </div>
                 </div>
@@ -301,7 +307,6 @@
               <!-- ----------------------------------------------------------------- -->
               <div class="col-md-3 col-6 p-2" id="item-gallery-item">
                 <div class="card bg-body-tertiary h-100">
-                  <!-- Title/Design ID -->
                   <div class="card-header text-center d-flex">
                     <div class="m-auto z-1">
                       <a class="stretched-link profileid profilelink" href=""></a>
@@ -373,7 +378,7 @@
                       aria-label="Select search parameter."></select>
                   </div>
                   <!-- Search Bar -->
-                  <div class="col d-flex">
+                  <div class="col">
                     <label class="px-2" for="charadex-search">Search</label>
                     <input class="form-control search" type="search" placeholder="Search" id="charadex-search">
                   </div>
