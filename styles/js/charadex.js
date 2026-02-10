@@ -42,7 +42,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
       for (let category of categories) {
         badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${category}</span>`);
       }
-      entry.categorybadge = badges.join('');
+      entry.categorybadge = badges.join(' ');
     }
 
     // Clear blanks
@@ -149,7 +149,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
         for (let category of categories) {
           badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
         }
-        entry.categorybadge = badges.join('');
+        entry.categorybadge = badges.join(' ');
       }
     }
 
