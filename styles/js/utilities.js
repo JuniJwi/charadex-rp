@@ -323,19 +323,34 @@ charadex.manageData = {
 
   /* Fixes old style of inventories
   ===================================================================== */
-  async inventoryFix(profileArray) {
+  async readInventoryLog(inventoryLog) {
+    // Initialize inventory
+    let inventory = {};
 
+    // For each item in the log, add/subtract from our inventory's running total
+    for (let log in inventoryLog) {
+      if(log['item'] in inventory) {
+        inventory[log['item']] += Number(log['quantity']);
+      } else {
+        inventory[log['item']] = Number(log['quantity']);
+      }
+    }
+    
+    // Import our inventory info for reference
     let itemArr = await charadex.importSheet(charadex.sheet.pages.items);
-  
+
     let inventoryData = [];
-    for (let property in profileArray) {
+    // For each item in our inventory, attach the item data
+    for (let [name, qty] in inventory) {
       for (let item of itemArr) {
-        if (property === charadex.tools.scrub(item.item) && profileArray[property] !== '') inventoryData.push({
-          ... item,
-          ... {
-            quantity: profileArray[property]
-          }
-        });
+        if (charadex.tools.scrub(name) === charadex.tools.scrub(item.item) && qty != 0) {
+          inventoryData.push({
+            ... item,
+            ... {
+              quantity: qty
+              }
+          });
+        }
       }
     }
     console.log("Inventory Data:", inventoryData);

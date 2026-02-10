@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         $('#gallery-header').hide();
 
         let profile = listData.profileArray[0];
-        let fixedData = await charadex.manageData.inventoryFix(profile);
+        let inventoryData = await charadex.manageData.readInventoryLog(profile.inventorylog);
 
         // Inventory
         charadex.initialize.groupGallery(
           charadex.page.player.playerConfig,
-          fixedData,
+          inventoryData,
           'type',
           charadex.url.getPageUrl('items')
         );
