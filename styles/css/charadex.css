@@ -3,13 +3,15 @@
 /* Charadex CSS Styling
 /*
 /* ************************************************************* */
-/* You should visit any section with [!!!] and adjust their settings.
+/* You should visit any section with [!!!] and adjust their 
+/* settings. You can visit [***] for optional adjustments.
 /*
 /* INDEX
 /*   1. Basic Variables       [!!!]
 /*   2. Color Calculations
 /*   3. Bootstrap Overrides   [!!!]
-/*   4. Charadex Variables    [!!!]
+/*   4. Charadex Styles       [!!!]
+/*   5. Tweaks
 /*
 /* ************************************************************* */
 /* Some notes about CSS:
@@ -23,9 +25,6 @@
 /*
 /*   - "bs" is used as a prefix for Boostrap. "cd" is used as
 /*     a prefix for charadex.
-/*   - RGB variables use RGB values. You can use a color picker like
-/*     https://www.w3schools.com/colors/colors_picker.asp
-/*     to select RGB values.
 /*
 /* ************************************************************* */
 
@@ -34,11 +33,14 @@
 /*                      1. Basic Variables
 /* ************************************************************* */
 /* These variables override bootstrap's color and styling.
-/* https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables
 /*
 /* ************************************************************* */
-
 /* THEME colors for your site */
+/* ------------------------------------------------------------- */
+/* RGB variables use RGB values. You can use a color picker like */
+/* https://www.w3schools.com/colors/colors_picker.asp            */
+/* to select RGB values.                                         */
+
   --bs-primary-rgb: 187, 95, 19;
   --bs-secondary-rgb: 108, 117, 125;
   
@@ -50,7 +52,7 @@
   --bs-gray: #afb6bd;
   --bs-gray-dark: #343a40;
 
-/* used for alerts, cards, buttons, etc */
+/* colors used for alerts, cards, buttons, etc */
   --bs-success-rgb: 25, 135, 84; /* for success, approve, save, etc */
   --bs-info-rgb: 13, 202, 240;   /* for info popups and tips */
   --bs-warning-rgb: 255, 193, 7; /* for warnings and alerts */
@@ -58,7 +60,9 @@
   --bs-light-rgb: 248, 249, 250; /* if you want light text or cards */
   --bs-dark-rgb: 33, 37, 41;     /* if you want dark text or cards */
 
-/* font variables */
+/* ------------------------------------------------------------- */
+/* Fonts, Weights, Sizes
+/* ------------------------------------------------------------- */
   --cd-font-header: "Comfortaa";
   --cd-font-body: "Montserrat";
   --cd-font-monospace: SFMono-Regular;
@@ -69,7 +73,15 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
 
-/* technically you can change these colors but bootstrap doesn't really use em */
+  --cd-header-max-size: 1.4rem; /* h1 size */
+  --cd-header-min-size: 1.1rem; /* h6 size */
+  --cd-header-transform: uppercase; /* capitalize, lowercase, none */
+
+/* ------------------------------------------------------------- */
+/* Misc Colors                                                   */
+/* ------------------------------------------------------------- */
+/* technically you can change these colors but bootstrap doesn't */
+/* really use em                                                 */
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -92,7 +104,8 @@
 /* You can ignore this section, at least to start.
 /* 
 /* ************************************************************* */
-
+/* Colors
+/* ------------------------------------------------------------- */
   --bs-primary: rgb(var(--bs-primary-rgb));
   --bs-secondary: rgb(var(--bs-secondary-rgb));
   --bs-black: rgb(var(--bs-black-rgb));
@@ -143,12 +156,32 @@
 
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
-/* Fonts will default to the first available. Universal fonts are listed just in case. */
+/* ------------------------------------------------------------- */
+/* Fonts
+/* ------------------------------------------------------------- */
+/* Fonts will default to the first available. Universal fonts    */
+/* are listed just in case.                                      */
   --bs-font-sans-serif:var(--cd-font-body), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: var(--cd-font-monospace), SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-body-font-family: var(--bs-font-sans-serif);
+
+/* ------------------------------------------------------------- */
+/* Headers
+/* ------------------------------------------------------------- */
+/* Calculating header increment */
+  --cd-header-inc-size: calc((var(--cd-header-max-size) - var(--cd-header-min-size)) / 4);
 }
-/* Setting our color palettes for buttons... */
+/* Set header sizes */
+h1 { font-size: var(--cd-header-max-size); }
+h2 { font-size: calc(var(--cd-header-min-size) + var(--cd-header-inc-size) * 4); }
+h3 { font-size: calc(var(--cd-header-min-size) + var(--cd-header-inc-size) * 3); }
+h4 { font-size: calc(var(--cd-header-min-size) + var(--cd-header-inc-size) * 2); }
+h5 { font-size: calc(var(--cd-header-min-size) + var(--cd-header-inc-size) * 1); }
+h6 { font-size: var(--cd-header-min-size); }
+
+/* ------------------------------------------------------------- */
+/* Buttons
+/* ------------------------------------------------------------- */
 .btn-primary, .btn-outline-primary {
   --cd-btn-text-color: var(--bs-white);
   --cd-btn-class-color: var(--bs-primary);
@@ -232,7 +265,9 @@
   --bs-btn-disabled-border-color: color-mix(in srgb,var(--bs-btn-border-color),var(--bs-white) 5%);
 }
 
-/* misc fixes */
+/* ------------------------------------------------------------- */
+/* misc fixes
+/* ------------------------------------------------------------- */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   --bs-nav-pills-link-active-bg: var(--bs-primary);
 }
@@ -250,14 +285,16 @@
 /* they rely on the variables defined above in some cases.
 /*
 /* ************************************************************* */
-
-/* body text */
+/* body text
+/* ------------------------------------------------------------- */
   --bs-body-color: var(--bs-dark);
   --bs-body-color-rgb: var(--bs-dark-rgb);
   --bs-body-bg: var(--bs-white);
   --bs-body-bg-rgb: var(--bs-white-rgb);
 
-/* link text */
+/* ------------------------------------------------------------- */
+/* link text
+/* ------------------------------------------------------------- */
   --bs-link-color: var(--bs-primary);
   --bs-link-color-rgb: var(--bs-primary-rgb);
   --bs-link-hover-color: var(--bs-secondary);
@@ -265,7 +302,9 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 
-/* border styles */
+/* ------------------------------------------------------------- */
+/* border styles
+/* ------------------------------------------------------------- */
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -279,49 +318,22 @@
   --bs-border-radius-pill: 50rem;
 }
 
-body {
 /* ************************************************************* */
-/*                   4. Charadex Variables
-/* ************************************************************* */
-/* These variables trickle down into all the .css styles, but you
-/* can fine tune them even further if you'd like. Some colors won't
-/* always play well together.
-/*
-/* ************************************************************* */
-
-/* Category Badges */
-/* Character categories appear as "badges" in listings        */
-/* You can customize these colors to suit factions and stuff  */
-  --cd-rarity-one-bg: #143c81;
-  --cd-rarity-one-txt: #ffffff;
-
-  --cd-rarity-two-bg: #801a1a;
-  --cd-rarity-two-txt: #ffffff;
-
-  --cd-rarity-three-bg: #1a7a1e;
-  --cd-rarity-three-txt: #ffffff;
-
-  --cd-rarity-four-bg: #9ab2df;
-  --cd-rarity-four-txt: #252525;
-
-  --cd-rarity-five-bg: #531a94;
-  --cd-rarity-five-txt: #ffffff;
-}
-
-/* ************************************************************* */
-/*                       5. Charadex Styles
+/*                       4. Charadex Styles
 /* ************************************************************* */
 /* You can further tweak Charadex CSS styles here.
 /*
 /* ************************************************************* */
-
-/* Global */
+/* Global
+/* ------------------------------------------------------------- */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
-/* Main Background */
+/* ------------------------------------------------------------- */
+/* Main Background
+/* ------------------------------------------------------------- */
   background-color: var(--bs-light);
   background-image: url("/charadex-rp/assets/bg-image.png");
   background-position: center top;
@@ -329,7 +341,42 @@ body {
   background-repeat: repeat;
 }
 
-/* Header and Footer */
+/* ------------------------------------------------------------- */
+/* Category Badges
+/* ------------------------------------------------------------- */
+/* Character categories appear as "badges" in listings           */
+/* In addition to '.badge-all', you want one for each category   */
+/* in the format of '.badge-[categoryname]'.                     */
+/* all lowercase, no spaces. For example, if "Good Guys" is the  */
+/* category name, '.badge-goodguys' is the badge name.           */
+.badge-all {
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+}
+
+.badge-one {
+  background-color: #143c81;
+  color: #ffffff;
+}
+.badge-two {
+  background-color: #801a1a;
+  color: #ffffff;
+}
+.badge-three {
+  background-color: #1a7a1e;
+  color: #ffffff;
+}
+.badge-four {
+  background-color: #9ab2df;
+  color: #252525;
+}
+.badge-five {
+  background-color: #531a94;
+  color: #ffffff;
+}
+/* ------------------------------------------------------------- */
+/* Header and Footer
+/* ------------------------------------------------------------- */
 .header {
   background-color: transparent;
   margin-bottom: 1em;
@@ -341,7 +388,9 @@ body {
   margin-bottom: 1em;
 }
 
-/* Scrollbar */
+/* ------------------------------------------------------------- */
+/* Scrollbar
+/* ------------------------------------------------------------- */
 @media (min-width: 992px) {
   body::-webkit-scrollbar-track {
     background-color: rgba(var(--bs-light), 0.2);
@@ -363,7 +412,10 @@ body {
   }
 }
 
-/* Adds a lockpad to fields that are marked as Inactive */
+/* ------------------------------------------------------------- */
+/* Inactive field
+/* ------------------------------------------------------------- */
+/* Adds a lockpad to 'inactive' character fields marked FALSE    */
 [data-cd-bool="false"] {
   opacity: .5;
 }
@@ -379,9 +431,9 @@ body {
   margin-right: 0.3rem;
 }
 
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Containers
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 #main-container {
   padding: 1rem;
   -ms-flex: 1 1 auto !important;
@@ -407,19 +459,19 @@ body {
   max-width: 950px !important;
 }
 
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Navbar
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 .navbar {
   font-family: var(--cd-font-header);
-  text-transform: uppercase;
+  text-transform: var(--cd-header-transform);
   z-index: 2000;
 }
 
 /* Navbar "Brand" aka title/logo */
 .navbar .navbar-brand {
   color: var(--bs-primary);
-  font-size: 2rem;
+  font-size: var(--cd-header-max-size);
   font-weight: bold;
   transition: color 0.2s ease-in-out;
 }
@@ -449,6 +501,11 @@ body {
 
 .navbar .navbar-nav .nav-link.disabled {
   color: var(--bs-gray) ;
+}
+
+.nav .nav-item {
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
 }
 
 /* Navbar Dropdowns */
@@ -489,204 +546,84 @@ body {
   padding: 0;
 }
 
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Various Text Styling
-/* ************************************************************* */
-
-/* Links */
-/*
-a,
-a:visited {
-  color: var(--cd-link-text-color);
-  transition: color 0.2s ease-in-out;
-}
-a:hover,
-a:focus,
-a:active {
-  color: var(--cd-link-text-color-hover);
-  text-decoration: none;
-}
+/* ------------------------------------------------------------- */
 blockquote {
-  margin: 0 2rem 1rem;
-  color: var(--cd-faded-background-color) !important;
-}
-
-/* Text */
-/*
-.text-primary {
-  color: var(--cd-primary-color) !important;
+  color: var(--bs-secondary);
+  border-left: calc(var(--bs-border-width)*2) var(--bs-border-style) var(--bs-border-color);
+  margin: 0 0 1rem;
+  padding: 0 0 0 1em;
 }
 
 .text-justify {
-  text-align: justify;
-}
-
-.bg-faded {
-  background-color: var(--cd-faded-background-color) !important;
-}
-
-.bg-reset {
-  background-color: var(--cd-input-background-color) !important;
-}
-
-.text-muted {
-  color: var(--cd-faded-text-color) !important;
-}
-
-.text-loud {
-  color: var(--cd-primary-color) !important;
+  text-align: justify !important;
 }
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--cd-font-header);
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: var(--cd-header-transform);
 }
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  text-decoration: none;
+  text-decoration: none; /* remove header url underline */
 }
-/*
-h1 {
-  color: var(--cd-primary-color);
-  font-size: 1.4rem;
-  text-align: center;
-}
-h2 {
-  color: var(--cd-secondary-color);
-  font-size: 1.2rem;
-}
-h3 {
-  color: var(--cd-faded-text-color);
-  font-size: 1.1rem;
-}
-h4 {
-  color: var(--cd-faded-text-color);
-  font-size: 1.05rem;
-}
- */
-.script {
+
+.span-header { /* in-line 'header' */
   font-family: var(--cd-font-header);
   font-weight: bold;
-  text-transform: uppercase;
-  color: var(--bs-gray);
+  text-transform: var(--cd-header-transform);
 }
+
 .subtitle {
   font-family: var(--cd-fond-header);
   font-weight: bold;
   color: var(--bs-gray);
-  font-size: 1.4rem;
+  font-size: var(--cd-header-min-size);
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
-/* Bullets */
+/* ------------------------------------------------------------- */
+/* Bullets
+/* ------------------------------------------------------------- */
 ul {
   list-style-type: "✦";
 }
 ul li::marker {
-  color: var(--cd-secondary-color) !important;
+  color: var(--bs-secondary) !important;
 }
 
-ol {
-  list-style-type: upper-roman;
-}
 ol li::marker {
-  color: var(--cd-primary-color);
+  color: var(--bs-primary);
   font-family: var(--cd-font-header);
 }
 
-#main-container ul li, #main-container ol li {
+#charadex-profile ul li, #charadex-profile ol li,
+#main-card ul li, #main-card ol li {
   margin-bottom: 0.5em;
   padding-left: 0.5em;
 }
-.nav .nav-item {
-  margin-bottom: 0 !important;
-  padding-left: 0 !important;
-}
 
-/* ************************************************************* */
-/* Horizontal Rule
-/* ************************************************************* */
-/*
-hr {
-  width: 100%;
-  margin: 0 auto 0 auto;
-  border-top: var(--cd-border-color) var(--cd-border-style) var(--cd-border-width);
-  opacity: 1;
-}
-.card-body hr {
-  margin: 1em auto 1em auto;
-}
-
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Tooltips
-/* ************************************************************* */
-/*
+/* ------------------------------------------------------------- */
 .tooltip {
   z-index: 10000 !important;
 }
-.tooltip.show {
-  opacity: 1 !important;
-}
-.tooltip-inner {
-  background-color: var(--cd-primary-color);
-  border-radius: var(--cd-border-radius) !important;
-  font-family: var(--cd-font-body);
-  font-size: 10pt;
-  line-height: 1rem;
-  padding: .5rem;
-}
-.tooltip.bs-tooltip-right .tooltip-arrow::before {
-    border-right-color: var(--cd-primary-color);
-}
-.tooltip.bs-tooltip-left .tooltip-arrow::before {
-    border-left-color: var(--cd-primary-color);
-}
-.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
-    border-bottom-color: var(--cd-primary-color);
-}
-.tooltip.bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: var(--cd-primary-color);
+
+.cd-tooltip {
+  /* only applies to tooltips with data-bs-custom-class="cd-tooltip" */
+  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-color: var(--bs-primary-text);
 }
 
-/* ************************************************************* */
-/* Buttons & Badges
-/* ************************************************************* */
-/*
-.btn,
-.nav-pills .nav-link {
-  border-style: var(--cd-button-border-style) !important;
-  border-width: var(--cd-button-border-width) !important;
-  border-radius: var(--cd-button-border-radius) !important;
-}
-
-.btn.btn-primary,
-.badge.badge-primary,
-.nav-pills .nav-link {
-  color: var(--cd-button-text-color) !important;
-  background-color: var(--cd-button-background-color) !important;
-  border-color: var(--cd-button-border-color) !important;
-}
-
-.btn.btn-primary:hover,
-.btn.btn-primary:focus,
-.btn.btn-primary:active,
-a.badge.badge-primary:hover,
-a.badge.badge-primary:focus,
-a.badge.badge-primary:active,
-.nav-pills .nav-link.active:hover,
-.nav-pills .nav-link.active:focus,
-.nav-pills .nav-link.active:active {
-  color: var(--cd-button-text-color-hover) !important;
-  border-color: var(--cd-button-border-color-hover) !important;
-  background-color: var(--cd-button-background-color-hover) !important;
-  box-shadow: none !important;
-}
-
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* to Top & Bottom
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
+/* These buttons are used on the character profile page          */
 .to-top {
   right: calc((100vw - 950px) / 2 - 99px);
   top: 45%;
@@ -698,10 +635,9 @@ a.badge.badge-primary:active,
   width: 100px;
 }
 
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Loading
-/* ************************************************************* */
-
+/* ------------------------------------------------------------- */
 /* Spinner icon */
 .loading {
   margin-top: 50vh;
@@ -732,14 +668,37 @@ a.badge.badge-primary:active,
   display: block;
 }
 
+/* ------------------------------------------------------------- */
+/* Hero images
+/* ------------------------------------------------------------- */
+.cd-hero-title {
+  color: var(--bs-white);
+  text-shadow: 0px 0px 3px var(--bs-black);
+  background-color: var(--bs-secondary);
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--bs-border-radius);
+  font-family: var(--cd-font-header);
+  text-transform: var(--cd-header-transform);
+  text-align: center;
+  font-weight: 800;
+  font-size: calc(var(--cd-header-min-size) + var(--cd-header-inc-size) * 3);
+  line-height: 1em;
+  padding: 1em;
+}
+@media (min-width: 768px) {
+  .cd-hero-title {
+    letter-spacing: 2px;
+  }
+}
+
 /* ************************************************************* */
-/*                        6. Tweaks
+/*                        5. Tweaks
 /* ************************************************************* */
 /* Adjustments to things that probably don't need changing
 /* unless they're really screwing with your styles.
 /*
 /* ************************************************************* */
-
 img {
   image-rendering: -webkit-optimize-contrast;
 }
@@ -749,29 +708,29 @@ img {
   max-height: 600px;
 }
 
-
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Pagination
-/* ************************************************************* */
-/*
+/* ------------------------------------------------------------- */
 .page-link {
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-  border-width: var(--cd-pagination-border-width) !important;
-  border-style: var(--cd-pagination-border-style) !important;
+  border-width: var(--bs-border-width) !important;
+  border-style: var(--bs-border-style) !important;
+  transition: color 0.2s ease-in-out, 
+              background-color 0.2s ease-in-out,
+              border 0.2s ease-in-out;
 }
 .page-link,
 .page-item.disabled .page-link {
-  color: var(--cd-pagination-text-color) !important;
-  background-color: var(--cd-pagination-background-color) !important;
-  border-color: var(--cd-pagination-border-color) !important;
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-secondary) !important;
+  border-color: var(--bs-secondary) !important;
 }
 .page-item.active .page-link,
 .page-link:hover,
 .page-link:focus,
 .page-link:active {
-  color: var(--cd-pagination-text-color-hover) !important;
-  background-color: var(--cd-pagination-background-hover) !important;
-  border-color: var(--cd-pagination-border-color-hover) !important;
+  color: var(--bs-white) !important;
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
 }
 
 /* Keeps users from accidentally highlighting */
@@ -789,15 +748,15 @@ img {
   border-radius: 0 !important;
 }
 .nav .page-item:first-child .page-link {
-  border-radius: var(--bs-border-radius) 0 0
-    var(--bs-border-radius) !important;
+  border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
 }
 .nav .page-item:last-child .page-link {
-  border-radius: 0 var(--bs-border-radius)
-    var(--bs-border-radius) 0 !important;
+  border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0 !important;
 }
 
-/* Multi Select Fixes - mostly Bootstrap Select */
+/* ------------------------------------------------------------- */
+/* Bootstrap Select
+/* ------------------------------------------------------------- */
 label {
   color: var(--bs-link-color);
   font-family: var(--cd-font-body);
@@ -816,9 +775,9 @@ label {
 }
 
 option:checked {
-  background-color: var(--cd-primary-color) !important;
-  border-radius: var(--cd-border-radius) !important;
-  color: var(--cd-primary-text-color) !important;
+  background-color: var(--bs-primary) !important;
+  border-radius: var(--bs-border-radius) !important;
+  color: var(--bs-white) !important;
   padding: .2rem .5rem !important;
 }
 
@@ -851,7 +810,9 @@ option:checked {
   top: .5rem;
 }
 
-/* Input */
+/* ------------------------------------------------------------- */
+/* Input
+/* ------------------------------------------------------------- */
 .form-control {
   background-color: var(--bs-body-bg) !important;
   color: var(--bs-body-color) !important;
@@ -865,11 +826,10 @@ option:checked {
   border-color: var(--bs-primary) !important;
 }
 
-/* ************************************************************* */
+/* ------------------------------------------------------------- */
 /* Chee's Tweaks
-/* ************************************************************* */
-
-/* Remove ugly box shadow */
+/* ------------------------------------------------------------- */
+/* Remove box shadow */
 button:focus,
 .page-link:focus,
 .form-control:focus {
@@ -882,30 +842,10 @@ p:last-child {
   margin-bottom: 0 !important;
 }
 
-/* Hero images */
-.cd-hero-title {
-  color: var(--cd-primary-text-color);
-  text-shadow: 0px 0px 3px black;
-  background-color: var(--cd-secondary-color);
-  border-radius: var(--cd-border-radius);
-  font-family: var(--cd-font-header);
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  padding: 1rem;
-}
-@media (min-width: 768px) {
-  .cd-hero-title {
-    letter-spacing: 2px;
-  }
-}
-
 /* ************************************************************* */
 /* Charadex
 /* ************************************************************* */
-/*
+/* overflow and spacing for content boxes */
 #gallery-card,
 #prompt-card,
 #player-card,
@@ -927,7 +867,6 @@ p:last-child {
 }
 
 /* character list */
-/*
 #charadex-gallery .list .card-header {
   padding: .5em;
 }
@@ -947,7 +886,6 @@ p:last-child {
 }
 
 /* prompt list */
-/*
 #prompt-gallery .list .card-header {
   padding: .5em;
 }
@@ -958,8 +896,6 @@ p:last-child {
   max-height: 200px;
 }
 .cd-prompt-background {
-  background-position: center;
-  background-size: cover;
   min-height: 150px;
 }
 @media (min-width: 768px) {
@@ -969,7 +905,6 @@ p:last-child {
 }
 
 /* player list */
-/*
 #player-gallery .list .card-header {
   padding: .5em;
 }
@@ -981,7 +916,6 @@ p:last-child {
 }
 
 /* item list */
-/*
 #item-gallery .list .card-header {
   padding: .5em;
 }
@@ -1006,40 +940,4 @@ p:last-child {
 
 .cd-profile-image-container > img {
   max-height: 400px;
-}
-
-/* Makes sure your text formatting is preserved from the sheet */
-/* Best for large areas like notes */
-/*
-.cd-text-pre {
-  white-space: break-spaces;
-}
-
-/* ************************************************************* */
-/* Category Badges
-/* ************************************************************* */
-
-.badge-all {
-  background-color: var(--cd-faded-background-color);
-  color: var(--cd-faded-text-color);
-}
-.badge-one {
-  background-color: var(--cd-rarity-one-bg);
-  color: var(--cd-rarity-one-txt);
-}
-.badge-two {
-  background-color: var(--cd-rarity-two-bg);
-  color: var(--cd-rarity-two-txt);
-}
-.badge-three {
-  background-color: var(--cd-rarity-three-bg);
-  color: var(--cd-rarity-three-txt);
-}
-.badge-four {
-  background-color: var(--cd-rarity-four-bg);
-  color: var(--cd-rarity-four-txt);
-}
-.badge-five {
-  background-color: var(--cd-rarity-five-bg);
-  color: var(--cd-rarity-five-txt);
 }

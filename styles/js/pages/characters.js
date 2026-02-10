@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", async () => {
               let relText = rel[4] ? charadex.manageData.convertMarkdown(rel[4]) : `<span class="text-muted">--</span>`;
               // Create the DOM elements
               relElement += `<div class="col-md-4 col-12 p-2">
-                              <div class="card bg-faded h-100">
+                              <div class="card bg-body-tertiary h-100">
                                 <div class="card-header text-center d-flex">
                                   <div class="m-auto z-1">
                                     <a class="stretched-link" href="${charLink}">${rel[0]}</a>
                                   </div>
                                 </div>
                                 <div class="card-body d-flex flex-column flex-fill">
-                                  <h3 class="script">${relTitle}</h3>
+                                  <h3 class="span-header">${relTitle}</h3>
                                   <div>${relText}</div>
                                 </div>
                                 <div class="card-footer text-muted small">
