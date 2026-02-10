@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let inventoryData = await charadex.manageData.readInventoryLog(profile.characterlog);
 
         charadex.initialize.groupGallery(
-          charadex.page.player.characterConfig,
+          charadex.page.masterlist.characterConfig,
           inventoryData,
           'type',
           charadex.url.getPageUrl('items')

@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (listData.type == 'profile') {
         $('#gallery-header').hide();
 
+        // Inventory
         let profile = listData.profileArray[0];
         let inventoryData = await charadex.manageData.readInventoryLog(profile.inventorylog);
 
-        // Inventory
         charadex.initialize.groupGallery(
           charadex.page.player.playerConfig,
           inventoryData,
