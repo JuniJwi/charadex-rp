@@ -1,4 +1,4 @@
-# Charadex: RP v1.0.0
+# Charadex: RP
 
 > [!IMPORTANT]
 > This is a customized version of [Charadex v1.5.5 by Cheeriko](https://github.com/charadex-team/charadex-v1.0/releases/tag/v1.5.5).
