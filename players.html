@@ -60,20 +60,20 @@
   <!-- Main Container                                                    -->
   <!-- ----------------------------------------------------------------- -->
   <div id="main-container" class="container d-flex order-md-2 order-3">
-
-    <!-- -------------------------------------------------------------- -->
-    <!-- Gallery Container                                              -->
-    <!-- -------------------------------------------------------------- -->
     <div id="player-gallery" class="w-100 d-flex flex-column softload">
 
+      <!-- ----------------------------------------------------------------- -->
+      <!-- UI                                                                -->
+      <!-- ----------------------------------------------------------------- -->
       <div id="search-options" class="mx-md-3 mx-0 mb-2">
+
+        <!-- Title -->
         <h1 class="text-center"><a href="/charadex-rp/players">Players</a></h1>
-        <!-- ----------------------------------------------------------------- -->
-        <!-- Faux Folders                                                      -->
-        <!-- ----------------------------------------------------------------- -->
+
+        <!-- Faux Folders -->
         <div style="display:none;" id="player-folder-container">
           <div class="row mb-2" id="player-folders"></div>
-          <!-- Buttons -->
+          <!-- Button Items -->
           <div style="display:none;">
             <div class="col-md-4 col-6 p-1" id="player-folder">
               <a class="btn btn-primary d-block" href=""></a>
@@ -81,12 +81,10 @@
           </div>
         </div>
 
-        <!-- ----------------------------------------------------------------- -->
-        <!-- Filters                                                           -->
-        <!-- ----------------------------------------------------------------- -->
+        <!-- Filters -->
         <div style="display:none;" id="player-filter-container">
           <div class="row mb-2 gy-2" id="player-filters"></div>
-          <!-- Filters -->
+          <!-- Filter Items -->
           <div style="display: none;">
             <div class="col-md-6 col-12" id="player-filter">
               <label class="px-2"></label>
@@ -96,9 +94,7 @@
           </div>
         </div>
 
-        <!-- ----------------------------------------------------------------- -->
-        <!-- Search                                                            -->
-        <!-- ----------------------------------------------------------------- -->
+        <!-- Search -->
         <div style="display:none;" id="player-search-container">
           <div class="row mb-2">
             <!-- Search Filter -->
@@ -139,12 +135,9 @@
             </div>
           </div>
         </div>
-      </div> <!-- end of search options -->
+      </div> <!-- end of ui -->
 
       <div id="gallery-card" class="card bg-body-tertiary flex-grow-1 mx-md-3 mx-0">
-        <!-- -------------------------------------------------------------- -->
-        <!-- List Items Render Here                                         -->
-        <!-- -------------------------------------------------------------- -->
         <div class="card-body">
           <!-- headers -->
           <div id="gallery-header">
@@ -155,7 +148,9 @@
             </div>
             <hr>
           </div>
-          <!-- entries -->
+          <!-- ----------------------------------------------------------------- -->
+          <!-- List Items Render Here                                            -->
+          <!-- ----------------------------------------------------------------- -->
           <div class="player-list list"></div>
           
           <!-- ----------------------------------------------------------------- -->
@@ -168,11 +163,11 @@
               <a class="btn-next px-1"><i class="fa fa-chevron-right"></i></a>
             </nav>
           </div>
+        </div>
 
-        </div> <!-- card body -->
-      </div> <!-- card -->
-    </div> <!-- gallery -->
-  </div> <!-- container -->
+      </div> <!-- End of gallery-card -->
+    </div> <!-- End of player-gallery -->
+  </div> <!-- End of main-container -->
 
   <!-- ----------------------------------------------------------------- -->
   <!-- Footer                                                            -->
@@ -197,6 +192,7 @@
         <div class="col-auto cooldown"></div>
       </div>
     </div> <!-- End of Player Thumb -->
+
     <!-- ----------------------------------------------------------------- -->
     <!-- Gallery Profile - Player Card                                     -->
     <!-- ----------------------------------------------------------------- -->
@@ -290,7 +286,6 @@
                   </div>
                 </div>
               </div>
-
 
               <!-- ---------- -->
               <!-- Pagination -->
@@ -515,7 +510,8 @@
       </div>
 
     </div> <!-- End of Player Card -->
-  </div>
+
+  </div> <!-- End of Repeat Items -->
 
   <!-- ----------------------------------------------------------------- -->
   <!-- JS                                                                -->
