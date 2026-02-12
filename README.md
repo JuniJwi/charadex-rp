@@ -1,4 +1,4 @@
-# Charadex: RP v0.0.0
+# Charadex: RP v1.0.0
 
 > [!IMPORTANT]
 > This is a customized version of [Charadex v1.5.5 by Cheeriko](https://github.com/charadex-team/charadex-v1.0/releases/tag/v1.5.5).
@@ -21,16 +21,11 @@ If you're using this version and find any bugs, please make an [issue](https://g
 
 - [Wiki](https://github.com/JuniJwi/charadex-rp/wiki)
 
-## Download
+## Setup
 
-- [Charadex](#)
+- [Getting Started](https://github.com/JuniJwi/charadex-rp/wiki/Getting-Started)
 - [Google Sheet Template](https://docs.google.com/spreadsheets/d/1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo/copy)
 - [Character Sheet Template](https://docs.google.com/spreadsheets/d/1yYCI972zbizZfoa16u_dY7ZieIdzjFnJ67UumjF890g/copy)
-
-## Setup
-- [Hosting](https://github.com/charadex-team/charadex-v1.0/wiki/Hosting)
-- [Sheet Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/Sheet-Set-Up)
-- [Site Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/Site-Set-Up)
 
 ## Other Information
 
