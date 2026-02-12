@@ -125,7 +125,7 @@ charadex.tools = {
         styleBase: 'form-control'
       });
     } catch (err) { 
-      console.error('Make sure the Multiselect CDN is in this file.') 
+      console.warning('Multiselect fields could not be updated. If there are fields, Make sure the Multiselect CDN is in this file:', err) 
     }
   } 
 
