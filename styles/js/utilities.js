@@ -14,39 +14,6 @@ import { charadex } from './config.js';
 charadex.tools = {
 
   /**
-   * Converts height to both Imperial and Metric.
-   * @param {String} height The height measurement in either unit.
-   * @return {{imperial: String, metric: String}} A dict with imperial and metric.
-   */
-  convertHeight(height) {
-    const ratio = 2.54; // 1 inch = 2.54 cm
-    let ft, inch, cm = 0;
-
-    // if this has a ' or ", we can assume it's an imperial measurement.
-    if (height.includes("'") || height.includes('"')) {
-      let imperial = height.split("'"); // split text by the '
-      ft = imperial[0].replace(/[^\d.-]/g, "");
-      inch = imperial[1].replace(/[^\d.-]/g, "");
-
-      let inches = Number(ft)*12 + Number(inch);
-      cm = inches * ratio;
-    
-    // otherwise, assume this is a metric measurement
-    } else {
-      cm = Number(height.replace(/[^\d.-]/g, ""));
-      let inches = cm / ratio;
-
-      ft = Math.floor(inches / 12);
-      inch = Math.floor(inches % 12);
-    }
-
-    return {
-      imperial: String(ft) + "'" + String(inch) + "&quot;",
-      metric: String(Math.floor(cm)) + " cm",
-    }
-  },
-
-  /**
    * Scrubs strings to alphanumeric, lowercase, no spaces.
    * @param {String} str The string to scrub
    * @return {String} The string, all lowercase, no spaces.
@@ -452,7 +419,40 @@ charadex.manageData = {
     });
 
     return converter.makeHtml(text);
-  }
+  },
+
+  /**
+   * Converts height to both Imperial and Metric.
+   * @param {String} height The height measurement in either unit.
+   * @return {{imperial: String, metric: String}} A dict with imperial and metric.
+   */
+  convertHeight(height) {
+    const ratio = 2.54; // 1 inch = 2.54 cm
+    let ft, inch, cm = 0;
+
+    // if this has a ' or ", we can assume it's an imperial measurement.
+    if (height.includes("'") || height.includes('"')) {
+      let imperial = height.split("'"); // split text by the '
+      ft = imperial[0].replace(/[^\d.-]/g, "");
+      inch = imperial[1].replace(/[^\d.-]/g, "");
+
+      let inches = Number(ft)*12 + Number(inch);
+      cm = inches * ratio;
+    
+    // otherwise, assume this is a metric measurement
+    } else {
+      cm = Number(height.replace(/[^\d.-]/g, ""));
+      let inches = cm / ratio;
+
+      ft = Math.floor(inches / 12);
+      inch = Math.floor(inches % 12);
+    }
+
+    return {
+      imperial: String(ft) + "'" + String(inch) + "&quot;",
+      metric: String(Math.floor(cm)) + " cm",
+    }
+  },
 
 }
 

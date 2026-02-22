@@ -355,11 +355,12 @@ body {
 /* ------------------------------------------------------------- */
 /* Category Badges
 /* ------------------------------------------------------------- */
-/* Character categories appear as "badges" in listings           */
-/* In addition to '.bg-all', you want one for each category   */
-/* in the format of '.bg-[categoryname]'.                     */
-/* all lowercase, no spaces. For example, if "Good Guys" is the  */
-/* category name, '.bg-goodguys' is the badge name.           */
+/* Character categories appear as "badges" in listings.
+/* In addition to '.bg-all', you want one for each category in the
+/* format of '.bg-[categoryname]' with all lowercase, no spaces.
+/* For example, if "Good Guys" is the category name,
+/* '.bg-goodguys' is the badge name.
+/* ------------------------------------------------------------- */
 .bg-all {
   background-color: var(--bs-secondary) !important;
   color: var(--bs-white) !important;
@@ -385,6 +386,29 @@ body {
   background-color: #531a94 !important;
   color: #ffffff !important;
 }
+
+/* Pronoun badges work the same...! */
+.bg-sheher {
+  background-color: #801a1a !important;
+  color: #ffffff !important;
+}
+.bg-hehim {
+  background-color: #143c81 !important;
+  color: #ffffff !important;
+}
+.bg-itits {
+  background-color: #531a94 !important;
+  color: #ffffff !important;
+}
+.bg-theythem {
+  background-color: #1a7a1e !important;
+  color: #ffffff !important;
+}
+.bg-other {
+  background-color: #9ab2df !important;
+  color: #252525 !important;
+}
+
 /* ------------------------------------------------------------- */
 /* Header and Footer
 /* ------------------------------------------------------------- */

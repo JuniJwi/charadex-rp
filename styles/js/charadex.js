@@ -36,6 +36,8 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
   for (let entry of charadexData) {
     charadex.tools.addProfileLinks(entry, pageUrl, config.profileProperty); // Go ahead and add profile keys just in case
     if (folders) folders(entry, config.fauxFolder.folderProperty); // If folders, add folder info
+
+    // Category badges
     if (entry.category) {
       let categories = entry.category.split(', ');
       let badges = [];
@@ -43,6 +45,16 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
         badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${category}</span>`);
       }
       entry.categorybadge = badges.join(' ');
+    }
+
+    // Pronoun badges
+    if (entry.pronouns) {
+      let pronouns = entry.pronouns.split(', ');
+      let badges = [];
+      for (let pronoun of pronouns) {
+        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(pronoun)}">${pronoun}</span>`);
+      }
+      entry.pronounbadge = badges.join(' ');
     }
 
     // Clear blanks
@@ -62,6 +74,11 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
       config.markdownColumns.forEach(function(column) {
         if (entry[column]) entry[column] = charadex.manageData.convertMarkdown(entry[column]);
       });
+    }
+
+    // Convert height measurement to imperial and metric
+    if (entry.height) {
+      entry.height = charadex.manageData.convertHeight(entry.height);
     }
   }
 
