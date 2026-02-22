@@ -13,23 +13,66 @@ import { charadex } from './config.js';
 ======================================================================= */
 charadex.tools = {
 
-  // Scrub
-  // Scrubs data so its all lowercase with no spaces
+  /**
+   * Converts height to both Imperial and Metric.
+   * @param {String} height The height measurement in either unit.
+   * @return {{imperial: String, metric: String}} A dict with imperial and metric.
+   */
+  convertHeight(height) {
+    const ratio = 2.54; // 1 inch = 2.54 cm
+    let ft, inch, cm = 0;
+
+    // if this has a ' or ", we can assume it's an imperial measurement.
+    if (height.includes("'") || height.includes('"')) {
+      let imperial = height.split("'"); // split text by the '
+      ft = imperial[0].replace(/[^\d.-]/g, "");
+      inch = imperial[1].replace(/[^\d.-]/g, "");
+
+      let inches = Number(ft)*12 + Number(inch);
+      cm = inches * ratio;
+    
+    // otherwise, assume this is a metric measurement
+    } else {
+      cm = Number(height.replace(/[^\d.-]/g, ""));
+      let inches = cm / ratio;
+
+      ft = Math.floor(inches / 12);
+      inch = Math.floor(inches % 12);
+    }
+
+    return {
+      imperial: String(ft) + "'" + String(inch) + "&quot;",
+      metric: String(Math.floor(cm)) + " cm",
+    }
+  },
+
+  /**
+   * Scrubs strings to alphanumeric, lowercase, no spaces.
+   * @param {String} str The string to scrub
+   * @return {String} The string, all lowercase, no spaces.
+   */
   scrub(str) {
     if (!str) return str;
     if (!isNaN(str)) return Number(str);
     return str.toLowerCase().replace(/[^a-z0-9]/g, "");
   },
 
-  // Similar to scrub
-  // Scrubs data so its all lowercase with no spaces
+  /**
+   * Scrubs strings for key format, to lowercase, no spaces.
+   * Symbols are allowed.
+   * @param {String} str The key to scrub
+   * @return {String} The key, all lowercase, no spaces.
+   */
   createKey(str) {
     if (!str) return str;
     return String(str).toLowerCase().replaceAll(" ", "");
   },
 
-  // Create Select Options
-  // Creates select options from an array
+  /**
+   * Takes an array of select options and formats for HTML.
+   * @param {Array} optionArray An array of select options.
+   * @return {Array} An array of options in HTML format.
+   */
   createSelectOptions(optionArray) {
     let options = [];
     for (let value of optionArray) {
@@ -38,8 +81,10 @@ charadex.tools = {
     return options;
   },
 
-  // Load files via include
-  // Will replace the entire div
+  /**
+   * Load other .html files via include.
+   * Includes replace the entire div.
+   */
   loadIncludedFiles() {
     $(".load-html").each(function () {
       const target = $(this);
@@ -50,19 +95,25 @@ charadex.tools = {
     });
   },
 
-  // Load Page
-  // Load selected areas
-  loadPage(loadAreaSelector = '', timeout = 500, loadIconSelector = '.loading') {
+  /**
+   * Show/hide elements after page load is complete.
+   * @param {String} showClass The class of items to show after load.
+   * @param {Number} timeout How long to wait before loading.
+   * @param {String} hideClass The class of elements to hide.
+   */
+  loadPage(showClass = '', timeout = 500, hideClass = '.loading') {
     setTimeout(function () {
-      $(loadIconSelector).addClass('inactive');
-      $(loadAreaSelector).addClass('active');
+      $(hideClass).addClass('inactive');
+      $(showClass).addClass('active');
     }, timeout);
     setTimeout(function () {
-      $(loadIconSelector).hide();
+      $(hideClass).hide();
     }, timeout+100);
   },
   
-  // Change meta information
+  /**
+   * Update meta information with config.js settings.
+   */
   updateMeta() {
     try {
       let title =  $('title');
@@ -80,15 +131,28 @@ charadex.tools = {
     }
   },
 
-  // Check Array
-  // Check if array is actually an array and has info
+  /**
+   * Check if an array is actually an array,
+   * and that it also has occurrences.
+   * @param {Array} arr The array to check.
+   * @return {Boolean} Whether or not the array is both an array and has occurrences.
+   */
   checkArray(arr) {
     return (arr && Array.isArray(arr) && arr.length > 0);
   },
 
-  // Create list classes for List.JS
-  // All things with the word 'image' will be made into images
-  // And all things with the word 'link' will be made into links
+  /**
+   * Create list classes for List.JS
+   * 
+   * All data with the word `image`, `avatar`, or `thumbnail` will be assigned to image src.
+   * 
+   * All data with the word `link` or `toyhouse` will be assigned to href.
+   * 
+   * All data with the word `toggle`, `check`, or `active` get true/false on data-cd-bool.
+   * 
+   * @param {Array} sheetArray The google sheet array of data.
+   * @return {Array} Sheet data with adjusted special element rules.
+   */
   createListClasses(sheetArray) {
 
     let classArr = [...new Set(sheetArray.slice(0, 5).flatMap(Object.keys))];
@@ -110,12 +174,21 @@ charadex.tools = {
 
   },
   
-  // Adds profile links
-  addProfileLinks(entry, pageUrl, key = 1) {
+  /**
+   * Add a link to the profile page of the related entity.
+   * @param {Object} entry An entry of charadex data.
+   * @param {String} pageUrl The URL of the related entity type.
+   * @param {Key} key The profile ID of the related entity.
+   */
+  addProfileLinks(entry, pageUrl, key = '1') {
     entry.profileid = entry[key];
     entry.profilelink = charadex.url.addUrlParameters(pageUrl, { profile: entry[key] });
   },
 
+  /**
+   * Add to Bootstrap multi-select picker.
+   * @param {Object} selectElement Option select elements from the DOM.
+   */
   // Try to add the select picker
   addMultiselect (selectElement) {
     try {

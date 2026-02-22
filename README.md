@@ -4,14 +4,12 @@
 > This is a customized version of [Charadex v1.5.5 by Cheeriko](https://github.com/charadex-team/charadex-v1.0/releases/tag/v1.5.5).
 > Attempting to use this project with future versions of Charadex or the Charadex sheet may cause version compatability issues.
 
-## Changelog
-- Rework the infrastructure for an RP group centric game system.
-  - Character profiles are hosted natively
-  - Closed species properties have been removed
-  - Google sheets now import member's profile sheets
-  - Lore entries instead of an FAQ
-  - Add character inventory
-  - Inventories now aggregate log entries to calculate final item counts
+## To Do
+- Add player pronouns and pronoun badges
+- Add player descriptions
+- Add player profile links
+- Generate a moderator and credits page
+- Automatically convert height fields
 
 # Issues
 
