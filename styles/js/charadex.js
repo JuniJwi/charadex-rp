@@ -79,6 +79,8 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     // Convert height measurement to imperial and metric
     if (entry.height) {
       let heights = charadex.manageData.convertHeight(entry.height);
+      entry.imperial = heights.imperial;
+      entry.metric = heights.metric;
       entry.height = heights.imperial + ' | ' + heights.metric;
     }
   }
