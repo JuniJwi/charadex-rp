@@ -63,7 +63,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
           let items = entry[column].split(', ');
           let badges = [];
           for (let item of items) {
-            badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
+            badges.push(`<span class="badge ${style[charadex.tools.scrub(item)]}">${item}</span>`);
           }
           entry[column + 'badge'] = badges;
         }
@@ -165,7 +165,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
             let items = entry[column].split(', ');
             let badges = [];
             for (let item of items) {
-              badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
+              badges.push(`<span class="badge ${style[charadex.tools.scrub(item)]}">${item}</span>`);
             }
             entry[column + 'badge'] = badges;
           }
