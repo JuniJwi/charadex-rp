@@ -65,7 +65,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
           for (let item of items) {
             badges.push(`<span class="badge ${style[charadex.tools.scrub(item)]}">${item}</span>`);
           }
-          entry[column + 'badge'] = badges;
+          entry[column + 'badge'] = badges.join(' ');
         }
       }
     }
@@ -167,7 +167,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
             for (let item of items) {
               badges.push(`<span class="badge ${style[charadex.tools.scrub(item)]}">${item}</span>`);
             }
-            entry[column + 'badge'] = badges;
+            entry[column + 'badge'] = badges.join(' ');
           }
         }
       }
