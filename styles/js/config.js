@@ -89,7 +89,7 @@ charadex.sheet = {
 /*                  entries at the top.
 /*  toggle:         true/false to turn prevnext on or off
 /*
-/* fillBlanks:      columns in which you want to replace any blank/zero
+/* fillBlanks:      columns in which you want to replace any blank
 /*                  values with a formatted "--"
 /*
 /* markdownColumns: columns in which you want to convert markdown text

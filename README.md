@@ -6,6 +6,7 @@
 
 - [Example Site](https://junijwi.github.io/charadex-rp/)
 - [Example Sheet](https://docs.google.com/spreadsheets/d/1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo/edit?usp=sharing)
+- [Example Character Sheet](https://docs.google.com/spreadsheets/d/1yYCI972zbizZfoa16u_dY7ZieIdzjFnJ67UumjF890g/edit?usp=sharing)
 
 # Issues
 

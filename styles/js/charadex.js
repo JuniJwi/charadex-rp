@@ -40,10 +40,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     // Clear blanks
     if (config.fillBlanks) {
       config.fillBlanks.forEach(function(column) {
-        if (typeof entry[column] === 'number') {
-          entry[column] = (entry[column] === 0) ? "" : entry[column].toString();
-        }
-        if (entry[column] && entry[column] === "") {
+        if (!entry[column] || entry[column] === "") {
           entry[column] = `<span class='text-muted'>--</span>`;
         }
       });
