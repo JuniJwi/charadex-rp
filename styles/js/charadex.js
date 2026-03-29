@@ -58,15 +58,15 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     
     // Create badges
     if (config.badgeColumns) {
-      Object.keys(config.badgeColumns).forEach(function([column, value]) {
+      for (const [column, style] of Object.entries(config.badgeColumns)) {
         if (entry[column]) {
           let items = entry[column].split(', ');
           let badges = [];
           for (let item of items) {
-            badges.push(`<span class="badge bg-secondary ${value[charadex.tools.scrub(item)]}">${item}</span>`);
+            badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
           }
         }
-      });
+      }
     }
 
     // Convert height measurement to imperial and metric
@@ -156,14 +156,20 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
 
     // Add gallery information
     for (let entry of charadexData) {
-      if (entry.category) {
-        let categories = entry.category.split(', ');
-        let badges = [];
-        for (let category of categories) {
-          badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${charadex.tools.scrub(category)}</span>`);
+      
+      // Create badges
+      if (config.badgeColumns) {
+        for (const [column, style] of Object.entries(config.badgeColumns)) {
+          if (entry[column]) {
+            let items = entry[column].split(', ');
+            let badges = [];
+            for (let item of items) {
+              badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
+            }
+          }
         }
-        entry.categorybadge = badges.join(' ');
       }
+      
     }
 
     // Add Pagination
