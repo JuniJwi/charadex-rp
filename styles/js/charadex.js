@@ -65,6 +65,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
           for (let item of items) {
             badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
           }
+          entry[column + 'badge'] = badges;
         }
       }
     }
@@ -166,10 +167,11 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
             for (let item of items) {
               badges.push(`<span class="badge bg-secondary ${style[charadex.tools.scrub(item)]}">${item}</span>`);
             }
+            entry[column + 'badge'] = badges;
           }
         }
       }
-      
+
     }
 
     // Add Pagination
