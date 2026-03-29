@@ -5,8 +5,7 @@
 > Attempting to use this project with future versions of Charadex or the Charadex sheet may cause version compatability issues.
 
 ## To Do
-- Bring player pages in line with character pages
-- Configurable badges (see charadex.js)
+- ...
 
 # Issues
 

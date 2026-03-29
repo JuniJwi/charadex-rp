@@ -37,46 +37,14 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     charadex.tools.addProfileLinks(entry, pageUrl, config.profileProperty); // Go ahead and add profile keys just in case
     if (folders) folders(entry, config.fauxFolder.folderProperty); // If folders, add folder info
 
-    // Role badges
-    if (entry.role) {
-      let roles = entry.role.split(', ');
-      let badges = [];
-      for (let role of roles) {
-        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(role)}">${role}</span>`);
-      }
-      entry.rolebadge = badges.join(' ');
-    }
-    // TODO: Maybe make them configurable... I guess...
-    // Can set class styles in the config, too, instead of badge classes
-
-    // Category badges
-    if (entry.category) {
-      let categories = entry.category.split(', ');
-      let badges = [];
-      for (let category of categories) {
-        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(category)}">${category}</span>`);
-      }
-      entry.categorybadge = badges.join(' ');
-    }
-
-    // Pronoun badges
-    if (entry.pronouns) {
-      let pronouns = entry.pronouns.split(', ');
-      let badges = [];
-      for (let pronoun of pronouns) {
-        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(pronoun)}">${pronoun}</span>`);
-      }
-      entry.pronounbadge = badges.join(' ');
-    }
-
     // Clear blanks
     if (config.fillBlanks) {
-      Object.entries(entry).forEach(([key, value]) => {
-        if (entry[key] === "") {
-          entry[key] = `<span class='text-muted'>--</span>`;
+      config.fillBlanks.forEach(function(column) {
+        if (typeof entry[column] === 'number') {
+          entry[column] = (entry[column] === 0) ? "" : entry[column].toString();
         }
-        if (typeof entry[key] === 'number') {
-          entry[key] = entry[key].toString();
+        if (entry[column] && entry[column] === "") {
+          entry[column] = `<span class='text-muted'>--</span>`;
         }
       });
     }
@@ -85,6 +53,19 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     if (config.markdownColumns) {
       config.markdownColumns.forEach(function(column) {
         if (entry[column]) entry[column] = charadex.manageData.convertMarkdown(entry[column]);
+      });
+    }
+    
+    // Create badges
+    if (config.badgeColumns) {
+      Object.keys(config.badgeColumns).forEach(function([column, value]) {
+        if (entry[column]) {
+          let items = entry[column].split(', ');
+          let badges = [];
+          for (let item of items) {
+            badges.push(`<span class="badge bg-secondary ${value[charadex.tools.scrub(item)]}">${item}</span>`);
+          }
+        }
       });
     }
 

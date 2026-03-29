@@ -163,6 +163,16 @@ charadex.page.prompts = {
     'description',
   ],
 
+  badgeColumns: {
+    category: {               // name of the column
+      one: 'bg-one',      // value: 'style'
+      two: 'bg-two',      // value: 'style'
+      three: 'bg-three',  // value: 'style'
+      four: 'bg-four',     // value: 'style'
+      five: 'bg-five',      // value: 'style'
+    },
+  },
+
 };
 
 
@@ -329,6 +339,23 @@ charadex.page.masterlist = {
     'lore',
   ],
   
+  badgeColumns: {
+    category: {               // name of the column
+      one: 'bg-one',      // value: 'style'
+      two: 'bg-two',      // value: 'style'
+      three: 'bg-three',  // value: 'style'
+      four: 'bg-four',     // value: 'style'
+      five: 'bg-five',      // value: 'style'
+    },
+    pronouns: {               // name of the column
+      hehim: 'bg-hehim',    // value: 'style'
+      sheher: 'bg-sheher',    // value: 'style'
+      theythem: 'bg-theythem', // value: 'style'
+      itits: 'bg-itits',    // value: 'style'
+      other: 'bg-other',    // value: 'style'
+    }
+  },
+
   // This is a special config for their inventory
   characterConfig: {
 
@@ -363,7 +390,7 @@ charadex.page.masterlist = {
 
 };
 
-/* Inventory
+/* Player & Inventory
 /* --------------------------------------------------------------- */
 charadex.page.player = {
 
@@ -411,6 +438,21 @@ charadex.page.player = {
   markdownColumns: [
     'description',
   ],
+
+  badgeColumns: {
+    role: {                   // name of the column
+      creator: 'bg-primary',  // value: 'style'
+      mod: 'bg-primary',      // value: 'style'
+      player: 'bg-secondary', // value: 'style'
+    },
+    pronouns: {               // name of the column
+      hehim: 'bg-hehim',    // value: 'style'
+      sheher: 'bg-sheher',    // value: 'style'
+      theythem: 'bg-theythem', // value: 'style'
+      itits: 'bg-itits',    // value: 'style'
+      other: 'bg-other',    // value: 'style'
+    }
+  },
 
 
   // Related Data
