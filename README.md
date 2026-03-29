@@ -5,11 +5,8 @@
 > Attempting to use this project with future versions of Charadex or the Charadex sheet may cause version compatability issues.
 
 ## To Do
-- Add player pronouns and pronoun badges
-- Add player descriptions
-- Add player profile links
-- Generate a moderator and credits page
-- Automatically convert height fields
+- Bring player pages in line with character pages
+- Configurable badges (see charadex.js)
 
 # Issues
 

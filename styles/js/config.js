@@ -405,8 +405,12 @@ charadex.page.player = {
   },
 
   prevNext: {
-    toggle: false,
+    toggle: true,
   },
+
+  markdownColumns: [
+    'description',
+  ],
 
 
   // Related Data

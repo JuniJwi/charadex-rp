@@ -37,6 +37,18 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     charadex.tools.addProfileLinks(entry, pageUrl, config.profileProperty); // Go ahead and add profile keys just in case
     if (folders) folders(entry, config.fauxFolder.folderProperty); // If folders, add folder info
 
+    // Role badges
+    if (entry.role) {
+      let roles = entry.role.split(', ');
+      let badges = [];
+      for (let role of roles) {
+        badges.push(`<span class="badge bg-secondary bg-${charadex.tools.scrub(role)}">${role}</span>`);
+      }
+      entry.rolebadge = badges.join(' ');
+    }
+    // TODO: Maybe make them configurable... I guess...
+    // Can set class styles in the config, too, instead of badge classes
+
     // Category badges
     if (entry.category) {
       let categories = entry.category.split(', ');
