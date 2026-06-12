@@ -169,7 +169,7 @@
 /* Headers
 /* ------------------------------------------------------------- */
 /* Calculating header increment */
-  --cd-header-inc-size: calc((var(--cd-header-max-size) - var(--cd-header-min-size)) / 4);
+  --cd-header-inc-size: calc((var(--cd-header-max-size) - var(--cd-header-min-size)) / 5);
 }
 /* Set header sizes */
 h1 { font-size: var(--cd-header-max-size); }
