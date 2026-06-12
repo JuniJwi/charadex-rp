@@ -700,14 +700,6 @@ ol li::marker {
   transition: opacity 0.2s ease;
 }
 
-/* Specifically for the body */
-#charadex-body {
-  display: none;
-}
-#charadex-body.active {
-  display: block;
-}
-
 /* ------------------------------------------------------------- */
 /* Hero images
 /* ------------------------------------------------------------- */

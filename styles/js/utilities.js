@@ -69,12 +69,14 @@ charadex.tools = {
    * @param {String} hideClass The class of elements to hide.
    */
   loadPage(showClass = '', timeout = 500, hideClass = '.loading') {
+    console.log('loading...', showClass);
     setTimeout(function () {
       $(hideClass).addClass('inactive');
       $(showClass).addClass('active');
     }, timeout);
     setTimeout(function () {
       $(hideClass).hide();
+      console.log('✅');
     }, timeout+100);
   },
   

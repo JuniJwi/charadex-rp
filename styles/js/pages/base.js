@@ -15,8 +15,4 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log('updating meta...')
   charadex.tools.updateMeta();
   console.log('✅');
-  
-  console.log('loading page #charadex-body...')
-  charadex.tools.loadPage('#charadex-body', 100);
-  console.log('✅');
 });
