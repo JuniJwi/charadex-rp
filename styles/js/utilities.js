@@ -49,20 +49,6 @@ charadex.tools = {
   },
 
   /**
-   * Load other .html files via include.
-   * Includes replace the entire div.
-   */
-  loadIncludedFiles() {
-    $(".load-html").each(function () {
-      const target = $(this);
-      $.get(this.dataset.source, function (data) {
-        target.replaceWith(data);
-        console.log("Loaded HTML file:", target);
-      });
-    });
-  },
-
-  /**
    * Show/hide elements after page load is complete.
    * @param {String} showClass The class of items to show after load.
    * @param {Number} timeout How long to wait before loading.
