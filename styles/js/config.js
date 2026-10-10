@@ -359,12 +359,6 @@ charadex.page.masterlist = {
   ],
 
   markdownColumns: [
-    'mythosdescription',
-    'abilitydescription1',
-    'abilitydescription2',
-    'abilitydescription3',
-    'abilitydescription4',
-    'abilitydescription5',
     'personality',
     'lore',
   ],
