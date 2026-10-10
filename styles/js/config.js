@@ -293,6 +293,69 @@ charadex.page.lore = {
 
 
 /* --------------------------------------------------------------- */
+/* News.html
+/* --------------------------------------------------------------- */
+charadex.page.news = {
+
+  sheetPage: charadex.sheet.pages.news,
+  sitePage: 'news',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: false,
+    sortProperty: 'id',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'TBA': [],
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Title', 'Author', 'Content', 'Tags']
+  },
+
+  prevNext: {
+    toggle: false,
+  },
+  
+  fillBlanks: [
+    'title',
+    'author',
+    'summary',
+    'content',
+  ],
+
+  markdownColumns: [
+    'summary',
+    'content',
+  ],
+
+  badgeColumns: {},
+
+}
+
+
+/* --------------------------------------------------------------- */
 /* characters.html
 /* --------------------------------------------------------------- */
 charadex.page.masterlist = {
