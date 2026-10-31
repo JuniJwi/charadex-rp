@@ -58,6 +58,9 @@ charadex.sheet = {
     announcementTypes: ['All', 'General', 'Event', 'Update', 'Plot', 'PSA'],
     PromptTypes: ['All', 'Roleplay', 'Writing', 'Illustration', 'Question', 'Meme'],
     CalendarTypes: ['All', 'Roleplay', 'Event', 'Hiatus', 'Prompt', 'Deadline', 'Holiday', 'Plot', 'Phase'],
+    
+    emotions: ['Neutral', 'Happy', 'Manic', 'Angry', 'Sad', 'Nervous', 'Stressed', 'Embarrassed', 'Skeptical', 'Signature'],
+
   }
 
 }
@@ -805,6 +808,69 @@ charadex.page.lore = {
   badgeColumns: {},
 
 }
+
+
+
+/* --------------------------------------------------------------- */
+/* chapters.html
+/* --------------------------------------------------------------- */
+charadex.page.chapters = {
+
+  // Dex Set Up
+  sheetID: charadex.sheet.contentid,
+  sheetPage: charadex.sheet.pages.chapters,
+  sitePage: 'chapters',
+  dexSelector: 'charadex',
+  profileProperty: 'name',
+
+  // Dex Options
+  sort: {
+    toggle: false,
+    sortProperty: 'name',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 24,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Affiliation': charadex.sheet.options.affiliation,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['Name', 'Characters']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  fillBlanks: [
+    'summary',
+  ],
+
+  markdownColumns: [
+    'summary',
+  ],
+
+  badgeColumns: {},
+
+};
 
 
 /* --------------------------------------------------------------- */
