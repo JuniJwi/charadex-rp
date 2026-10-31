@@ -40,11 +40,13 @@ charadex.sheet = {
 
     items:           'items',
     skills:          'skills',          // @todo: preset powers
+
     // activityid pages
     announcements:   'announcements',   // @todo: make this RSS feed?
     prompts:         'prompts',
     calendar:        'calendar',        // @todo: a calendar
     events:          'events',          // @todo: user roleplay
+
     // contentid pages
     lore:            'lore',
     chapters:        'chapters',        // @todo: visual novel
@@ -684,7 +686,80 @@ charadex.page.calendar = {
   sheetID: charadex.sheet.activityid,
   sheetPage: charadex.sheet.pages.calendar,
   sitePage: 'calendar',
-  dexSelector: 'charadex',
+  dexSelector: 'calendar',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: true,
+    sortProperty: 'start',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Affiliation': charadex.sheet.options.affiliation,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: false,
+    parameters: ['Title']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+  
+  fillBlanks: [
+    'title',
+    'start',
+    'end',
+    'summary',
+    'description',
+  ],
+  
+  markdownColumns: [
+    'summary',
+    'description',
+  ],
+
+  badgeColumns: {
+    affiliation: {               // name of the column
+      one: 'bg-one',      // value: 'style'
+      two: 'bg-two',      // value: 'style'
+      three: 'bg-three',  // value: 'style'
+      four: 'bg-four',     // value: 'style'
+      five: 'bg-five',      // value: 'style'
+    },
+  },
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* events.html
+/* --------------------------------------------------------------- */
+charadex.page.events = {
+
+  sheetID: charadex.sheet.activityid,
+  sheetPage: charadex.sheet.pages.events,
+  sitePage: 'events',
+  dexSelector: 'event',
   profileProperty: 'id',
 
   sort: {
