@@ -23,24 +23,44 @@ charadex.site = {
 /* --------------------------------------------------------------- */
 charadex.sheet = {
 
+  // you can have these on the same google doc (just use the same id)
+  // but you can also split them up for laod time and sanity
   id: '1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo',
+  activityid: '1LvIIvAVdC6i-HHe35ukdlBd5dDdwqwwquaFA6jKuZOU',
+  contentid: '1VHPmKI2mkyQCg2HPe4zXzK8YmhvGRcIrXf0qXoiwRUo',
+
 
   pages: { // these should match your sheet names, but in lowercase
-    masterlist:    'characters',
-    masterlistLog: 'character log',
-    player:        'players',
-    inventoryLog:  'inventory log',
-    items:         'items',
-    prompts:       'prompts',
-    lore:          'lore',
+    // id pages
+    masterlist:      'characters',
+    masterlistLog:   'character log',
+    player:          'players',
+    inventoryLog:    'inventory log',
+    items:           'items',
+    skills:          'skills',          // todo: preset powers
+    // activityid pages
+    announcements:   'announcements',   // todo: make this RSS feed?
+    prompts:         'prompts',
+    calendar:        'calendar',        // todo: a calendar
+    events:          'events',          // todo: user roleplay
+    // contentid pages
+    lore:            'lore',
+    chapters:        'chapters',        // todo: visual novel
   },
 
   options: { // available options for values in your sheets used in search filters
     roles: ['Story Character', 'Player Character', 'Side Character'],
     statuses: ['Active', 'Out of Date', 'Retired', 'Dead', 'WIP'],
+    affiliation: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
     category: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
-    subcategory: ['All', 'One', 'Two', 'Three', 'Four', 'Five'],
     itemTypes: ['All', 'Currency', 'Voucher', 'Achievement', 'Gatcha', 'Misc'],
+    skillTypes: ['All', 'Passive', 'Utility', 'Active'],
+    announcementTypes: ['All', 'General', 'Event', 'Update', 'Plot', 'PSA'],
+    PromptTypes: ['All', 'Roleplay', 'Writing', 'Illustration', 'Question', 'Meme'],
+    CalendarTypes: ['All', 'Roleplay', 'Event', 'Hiatus', 'Prompt', 'Deadline', 'Holiday', 'Plot', 'Phase'],
+    
+    emotions: ['Neutral', 'Happy', 'Manic', 'Angry', 'Sad', 'Nervous', 'Stressed', 'Embarrassed', 'Skeptical', 'Signature'],
+
   }
 
 }
@@ -50,12 +70,13 @@ charadex.sheet = {
 /* ==================================================================== */
 /* Some general notes for each section...
 /*
+/* sheetID:         which sheet we're pulling the information from
 /* sheetPage:       refers to the name of the google sheet, but in lowercase
 /* sitePage:        refers to the URL path of the page. Usually, this will
 /*                  match the name of the html file for that page
 /* dexSelector:     refers to the class prefix of the html elements for
 /*                  javascript selection. is 'charadex' by default.
-/* profileProperty: column on the sheet that serves as the UNIQUe id key
+/* profileProperty: column on the sheet that serves as the UNIQUE id key
 /*                  used to identify the row and create the URL.
 /*
 /* sort:
@@ -103,263 +124,13 @@ charadex.sheet = {
 /* ==================================================================== */
 charadex.page = {};
 
-/* --------------------------------------------------------------- */
-/* items.html
-/* --------------------------------------------------------------- */
-charadex.page.items = {
-
-  sheetPage: charadex.sheet.pages.items,
-  sitePage: 'items',
-  dexSelector: 'item',
-  profileProperty: 'item',
-
-  sort: {
-    toggle: true,
-    sortProperty: 'sort',
-    order: 'asc',
-    parameters: []
-  },
-
-  pagination: {
-    toggle: true,
-    bottomToggle: true,
-    amount: 24,
-  },
-
-  filters: {
-    toggle: false,
-    parameters: {
-      'Type': charadex.sheet.options.itemTypes,
-    }
-  },
-
-  fauxFolder: {
-    toggle: true,
-    folderProperty: 'Type',
-    parameters: charadex.sheet.options.itemTypes,
-  },
-
-  search: {
-    toggle: true,
-    filterToggle: true,
-    parameters: ['All', 'Item', 'Description']
-  },
-
-  prevNext: {
-    toggle: true,
-  },
-
-  fillBlanks: [],
-  
-  markdownColumns: [],
-
-  badgeColumns: {},
-
-};
-
-
-/* --------------------------------------------------------------- */
-/* prompts.html
-/* --------------------------------------------------------------- */
-charadex.page.prompts = {
-
-  sheetPage: charadex.sheet.pages.prompts,
-  sitePage: 'prompts',
-  dexSelector: 'prompt',
-  profileProperty: 'title',
-
-  sort: {
-    toggle: true,
-    sortProperty: 'enddate',
-    order: 'asc',
-    parameters: []
-  },
-
-  pagination: {
-    toggle: true,
-    bottomToggle: true,
-    amount: 12,
-  },
-
-  filters: {
-    toggle: true,
-    parameters: {
-      'Category': charadex.sheet.options.category,
-    }
-  },
-
-  fauxFolder: {
-    toggle: false,
-    folderProperty: '',
-    parameters: [],
-  },
-
-  search: {
-    toggle: true,
-    filterToggle: false,
-    parameters: ['Title']
-  },
-
-  prevNext: {
-    toggle: true,
-  },
-  
-  fillBlanks: [
-    'title',
-    'startdate',
-    'enddate',
-    'summary',
-    'description',
-  ],
-  
-  markdownColumns: [
-    'summary',
-    'description',
-  ],
-
-  badgeColumns: {
-    category: {               // name of the column
-      one: 'bg-one',      // value: 'style'
-      two: 'bg-two',      // value: 'style'
-      three: 'bg-three',  // value: 'style'
-      four: 'bg-four',     // value: 'style'
-      five: 'bg-five',      // value: 'style'
-    },
-  },
-
-};
-
-
-/* --------------------------------------------------------------- */
-/* lore.html
-/* --------------------------------------------------------------- */
-charadex.page.lore = {
-
-  sheetPage: charadex.sheet.pages.lore,
-  sitePage: 'lore',
-  dexSelector: 'charadex',
-  profileProperty: 'id',
-
-  sort: {
-    toggle: false,
-    sortProperty: 'id',
-    order: 'asc',
-    parameters: []
-  },
-
-  pagination: {
-    toggle: true,
-    bottomToggle: true,
-    amount: 12,
-  },
-
-  filters: {
-    toggle: false,
-    parameters: {
-      'TBA': [],
-    }
-  },
-
-  fauxFolder: {
-    toggle: false,
-    folderProperty: '',
-    parameters: [],
-  },
-
-  search: {
-    toggle: true,
-    filterToggle: true,
-    parameters: ['All', 'Title', 'Content', 'Tags']
-  },
-
-  prevNext: {
-    toggle: false,
-  },
-  
-  fillBlanks: [
-    'title',
-    'summary',
-    'content',
-  ],
-
-  markdownColumns: [
-    'summary',
-    'content',
-  ],
-
-  badgeColumns: {},
-
-}
-
-
-/* --------------------------------------------------------------- */
-/* News.html
-/* --------------------------------------------------------------- */
-charadex.page.news = {
-
-  sheetPage: charadex.sheet.pages.news,
-  sitePage: 'news',
-  dexSelector: 'charadex',
-  profileProperty: 'id',
-
-  sort: {
-    toggle: false,
-    sortProperty: 'id',
-    order: 'asc',
-    parameters: []
-  },
-
-  pagination: {
-    toggle: true,
-    bottomToggle: true,
-    amount: 12,
-  },
-
-  filters: {
-    toggle: false,
-    parameters: {
-      'TBA': [],
-    }
-  },
-
-  fauxFolder: {
-    toggle: false,
-    folderProperty: '',
-    parameters: [],
-  },
-
-  search: {
-    toggle: true,
-    filterToggle: true,
-    parameters: ['All', 'Title', 'Author', 'Content', 'Tags']
-  },
-
-  prevNext: {
-    toggle: false,
-  },
-  
-  fillBlanks: [
-    'title',
-    'author',
-    'summary',
-    'content',
-  ],
-
-  markdownColumns: [
-    'summary',
-    'content',
-  ],
-
-  badgeColumns: {},
-
-}
-
 
 /* --------------------------------------------------------------- */
 /* characters.html
 /* --------------------------------------------------------------- */
 charadex.page.masterlist = {
 
+  sheetID: charadex.sheet.id,
   sheetPage: charadex.sheet.pages.masterlist,
   sitePage: 'characters',
   dexSelector: 'charadex',
@@ -383,8 +154,8 @@ charadex.page.masterlist = {
     parameters: {
       'Role': charadex.sheet.options.roles,
       'Status': charadex.sheet.options.statuses,
+      'Affiliation': charadex.sheet.options.affiliation,
       'Category': charadex.sheet.options.category,
-      'Subcategory': charadex.sheet.options.subcategory,
     }
   },
 
@@ -427,7 +198,7 @@ charadex.page.masterlist = {
   ],
   
   badgeColumns: {
-    category: {
+    affiliation: {
       one: 'bg-one',
       two: 'bg-two',
       three: 'bg-three',
@@ -510,13 +281,12 @@ charadex.page.masterlist = {
 /* --------------------------------------------------------------- */
 charadex.page.player = {
 
-  // Dex Set Up
+  sheetID: charadex.sheet.id,
   sheetPage: charadex.sheet.pages.player,
   sitePage: 'players',
   dexSelector: 'player',
   profileProperty: 'username',
 
-  // Dex Options
   sort: {
     toggle: true,
     sortProperty: 'username',
@@ -651,6 +421,454 @@ charadex.page.player = {
     },
 
   }
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* items.html
+/* --------------------------------------------------------------- */
+charadex.page.items = {
+
+  sheetID: charadex.sheet.id,
+  sheetPage: charadex.sheet.pages.items,
+  sitePage: 'items',
+  dexSelector: 'item',
+  profileProperty: 'item',
+
+  sort: {
+    toggle: true,
+    sortProperty: 'sort',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 24,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'Type': charadex.sheet.options.itemTypes,
+    }
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Type',
+    parameters: charadex.sheet.options.itemTypes,
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Item', 'Description']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  fillBlanks: [],
+  
+  markdownColumns: [],
+
+  badgeColumns: {},
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* skills.html
+/* --------------------------------------------------------------- */
+charadex.page.skills = {
+
+  sheetID: charadex.sheet.id,
+  sheetPage: charadex.sheet.pages.skills,
+  sitePage: 'skills',
+  dexSelector: 'skill',
+  profileProperty: 'skill',
+
+  sort: {
+    toggle: true,
+    sortProperty: 'sort',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 24,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'Type': charadex.sheet.options.skillTypes,
+    }
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Type',
+    parameters: charadex.sheet.options.skillTypes,
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Skill', 'Description']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  fillBlanks: [],
+  
+  markdownColumns: [],
+
+  badgeColumns: {},
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* Announcements.html
+/* --------------------------------------------------------------- */
+charadex.page.announcements = {
+
+  sheetID: charadex.sheet.activityid,
+  sheetPage: charadex.sheet.pages.announcements,
+  sitePage: 'announcements',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: false,
+    sortProperty: 'id',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'TBA': [],
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Title', 'Author', 'Content', 'Tags']
+  },
+
+  prevNext: {
+    toggle: false,
+  },
+  
+  fillBlanks: [
+    'title',
+    'author',
+    'summary',
+    'content',
+  ],
+
+  markdownColumns: [
+    'summary',
+    'content',
+  ],
+
+  badgeColumns: {},
+
+}
+
+
+/* --------------------------------------------------------------- */
+/* prompts.html
+/* --------------------------------------------------------------- */
+charadex.page.prompts = {
+
+  sheetID: charadex.sheet.activityid,
+  sheetPage: charadex.sheet.pages.prompts,
+  sitePage: 'prompts',
+  dexSelector: 'prompt',
+  profileProperty: 'title',
+
+  sort: {
+    toggle: true,
+    sortProperty: 'end',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Affiliation': charadex.sheet.options.affiliation,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: false,
+    parameters: ['Title']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+  
+  fillBlanks: [
+    'title',
+    'start',
+    'end',
+    'summary',
+    'description',
+  ],
+  
+  markdownColumns: [
+    'summary',
+    'description',
+  ],
+
+  badgeColumns: {
+    affiliation: {               // name of the column
+      one: 'bg-one',      // value: 'style'
+      two: 'bg-two',      // value: 'style'
+      three: 'bg-three',  // value: 'style'
+      four: 'bg-four',     // value: 'style'
+      five: 'bg-five',      // value: 'style'
+    },
+  },
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* calendar.html
+/* --------------------------------------------------------------- */
+charadex.page.calendar = {
+
+  sheetID: charadex.sheet.activityid,
+  sheetPage: charadex.sheet.pages.calendar,
+  sitePage: 'calendar',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: true,
+    sortProperty: 'start',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Affiliation': charadex.sheet.options.affiliation,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: false,
+    parameters: ['Title']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+  
+  fillBlanks: [
+    'title',
+    'start',
+    'end',
+    'summary',
+    'description',
+  ],
+  
+  markdownColumns: [
+    'summary',
+    'description',
+  ],
+
+  badgeColumns: {
+    affiliation: {               // name of the column
+      one: 'bg-one',      // value: 'style'
+      two: 'bg-two',      // value: 'style'
+      three: 'bg-three',  // value: 'style'
+      four: 'bg-four',     // value: 'style'
+      five: 'bg-five',      // value: 'style'
+    },
+  },
+
+};
+
+
+/* --------------------------------------------------------------- */
+/* lore.html
+/* --------------------------------------------------------------- */
+charadex.page.lore = {
+
+  sheetID: charadex.sheet.contentid,
+  sheetPage: charadex.sheet.pages.lore,
+  sitePage: 'lore',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: false,
+    sortProperty: 'id',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'TBA': [],
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Title', 'Content', 'Tags']
+  },
+
+  prevNext: {
+    toggle: false,
+  },
+  
+  fillBlanks: [
+    'title',
+    'summary',
+    'content',
+  ],
+
+  markdownColumns: [
+    'summary',
+    'content',
+  ],
+
+  badgeColumns: {},
+
+}
+
+
+
+/* --------------------------------------------------------------- */
+/* chapters.html
+/* --------------------------------------------------------------- */
+charadex.page.chapters = {
+
+  // Dex Set Up
+  sheetID: charadex.sheet.contentid,
+  sheetPage: charadex.sheet.pages.chapters,
+  sitePage: 'chapters',
+  dexSelector: 'charadex',
+  profileProperty: 'name',
+
+  // Dex Options
+  sort: {
+    toggle: false,
+    sortProperty: 'name',
+    order: 'asc',
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 24,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Affiliation': charadex.sheet.options.affiliation,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['Name', 'Characters']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  fillBlanks: [
+    'summary',
+  ],
+
+  markdownColumns: [
+    'summary',
+  ],
+
+  badgeColumns: {},
 
 };
 

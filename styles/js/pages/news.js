@@ -10,21 +10,21 @@ import { charadex } from '../charadex.js';
 document.addEventListener("DOMContentLoaded", async () => {
   let dex = await charadex.initialize.page(
     null, 
-    charadex.page.news, 
+    charadex.page.announcements, 
     (arr) => {
 
-      let pageUrl = charadex.url.getPageUrl(charadex.page.news.sitePage);
-      for (let news of arr) {
+      let pageUrl = charadex.url.getPageUrl(charadex.page.announcements.sitePage);
+      for (let announcements of arr) {
 
         // Make the tags pretty and actually work <3
-        news.tags = news.tags ? news.tags.split(',') : [];
+        announcements.tags = announcements.tags ? announcements.tags.split(',') : [];
         let fancyTagArr = [];
-        if (news.tags.length >= 1) {
-          for (let tag of news.tags) {
+        if (announcements.tags.length >= 1) {
+          for (let tag of announcements.tags) {
             fancyTagArr.push(`<a href="${charadex.url.addUrlParameters(pageUrl, {tags: tag.trim()})}">#${tag.trim()}</a>`);
           }
         }
-        news.fancytags = fancyTagArr.join(' ');
+        announcements.fancytags = fancyTagArr.join(' ');
 
       }
   });
