@@ -365,7 +365,7 @@ charadex.manageData = {
     }
     
     // Import our inventory info for reference
-    let itemArr = await charadex.importSheet(charadex.sheet.pages.items);
+    let itemArr = await charadex.importSheet(charadex.sheet.pages.items, charadex.page.items.sheetID);
 
     let inventoryData = [];
     // Check if we have items in our inventory, and if so, attach data.
@@ -453,13 +453,13 @@ charadex.manageData = {
   Does what it says on the box.
     
 ======================================================================= */
-charadex.importSheet = async (sheetPage, sheetId = charadex.sheet.id) => {
+charadex.importSheet = async (sheetPage, sheetID = charadex.sheet.id) => {
 
-  if (!sheetId) return console.error('Missing sheetID.');
+  if (!sheetID) return console.error('Missing sheetID.');
   if (!sheetPage) return console.error('Missing sheetPage.');
 
   // Fetch the sheet
-  const importUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&headers=1&tq=WHERE A IS NOT NULL&sheet=${sheetPage}`;
+  const importUrl = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&headers=1&tq=WHERE A IS NOT NULL&sheet=${sheetPage}`;
 
   // Attempt to get it
   const sheetJSON = await fetch(importUrl).then(i => i.text()).catch(err => {
