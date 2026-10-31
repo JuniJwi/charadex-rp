@@ -34,18 +34,20 @@ charadex.sheet = {
     // id pages
     masterlist:      'characters',
     masterlistLog:   'character log',
+    
     player:          'players',
     inventoryLog:    'inventory log',
+
     items:           'items',
-    skills:          'skills',          // todo: preset powers
+    skills:          'skills',          // @todo: preset powers
     // activityid pages
-    announcements:   'announcements',   // todo: make this RSS feed?
+    announcements:   'announcements',   // @todo: make this RSS feed?
     prompts:         'prompts',
-    calendar:        'calendar',        // todo: a calendar
-    events:          'events',          // todo: user roleplay
+    calendar:        'calendar',        // @todo: a calendar
+    events:          'events',          // @todo: user roleplay
     // contentid pages
     lore:            'lore',
-    chapters:        'chapters',        // todo: visual novel
+    chapters:        'chapters',        // @todo: visual novel
   },
 
   options: { // available options for values in your sheets used in search filters
