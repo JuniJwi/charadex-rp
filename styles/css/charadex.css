@@ -353,12 +353,12 @@ body {
 }
 
 /* ------------------------------------------------------------- */
-/* Category Badges
+/* Affiliation Badges
 /* ------------------------------------------------------------- */
 /* Character categories appear as "badges" in listings.
-/* In addition to '.bg-all', you want one for each category in the
-/* format of '.bg-[categoryname]' with all lowercase, no spaces.
-/* For example, if "Good Guys" is the category name,
+/* In addition to '.bg-all', you want one for each affiliation in the
+/* format of '.bg-[affiliationname]' with all lowercase, no spaces.
+/* For example, if "Good Guys" is the affiliation name,
 /* '.bg-goodguys' is the badge name.
 /* ------------------------------------------------------------- */
 .bg-all {
