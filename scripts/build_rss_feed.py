@@ -1,7 +1,7 @@
 import json
 import os
 import tempfile
-import requests
+from urllib.request import urlopen
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from xml.sax.saxutils import escape
@@ -40,13 +40,15 @@ def getSource(sheetID, sheetPage):
         sheetPage = sheetPage,
     )
 
-    # Send a GET request to the desired API URL
-    response = requests.get(source)
+    # Open the URL that contains JSON
+    response = urlopen(source)
 
-    # Parse the response and print it
-    data = response.json()
-
-    return data
+    if response.getcode() == 200:
+        # Parse JSON in Python
+        data = json.loads(response.read().decode('utf-8'))
+        return data
+    else:
+        raise SystemExit(f'Unable to fetch JSON from sheets at {source}.')
 
 
 def filterPosts(posts, sheetPage):
