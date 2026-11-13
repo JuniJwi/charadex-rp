@@ -20,7 +20,7 @@ SHEET_PAGES = [
 # .. ------------------------------------------------- ..
 # variables you don't need to change
 # .. ------------------------------------------------- ..
-GSHEET_JSON_URL = 'https://docs.google.com/spreadsheets/d/{sheetID}/gviz/tq?tqx=out:json&headers=1&tq=WHERE A IS NOT NULL&sheet={sheetPage}'
+GSHEET_JSON_URL = 'https://docs.google.com/spreadsheets/d/{sheetID}/gviz/tq?tqx=out:json&headers=1&tq=WHERE%20A%20IS%20NOT%20NULL&sheet={sheetPage}'
 OUT_XML_PATH = 'public/{sheetPage}_feed.xml'
 LIMIT = 20
 
