@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+	<channel>
+		<title>Charadex: Rp - Announcements</title>
+		<category>announcements</category>
+		<link>https://junijwi.github.io/charadex-rp//announcements/</link>
+		<description>Charadex: RP - announcements</description>
+		<lastBuildDate>Thu, 29 Oct 2026 00:00:00 GMT</lastBuildDate>
+		<item>
+			<title>Etc</title>
+			<category>Event</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/7.0</link>
+			<guid isPermaLink="false">7.0</guid>
+			<pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>Serial Killer Lore</title>
+			<category>Plot</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/4.0</link>
+			<guid isPermaLink="false">4.0</guid>
+			<pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>Fantasy France</title>
+			<category>PSA</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/6.0</link>
+			<guid isPermaLink="false">6.0</guid>
+			<pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>Title of a thing</title>
+			<category>Event</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/2.0</link>
+			<guid isPermaLink="false">2.0</guid>
+			<pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>This is a story</title>
+			<category>General</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/1.0</link>
+			<guid isPermaLink="false">1.0</guid>
+			<pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>Timeline or something</title>
+			<category>Update</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/3.0</link>
+			<guid isPermaLink="false">3.0</guid>
+			<pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+		<item>
+			<title>HEB history</title>
+			<category>PSA</category>
+			<link>https://junijwi.github.io/charadex-rp//announcements/5.0</link>
+			<guid isPermaLink="false">5.0</guid>
+			<pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate>
+			<description>This is a summary.</description>
+		</item>
+	</channel>
+</rss>
