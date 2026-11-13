@@ -1,6 +1,7 @@
 import json
 import os
 import tempfile
+import requests
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from xml.sax.saxutils import escape
@@ -32,7 +33,6 @@ def getSource(sheetID, sheetPage):
     """
     Retrieve the .json for this RSS feed
     """
-
     # This google sheet url retrieves the spreadsheet in JSON format
     # similar to how we're doing it in javascript :)
     source = GSHEET_JSON_URL.format(
@@ -40,10 +40,13 @@ def getSource(sheetID, sheetPage):
         sheetPage = sheetPage,
     )
 
-    # Open the JSON
-    with open(source, encoding='utf-8') as handle:
-      sheetJSON = json.load(handle)
-      return sheetJSON
+    # Send a GET request to the desired API URL
+    response = requests.get(source)
+
+    # Parse the response and print it
+    data = response.json()
+
+    return data
 
 
 def filterPosts(posts, sheetPage):
