@@ -44,8 +44,11 @@ def getSource(sheetID, sheetPage):
     response = urlopen(source)
 
     if response.getcode() == 200:
+        # Remove headers
+        text = response.read().decode('utf-8')
+        text = text[47,-2]
         # Parse JSON in Python
-        data = json.loads(response.read().decode('utf-8'))
+        data = json.loads(text)
         return data
     else:
         raise SystemExit(f'Unable to fetch JSON from sheets at {source}.')
