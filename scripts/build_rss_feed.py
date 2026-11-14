@@ -36,7 +36,6 @@ def convertDate(googleDate):
     python datetime.
     """
     dateString = googleDate[5:-1]
-    print(dateString)
     
     data = dateString.split(',')
     date = datetime(
@@ -89,7 +88,7 @@ def getSource(sheetID, sheetPage):
                 else:
                     newRow[header] = None
             scrubbedData.append(newRow)
-        print(f'Here is the scrubbed data: {scrubbedData}')
+        # print(f'Here is the scrubbed data: {scrubbedData}')
         return headers, scrubbedData
     else:
         raise SystemExit(f'Unable to fetch JSON from sheets at {source}.')
@@ -174,6 +173,7 @@ def main():
             with os.fdopen(handle, 'w', encoding='utf-8') as out:
                 out.write(xml)
             os.replace(temp_path, out_path)
+            print(f'Created new XML file for {sheetPage}.')
         else:
             print(f'No XML was created for {sheetPage}.')
 

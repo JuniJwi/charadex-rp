@@ -42,7 +42,7 @@ charadex.sheet = {
     skills:          'skills',          // @todo: preset powers
 
     // activityid pages
-    announcements:   'announcements',   // @todo: make this RSS feed?
+    announcements:   'announcements',
     prompts:         'prompts',
     calendar:        'calendar',        // @todo: a calendar
     events:          'events',          // @todo: user roleplay
